@@ -1,12 +1,25 @@
     Course Highlights
 
     I. React Client (Frontend)
+
     - Create React Project
         1. create biloko-mern-ecommerce folder
         2. create client folder using npx create-react-app client.
         3. run client folder using npm start after going in client folder (cd client)
-        4. Clean App.js folder    
+        4. Clean App.js folder 
+
     - Install react-router
+        1. install react-router-dom (npm i react-router-dom) in  client folder 
+
+    - Routes and Pages
+        1. create pages folder in src and then create Login & Register folder. 
+        2. create auth folder in pages and drag and drop Login and Register
+        3. fill Register & login component (rafce shortcut)
+        4. create Home Page component in  pages folder
+        5. adding in app.js & import {Routes,Route} from react-router-dom
+        6. Wrap our app in BrowserRouter by importing it. 
+
+    - Ant Design Navigation
         1. 
 
     II. Firebase Authentication and Redux
