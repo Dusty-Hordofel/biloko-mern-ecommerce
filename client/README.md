@@ -20,7 +20,14 @@
         6. Wrap our app in BrowserRouter by importing it. 
 
     - Ant Design Navigation
-        1. 
+        1. go to boostrap material()
+        2. add this link (...) in public folder to add boostrap
+        3. go to ant Design. 
+        4. create folder components & nav nested folder . Add Header component and past ant Design info
+        5. install ant Design (npm i @ant-design/icons) & (npm i antd)
+        6. import "antd/dist/antd.variable.min.css";
+
+      
 
     II. Firebase Authentication and Redux
 
