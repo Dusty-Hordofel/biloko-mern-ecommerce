@@ -26,6 +26,15 @@
         4. create folder components & nav nested folder . Add Header component and past ant Design info
         5. install ant Design (npm i @ant-design/icons) & (npm i antd)
         6. import "antd/dist/antd.variable.min.css";
+    
+    - Ant Design icons
+        1. go to Ant Design ,and tap icons to go to icons . copy and past icons we need (Home , register,logout).
+        2. useBootstrap className to organize the move icons (we have already install bootstrap material icons)
+        3. in Login & Register component add className="float-right",we have to put register first if we want its works well.
+        4.
+    - React Router Link in Header.js
+        1. import { Link } from "react-router-dom";
+        2. wrapp each icon component in a react-router-dom Link 
 
       
 
