@@ -65,7 +65,15 @@
         - test if it's work well trying to register an email in the input.
         - go to network and see the last element to see whats happen after clicking on register button.
         - let's verify if we got the email and click in the link provided to confirm our email.
+
+    -  ENV and Toast Notifications
+        - create .env file in the root directory. 
+        - add REACT_APP_ before naming a variable , it is a requirement
+        - add  const config url from Register.jsx and replace it with process.env.(env variable name we've created)
+        - import toasts import to our App.js and his component. we want it to be available in our entire App. Remove toasts links from Register.jsx without removing toast .
         
+
+
     
 
 
