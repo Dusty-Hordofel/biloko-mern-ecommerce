@@ -78,9 +78,20 @@
         - we need a history object from the react router dom. 
         - Destructure the props history
         - clean the handleSubmit method.
-        - add useState to retrieve the email from the localStorage
+        - add useEffect to retrieve the email from the localStorage
         -  remove autofocus from input
         - create an input field for password 
+
+    - Complete Registration
+        - add try and catch in handleSubmit method.
+        - console.log(window.location.href);//to see what it is
+        - console.log(window.localStorage.getItem("emailForRegistration"));//to see what it is
+        - we've passed these tow function in handleSubmit Methode.  
+        - handle the error in catchblock using toastify. 
+        - add if statement using emailVerified method. 
+        - useNavigate to redirect to the homePage
+
+    
 
 
 
