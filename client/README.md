@@ -71,7 +71,20 @@
         - add REACT_APP_ before naming a variable , it is a requirement
         - add  const config url from Register.jsx and replace it with process.env.(env variable name we've created)
         - import toasts import to our App.js and his component. we want it to be available in our entire App. Remove toasts links from Register.jsx without removing toast .
-        
+
+    - Complete Registration Page
+        - to make it easyer , grab all the code from register.
+        - add one more field (password state)
+        - we need a history object from the react router dom. 
+        - Destructure the props history
+        - clean the handleSubmit method.
+        - add useState to retrieve the email from the localStorage
+        -  remove autofocus from input
+        - create an input field for password 
+
+
+
+
 
 
     
