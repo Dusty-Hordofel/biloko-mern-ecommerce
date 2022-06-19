@@ -54,7 +54,22 @@
     - Email link to SignIn 
         -   add react toastify (npm i react-toastify)
         - import { auth } from "../../firebase";
-        - 
+        - import { toast, ToastContainer } from "react-toastify";
+        - import "react-toastify/dist/ReactToastify.css";
+        - add e.preventDefault  in handleSubmit function
+        - add const config (see firebase doc: Email Link Authentication, ) ,https://firebase.google.com/docs/auth/web/email-link-auth
+        - add firebase sendSignInLinkToEmail(https://firebase.google.com/docs/auth/web/email-link-auth) method in Email Link Authentication section.
+        - go to the authentication section in firebase to active Adresse e-mail/Mot de passe methode
+        - add google auth method . 
+        - add Toast component in Header.jsx <ToastContainer />
+        - test if it's work well trying to register an email in the input.
+        - go to network and see the last element to see whats happen after clicking on register button.
+        - let's verify if we got the email and click in the link provided to confirm our email.
+        
+    
+
+
+
 
 
     III. Node MongoDB API (Backend)

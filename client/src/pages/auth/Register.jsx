@@ -1,11 +1,28 @@
 import { useState } from "react";
+import { auth } from "../../firebase";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
 
   //console.log(email);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //to prevent the browser from refreshing or reloading the page
+    const config = {
+      url: "http://localhost:3001/register/complete", //our app is running is this localhost:3001 & /register is the endpoint
+      handleCodeInApp: true,
+    }; //from the documentation , see Email Link Authentication
+
+    //firebase method
+    await auth.sendSignInLinkToEmail(email, config);
+    toast.success(
+      `Email is sent to ${email}. Click the link to complete your registration.`
+    );
+    // save user email in local storage
+    window.localStorage.setItem("emailForRegistration", email); //localStorage is the property of the window object. To save somthing in localStorage, we use the setItem method and we pass two arguments, the key and the value. getItem is used to retrieve the value of a key.
+    // clear state
+    setEmail("");
   };
 
   const registerForm = () => (
@@ -30,6 +47,7 @@ const Register = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h4>Register</h4>
+          <ToastContainer />
           {registerForm()}
         </div>
       </div>
