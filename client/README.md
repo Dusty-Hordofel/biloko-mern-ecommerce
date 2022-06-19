@@ -1,4 +1,4 @@
-    Course Highlights
+    Ccourse Highlights
 
     I. React Client (Frontend)
 
@@ -34,11 +34,20 @@
         4.
     - React Router Link in Header.js
         1. import { Link } from "react-router-dom";
-        2. wrapp each icon component in a react-router-dom Link 
+        2. wrapp each icon component in a react-router-dom Link
+
 
       
 
     II. Firebase Authentication and Redux
+    - Firebase Setup
+        - go to firebase(firebase.google.com) and signIn
+        - go to the console, create project (biloko-mern-ecommerce),name it as you want
+        - deseable google analytics
+        - click on the web (</>) & register app (biloko ecommerce)
+        - create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase. 
+        -
+
 
     III. Node MongoDB API (Backend)
 

@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 //const { SubMenu,} = Menu; //return Menu.SubMenu, we destructure Menu we have imported before
 import { Link } from "react-router-dom";
+import firebase from "firebase/compat/app";
 
 const items = [
   {
