@@ -46,7 +46,15 @@
         - deseable google analytics
         - click on the web (</>) & register app (biloko ecommerce)
         - create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase. 
-        -
+    
+    - Register Form
+        - go to pages->auth->Register.jsx
+        - setup the form by creating Register function
+
+    - Email link to SignIn 
+        -   add react toastify (npm i react-toastify)
+        - import { auth } from "../../firebase";
+        - 
 
 
     III. Node MongoDB API (Backend)
