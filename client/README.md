@@ -103,7 +103,7 @@
         - add userReducer in rootReducer function.
         - create userReducer
 
-    - User in Redux State
+    23. User in Redux State
         NB: Now we want to update the state with the user we get from the firebase
         - Go to App.js and use to the firebase auth function to access the currently logged user. 
         - import auth function from the firebase; 
@@ -114,7 +114,7 @@
         - dispatch action to the store dispatch({type: x, payload: x})
         NB: we don't have store information in the localStorage, firebase stores everything for us.
     
-    - User Logout
+    24. User Logout
         1. go to the Header component 
         2. import firebase from "firebase/compat/app";
         3. to to dropdown menu,copy one children. remove key, add icon and className.
@@ -123,7 +123,7 @@
         6. redirect user in login page fater logout.
         7. Change the logout icon
 
-    - Login Page 
+    25. Login Page 
         1. go to register component add placeholder "Your email" and a line break in the email input.
         2. copy Register component code and paste it in Login page.
         3. let's add password state & password input
@@ -135,7 +135,7 @@
         9. remove button and replace him with Ant Design Button.    
         10.Personnalise Button 
     
-    - Signin with Email and Password
+    26. Signin with Email and Password
         1. add try and catch to log the user with firebase
         2. use auth function & signInWithEmailAndPassword method to login
         3.test logique with console.log(...) 
@@ -145,6 +145,14 @@
         7. redirect the user to the home page.  
         8. test the script  
         9. add loading state ,setLoading to true in handleSubmit and false in catch block.
+    
+    23. Login with Google
+        1. add conditionnal rendering in Login Page 
+        2. Add Google Button. 
+        3. create googleLogin function
+        4. add auth.signInWithPopup(googleAuthProvider)
+        5. then handle response with then and catch.
+        6. test the script. 
 
     
 
