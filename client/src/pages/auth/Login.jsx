@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth, googleAuthProvider } from "../../firebase";
 import { toast } from "react-toastify";
 import { Button } from "antd";
 import { GoogleOutlined, MailOutlined } from "@ant-design/icons";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("hordofel@gmail.com");
   const [password, setPassword] = useState("123456");
   const [loading, setLoading] = useState(false);
 
+  const { user } = useSelector((state) => ({ ...state }));
   let dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user && user.token) navigate("/");
+  }, [user]); //if the user is authenticated, then redirect to home page.
 
   //console.log(email);
   const handleSubmit = async (e) => {
@@ -117,6 +122,9 @@ const Login = () => {
           >
             Login with Google
           </Button>
+          <Link to="/forgot/password" className="float-right text-danger">
+            Forgot Password
+          </Link>
         </div>
       </div>
     </div>

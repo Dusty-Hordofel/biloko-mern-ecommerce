@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
+
+  const { user } = useSelector((state) => ({ ...state }));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user && user.token) navigate("/");
+  }, [user]); //if the user is authenticated, then redirect to home page.
 
   //console.log(email);
   const handleSubmit = async (e) => {

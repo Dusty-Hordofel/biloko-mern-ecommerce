@@ -154,6 +154,31 @@
         5. then handle response with then and catch.
         6. test the script. 
 
+    24. Conditional Rendering
+        1. Go to Header.jsx
+        2. use useSelector hook to know if user is conected or not. it's helps us to get the data from the state!
+        3. add conditionnal rendering to display or not Register & login
+        4. display Logout if we have a user
+        5. test the script
+        6. Replace username title by the first part of email user.
+
+    25. Forgot Password.  
+        1. go to login Page & create a link below the boutton
+        2. create ForgotPassword Page & inport all element from login to make things easier
+        3. add email & loading state
+        4. add a div in our compenent & add it in app.js
+        5. add a conditionnal rendering
+        6. add a form element & add handleSubmit event handler
+        7. go to submit function and fill it . 
+    
+    26. Redirect Logged in User
+        1. Let's grab the user from the state with useSelector
+        2. add useEffect
+        3. go to login and add the same useEffect to redirect user
+        4. add useEffect, useSelector (to grap the user) and redirect
+        5. let's do the same with register
+
+
     
 
 

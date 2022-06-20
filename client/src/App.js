@@ -9,6 +9,7 @@ import RegisterComplete from "./pages/auth/RegisterComplete";
 import Home from "./pages/Home";
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -44,6 +45,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/register/complete" element={<RegisterComplete />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot/password" element={<ForgotPassword />} />
       </Routes>
     </div>
   );
