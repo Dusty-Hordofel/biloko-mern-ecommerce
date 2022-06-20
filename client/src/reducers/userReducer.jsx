@@ -8,3 +8,5 @@ export const userReducer = (state = null, action) => {
       return state;
   }
 };
+
+//NB: we will update the state with the user we get from the firebase;

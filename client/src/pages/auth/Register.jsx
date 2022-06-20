@@ -29,10 +29,12 @@ const Register = () => {
       <input
         type="email"
         className="form-control"
+        placeholder="Your email"
         value={email} //we put whatever the user typing in and put that in the state by the name of email.Putting a value attribute makes the input controlled
         onChange={(e) => setEmail(e.target.value)} //onChange helps us to track the value of the input element in real-time.
         autoFocus
       />
+      <br />
       {/*  */}
 
       <button type="submit" className="btn btn-raised">

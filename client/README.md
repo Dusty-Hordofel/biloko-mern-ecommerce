@@ -124,7 +124,11 @@
         7. Change the logout icon
 
     - Login Page 
-        1. 
+        1. go to register component add placeholder "Your email" and a line break in the email input.
+        2. copy Register component code and paste it in Login page.
+        3. let's add password state & password input
+        4. clean handleSubmit function
+        5. put each div in form-group div 
     
 
 
