@@ -91,6 +91,20 @@
         - add if statement using emailVerified method. 
         - useNavigate to redirect to the homePage
 
+    - Setup Redux
+        NB: Reddux will help us to create a global state, and we need a global state for certain things. 
+        The most import is getting the user information (the most importantly the user token). 
+
+        - Using redux will make the user information accessible any where! 
+        - install redux and react-redux (npm i redux react-redux redux-devtools-extension)
+        - go to index.js and create the store and import the provider & composeWithDevTool
+        - create a store with createStore function and insert rootReducer ans composeWithDevTools as agurments. 
+        - create a reducer folder & rootReducer (to combine all reducers) function in index.js file
+        - add userReducer in rootReducer function.
+        
+
+
+
     
 
 

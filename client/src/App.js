@@ -6,6 +6,8 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import RegisterComplete from "./pages/auth/RegisterComplete";
 import Home from "./pages/Home";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
