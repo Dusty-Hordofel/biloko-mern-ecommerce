@@ -49,7 +49,7 @@ const RegisterComplete = ({ history }) => {
         //redux store
         //we use redux here because we need to access the token in many different pages.
         //redirect to home page
-        navigate("/"); //history.push is a method that we can use to redirect the user to a different page.
+        navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
       }
     } catch (error) {
       console.log(error);

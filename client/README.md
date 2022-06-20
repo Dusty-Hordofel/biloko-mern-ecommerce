@@ -129,6 +129,23 @@
         3. let's add password state & password input
         4. clean handleSubmit function
         5. put each div in form-group div 
+        6. make a request to firebase in handleSubmit function after, before console.table(email,password) to see what we submit in to firebase.
+        7. go to Ant design , component->button 
+        8. import antd Button and MailOutlined icon in Login Page and add them.
+        9. remove button and replace him with Ant Design Button.    
+        10.Personnalise Button 
+    
+    - Signin with Email and Password
+        1. add try and catch to log the user with firebase
+        2. use auth function & signInWithEmailAndPassword method to login
+        3.test logique with console.log(...) 
+        4. import useDispatch from  react-redux
+        5. add result , destructure the user and idTokenResult
+        6. disptch action 
+        7. redirect the user to the home page.  
+        8. test the script  
+        9. add loading state ,setLoading to true in handleSubmit and false in catch block.
+
     
 
 
