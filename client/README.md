@@ -41,11 +41,11 @@
 
     II. Firebase Authentication and Redux
     - Firebase Setup
-        - go to firebase(firebase.google.com) and signIn
-        - go to the console, create project (biloko-mern-ecommerce),name it as you want
-        - deseable google analytics
-        - click on the web (</>) & register app (biloko ecommerce)
-        - create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase. 
+        1. go to firebase(firebase.google.com) and signIn
+        2. go to the console, create project (biloko-mern-ecommerce),name it as you want
+        3. deseable google analytics
+        4. click on the web (</>) & register app (biloko ecommerce)
+        5. create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase. 
     
     - Register Form
         - go to pages->auth->Register.jsx
@@ -92,7 +92,7 @@
         - useNavigate to redirect to the homePage
 
     - Setup Redux
-        NB: Reddux will help us to create a global state, and we need a global state for certain things. 
+        NB: Redux will help us to create a global state, and we need a global state for certain things. 
         The most import is getting the user information (the most importantly the user token). 
 
         - Using redux will make the user information accessible any where! 
@@ -101,7 +101,31 @@
         - create a store with createStore function and insert rootReducer ans composeWithDevTools as agurments. 
         - create a reducer folder & rootReducer (to combine all reducers) function in index.js file
         - add userReducer in rootReducer function.
-        
+        - create userReducer
+
+    - User in Redux State
+        NB: Now we want to update the state with the user we get from the firebase
+        - Go to App.js and use to the firebase auth function to access the currently logged user. 
+        - import auth function from the firebase; 
+        - dipatch action using useDispatch from "react-redux". 
+        - add useEffect to check firebase auth state
+        - create unsubscribe const and use onAuthStateChanged method from firebase
+        - create if statement to check if user is logged.
+        - dispatch action to the store dispatch({type: x, payload: x})
+        NB: we don't have store information in the localStorage, firebase stores everything for us.
+    
+    - User Logout
+        1. go to the Header component 
+        2. import firebase from "firebase/compat/app";
+        3. to to dropdown menu,copy one children. remove key, add icon and className.
+        4. add OnClick handler to Logout user using firebase method, add & create logout method. 
+        5. import useDispatch hook to update the state adding dispatch method in logout function     dispatch({type: "LOGGED_OUT_USER",payload: null,});
+        6. redirect user in login page fater logout.
+        7. Change the logout icon
+
+    - Login Page 
+        1. 
+    
 
 
 

@@ -5,77 +5,57 @@ import {
   SettingOutlined,
   UserOutlined,
   UserAddOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
-//const { SubMenu,} = Menu; //return Menu.SubMenu, we destructure Menu we have imported before
 import { Link } from "react-router-dom";
 import firebase from "firebase/compat/app";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const items = [
-  {
-    label: "Home",
-    key: "home",
-    icon: (
-      <Link to="/">
-        <AppstoreOutlined />
-      </Link>
-    ),
-    className: "",
-  },
-  {
-    label: "Register",
-    key: "register",
-    icon: (
-      <Link to="/register">
-        <UserAddOutlined />
-      </Link>
-    ),
-    className: "float-right",
-  },
-  {
-    label: "Login",
-    key: "login",
-    icon: (
-      <Link to="/login">
-        <UserOutlined />
-      </Link>
-    ),
-    className: "float-right",
-  },
-
-  {
-    label: "Username",
-    key: "SubMenu",
-    icon: <SettingOutlined />,
-    className: "",
-
-    children: [
-      {
-        label: "Option 1",
-        key: "setting:1",
-      },
-      {
-        label: "Option 2",
-        key: "setting:2",
-      },
-    ],
-  },
-];
+const { SubMenu, Item } = Menu;
 
 const Header = () => {
   const [current, setCurrent] = useState("home");
 
-  const onClick = (e) => {
-    //console.log("click ", e);
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+
+  const handleClick = (e) => {
+    // console.log(e.key);
     setCurrent(e.key);
   };
 
+  const logout = () => {
+    firebase.auth().signOut(); // firebase.auth().signOut() will logout the user
+    dispatch({
+      type: "LOGGED_OUT_USER",
+      payload: null,
+    }); //to update the state
+    navigate("/login"); //to redirect to login page
+  };
+
   return (
-    <Menu
-      onClick={onClick}
-      selectedKeys={[current]}
-      mode="horizontal"
-      items={items}
-    />
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+      <Item key="home" icon={<AppstoreOutlined />}>
+        <Link to="/">Home</Link>
+      </Item>
+
+      <Item key="register" icon={<UserAddOutlined />} className="float-right">
+        <Link to="/register">Register</Link>
+      </Item>
+
+      <Item key="login" icon={<UserOutlined />} className="float-right">
+        <Link to="/login">Login</Link>
+      </Item>
+
+      <SubMenu icon={<SettingOutlined />} title="Username">
+        <Item key="setting:1">Option 1</Item>
+        <Item key="setting:2">Option 2</Item>
+        <Item icon={<LogoutOutlined />} onClick={logout}>
+          Logout
+        </Item>
+      </SubMenu>
+    </Menu>
   );
 };
 
