@@ -333,12 +333,26 @@ Anyone who is up for a challenge
         13. test if we are connected to server & our database. tap npm start in the terminal
     
     32. Routes. 
-        1. 
-
+        1. create routes and auth.js file. 
+        2. import express,create const router and export it by default
+        3. cut the app.get route in server.js and past it in auth.js route
+        4. import routes from auth.js & add app.use(url, router);
 
     33. Routes Autoloading
-    34. Controllers.    
+        1. import fs from "fs" in server.js.  
+        2. 
+
+    34. Controllers.
+        1. create controllers folders
+        2.  create    
     35. User Schema. 
+        1. create models folder. 
+        2. import mongoose from "mongoose";
+        3. const { ObjectId } = mongoose.Schema;
+        4. create a userSchema
+        5. add a timestamps argument
+        5. export UserSchema
+    
 
 
 

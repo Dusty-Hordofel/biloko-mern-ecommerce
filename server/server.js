@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
+import { readdirSync } from "fs";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 
 dotenv.config();
 
@@ -34,15 +37,14 @@ mongoose.connection.on("disconnected", () => {
 }); // to listen our connection, so if we are disconnected, we will be notified about that
 
 //middleware
-app.use(morgan("dev")); //morgane is a function which logs the requests
+app.use(morgan("dev")); //morgan is a function which logs the requests
 app.use(express.json()); //to send JSON.object
 app.use(cors()); //to allow cross-origin requests
 
-//route
-app.get("/", (req, res) => {
-  //res.send("Hello World!");
-  res.json({ message: "Hello World!" });
-}); //the first argument is a url and the second argument is a function which handles the request.
+//routes middleware
+app.use("/api/auth", authRoutes); //to use the authRoute, we prefix the url with /api/auth
+app.use("/api", userRoutes); //to use the authRoute, we prefix the url with /api/auth
+//readdirSync("./routes").map((r) => app.use("/api", import("./routes/" + r)));
 
 //port
 const port = process.env.PORT || 5000; //port is used to connect to the server.
