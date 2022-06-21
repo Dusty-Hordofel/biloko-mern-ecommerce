@@ -1,4 +1,133 @@
-    Ccourse Highlights
+
+Course Highlights
+
+React Client (Frontend)
+
+Firebase Authentication and Redux
+
+Node MongoDB API (Backend)
+
+Firebase Auth Check (Server side)
+
+User Admin and Protected Routes
+
+Categories CRUD
+
+Sub Categories CRUD
+
+Creating Products with Categories and Sub Categories (Advance)
+
+Multiple Image Uploads with Client Side Resize
+
+Update and Delete Products (Advance)
+
+Displaying Products Pagination and Carousel
+
+Star Rating System
+
+Products based on Categories and Sub Categories
+
+Advance Searching and Filtering (9 Different Ways)
+
+Add to Cart
+
+Checkout
+
+Coupon
+
+Payment with Stripe
+
+Orders
+
+User Dashboard (Purchase History)
+
+PDF/Invoice Download
+
+Admin Dashboard (Order Management)
+
+Wishlist
+
+Cash On Delivery (Cashless order)
+
+Deployment to Digital Ocean Cloud
+
+
+
+Project Overview
+
+Master MERN Stack Web Development building Ultimate E-commerce app with React Redux Ant Design Firebase NodeJs and MongoDB. This project will have almost all the features you want to add in any E-commerce app including:
+
+Login Registration System
+
+Login with email/password and social login (Google)
+
+Admin dashboard and order management system
+
+Products CRUD with advance features including categories, sub-categories, multiple image uploads etc
+
+Plenty of advance searching and filtering options
+
+Star rating system
+
+Cart functionality with both backend/frontend implementation
+
+Checkout with stripe for credit card payments
+
+Checkout with cash on delivery (no online payment required)
+
+User dashboard with password update, purchase history, Invoice/PDF download etc
+
+Deployment to digital ocean cloud
+
+Please go through the curriculum to get better understanding of the project
+
+This course project is probably the biggest and most exciting project you have build so far. It is packed with hundreds of tips and tricks that can help you build almost any type of full stack app (not limited to ecommerce).
+
+Master the art of building FullStack/MERN Stack apps by enrolling into this course and never look back. What you are now and what you will become after completing this course is going to be a ground breaking step in your web development career.
+
+You can build the biggest and most complex apps of your dream or as required at your job. Master the stack of all stacks and become the most productive and innovative developer of your team. I welcome you to be a part of this incredible journey.
+
+Ce que vous allez apprendre
+Learn to build one of the biggest ecommerce app ever
+Hundreds of tips and tricks to build full stack app
+Gain the skill for building any type of app (not limited to ecommerce)
+Master the art of building frontend app with react and redux
+Master the art of building backend api with nodejs
+Master the art of building lightning fast full stack / mern stack apps
+Integrate firebase for handling authentication
+Learn to perform simple to complex mongodb queries using mongoose
+Learn ant design (the most popular react UI library)
+Stunning layout with bootstrap material css
+Complete authentication with social login
+Password forgot/reset, confirmation email on signup etc
+Integrate redux for global state management
+Role based access control for users and admin
+Advance CRUD (create read update delete) for products, categories and sub categories
+Multiple Image Uploads with Client Side Resize
+Pagination
+Advance searching and filtering (9 different ways)
+Star rating system
+Add to cart
+Discount coupon code
+Credit card payment with stripe
+Cash on delivery (no online payment required)
+Order management system for admin
+Admin dashboard to manage and run ecommerce platform
+Add to wishlist
+Code splitting
+Deployment
+Y a-t-il des exigences ou prérequis pour ce cours ?
+Good understanding of javascript
+Previous experience of building apps using react and node
+À qui ce cours s'adresse-t-il ?
+Javascript developers of all level
+Anyone interested in building real world ecommerce app
+Anyone interested in learning full stack / mern stack development
+Anyone who enjoys learning by building meaningful real projects (not toy projects)
+Anyone interested in learning hundred's of tips and tricks, all within one course
+Anyone with ambition to build the next big thing by mastering full stack development
+Anyone who likes to write code that is clean and easy to understand (even for complex features)
+Anyone who is up for a challenge
 
     I. React Client (Frontend)
 
@@ -179,24 +308,44 @@
         5. let's do the same with register
 
 
-    
-
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
     III. Node MongoDB API (Backend)
+    27. Backend API with Node and MongoDB
+    28. NPM Packages to install
+        1. create server folder and install npm init -y   
+        2. npm i express mongoose cors morgan express-jwt firebase-admin jsonwebtoken nodemon dotenv
+        
+
+    29. Mongoose version
+    30. Mongo Atlas or local installation 
+    31. Server Setup.
+        1. create .env file & put MONGO_URL.    
+        2. add a variable named PORT. 
+        3. create .gitignore file & add file || folder name we don't wan to push in github.     
+        4. create server.js file & go to package.json & add "type":"module". 
+        5. go to server.js
+        6. import express from "express" in server.js ... mongoose,morgan,cors & dotenv
+        7. create const app ,connect db with mongoose & listen server
+        8. add a middleware section and add morgane-express.json & cors() in it.
+        9. add route section and test our route
+        10. go to package.json and add a script in script section ("start":"nodemon server.js") 
+        11. define the port constant to connect to the server
+        12. listen the server with app.listen
+        13. test if we are connected to server & our database. tap npm start in the terminal
+    
+    32. Routes. 
+        1. 
+
+
+    33. Routes Autoloading
+    34. Controllers.    
+    35. User Schema. 
+
+
+
+
+
+
+
 
     IV. Firebase Auth Check (Server side)
 
