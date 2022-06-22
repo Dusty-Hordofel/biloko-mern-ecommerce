@@ -361,7 +361,44 @@ Anyone who is up for a challenge
         4. To use firebase admin we need to generate a new key and use the code we see (before to generate a key) to get firebase admin. 
         5. download and save the file in a new root config folder
         6. create another in root folder named firebase, create index.js file inside & paste the Extrait de configuration Admin SDK.
-        7. 
+        7. update the path of serviceAccount in index.js file . 
+    
+    35. Middleware
+        NB: Now we can start using firebase admin tool to validate the token. So when our front-end send the user token to our backend, we will received that in ou auth route.
+        1. change your get to post method (route->auth.js)
+        2. to grab that token or verify the middleware & verify the token we can write another middleware function. 
+        3. in the middle we have to made some check to verify the token is valide. 
+        4. in The Middle make sure you get the token and this is valide. 
+        5. create a middlewares folder in the root, add auth.js file. 
+            - import admin from firebase/index.js file
+            - create authCheck function
+            - check if the token is valid with firebase admin & get the user information  
+            - use this function as middleware in routes->auth.js 
+    
+    36. Auth Check Middleware
+        NB: In this part wa are trying to send the user token from the frontend to the endpoint ("/test"). 
+        1. go to client->env
+            - add a new variable REACT_APP_API 
+            - you can also add proxy in package.json if you want . 
+        2. go to login page
+            NB: use axios to make a http request to send our token to the backend.Make sure backend and frontend are runing
+            - npm i axios & import that
+            - execute a function that will make a request to our backend
+            - create an async funtion named createOrUpdateUser
+            - use axios & hhtp request
+            - add the url , leave the body empty because we dont send any request in the body (like create a product...) just in the token in the headers(headers{}).
+            - give this token a name (headers{authtoken:paramter}) and pass the token to this function(authtoken). headersheaders{authtoken:authtoken}
+        
+            - Pass the token to the function we've created 
+            -  go to login function, add createOrUpdateUser and pass it the token. 
+            NB: when we get the token in Login function , we execute createOrUpdateUser
+            - add promises and handle the error. 
+            - test the script 
+            NB: we will see the authtoken in network and in console
+
+
+
+
 
 
     V. User Admin and Protected Routes
