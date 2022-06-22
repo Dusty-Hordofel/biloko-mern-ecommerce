@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
     address: String,
     //wishlist: [{ type: ObjectId, ref: "Product" }],
   },
-  { timestamps: true }
+  { timestamps: true } //second argument is the time stamps
 );
 
 export default mongoose.model("User", userSchema);

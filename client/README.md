@@ -315,9 +315,9 @@ Anyone who is up for a challenge
         2. npm i express mongoose cors morgan express-jwt firebase-admin jsonwebtoken nodemon dotenv
         
 
-    29. Mongoose version
-    30. Mongo Atlas or local installation 
-    31. Server Setup.
+    xx. Mongoose version
+    xx. Mongo Atlas or local installation 
+    29. Server Setup.
         1. create .env file & put MONGO_URL.    
         2. add a variable named PORT. 
         3. create .gitignore file & add file || folder name we don't wan to push in github.     
@@ -332,36 +332,37 @@ Anyone who is up for a challenge
         12. listen the server with app.listen
         13. test if we are connected to server & our database. tap npm start in the terminal
     
-    32. Routes. 
+    30. Routes. 
         1. create routes and auth.js file. 
         2. import express,create const router and export it by default
         3. cut the app.get route in server.js and past it in auth.js route
         4. import routes from auth.js & add app.use(url, router);
 
-    33. Routes Autoloading
+    31. Routes Autoloading
         1. import fs from "fs" in server.js.  
         2. 
 
-    34. Controllers.
+    32. Controllers.
         1. create controllers folders
         2.  create    
-    35. User Schema. 
+    33. User Schema. 
         1. create models folder. 
         2. import mongoose from "mongoose";
         3. const { ObjectId } = mongoose.Schema;
         4. create a userSchema
         5. add a timestamps argument
         5. export UserSchema
-    
-
-
-
-
-
-
-
 
     IV. Firebase Auth Check (Server side)
+    34. Firebase Admin
+        1.install firebase admin 
+        2.go to firebase console to get the firebase service account key to process further. 
+        3. click on project overview->project settings->service account
+        4. To use firebase admin we need to generate a new key and use the code we see (before to generate a key) to get firebase admin. 
+        5. download and save the file in a new root config folder
+        6. create another in root folder named firebase, create index.js file inside & paste the Extrait de configuration Admin SDK.
+        7. 
+
 
     V. User Admin and Protected Routes
 
