@@ -5,20 +5,7 @@ import { Button } from "antd";
 import { GoogleOutlined, MailOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
-
-// //"/auth/create-or-update-user"
-const createOrUpdateUser = async (authtoken) => {
-  return await axios.post(
-    `${process.env.REACT_APP_API}/auth/create-or-update-user`,
-    {},
-    {
-      headers: {
-        authtoken,
-      },
-    }
-  );
-};
+import { createOrUpdateUser } from "../../functions/auth.js";
 
 const Login = () => {
   const [email, setEmail] = useState("hordofel@gmail.com");
@@ -45,17 +32,29 @@ const Login = () => {
       const idTokenResult = await user.getIdTokenResult(); //getIdTokenResult is used to get the idTokenResult
 
       createOrUpdateUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
-        .then((res) => console.log("CREATE OR UPDATE RES", res))
+        .then((res) => {
+          dispatch({
+            type: "LOGGED_IN_USER",
+            payload: {
+              name: res.data.name,
+              email: res.data.email,
+              token: idTokenResult.token,
+              role: res.data.role,
+              _id: res.data._id,
+            }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
+          }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
+        })
         .catch((err) => {});
-
-      dispatch({
-        type: "LOGGED_IN_USER",
-        payload: {
-          email: user.email,
-          token: idTokenResult.token,
-        }, //these coming from firebase, we don't want to store them in the local storage
-      }); //we dispatch the idTokenResult to the store as a payload . {type: "LOGGED_IN_USER", payload: {email: user.email,token: idTokenResult.token,}}
       navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
+
+      // dispatch({
+      //   type: "LOGGED_IN_USER",
+      //   payload: {
+      //     email: user.email,
+      //     token: idTokenResult.token,
+      //   }, //these coming from firebase, we don't want to store them in the local storage
+      // }); //we dispatch the idTokenResult to the store as a payload . {type: "LOGGED_IN_USER", payload: {email: user.email,token: idTokenResult.token,}}
+      // navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -104,13 +103,28 @@ const Login = () => {
       .then(async (result) => {
         const { user } = result;
         const idTokenResult = await user.getIdTokenResult();
-        dispatch({
-          type: "LOGGED_IN_USER",
-          payload: {
-            email: user.email,
-            token: idTokenResult.token,
-          },
-        });
+        createOrUpdateUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
+          .then((res) => {
+            dispatch({
+              type: "LOGGED_IN_USER",
+              payload: {
+                name: res.data.name,
+                email: res.data.email,
+                token: idTokenResult.token,
+                role: res.data.role,
+                _id: res.data._id,
+              }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
+            }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
+          })
+          .catch((err) => {});
+
+        // dispatch({
+        //   type: "LOGGED_IN_USER",
+        //   payload: {
+        //     email: user.email,
+        //     token: idTokenResult.token,
+        //   },
+        // });
         navigate("/");
       })
       .catch((error) => {

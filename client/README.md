@@ -417,7 +417,53 @@ Anyone who is up for a challenge
             NB: if user already exists, we will update the user.if it doesn't exist in the database we create. 
             -  create const user & use findOneAndUpdate methode
             -  add if statement to verify if user exist or not
-            
+            - go to client->pages->auth->login & see the createOrUpdateUser function we create before
+            - go to the console to see the result , we have CREATE OR UPDATE RES and response as userInformation
+            - in the vscode terminal we have USER CREATED & his infomation. 
+    
+    39. API User Response
+        1.  go to Login page. 
+        NB: Previously in the login page , we were dispatching to the redux tools only the email & the token. it was came from firebase.com. 
+        But now we are able to get the response from our on server using the createOrUpdateUser method. 
+            - replace the console.log("CREATE OR UPDATE RES", res) by dispath content commented below
+            -  add _id,role,name property(name: res.data.name), update other informations.
+            - go to redux devtools and try if every thing works as we want.
+            - go to network (create-or-update-user) see the response:
+                - we send authtoke to the headers 
+                -& we get response the response contening user information. 
+        
+        NB:unfortunately it doesn't persit in the redux devtools. 
+        if you refresh the page we only have email and token  we got from firebase.
+        that means we have to create one more endpoint that give us the current user. and in App.js we can create the request to our backend. 
+        we can make request to our Backend in backend using  existing UseEffect in App.js 
+
+        2. go to Login.js & copy the entire createOrUpdateUser function witch is inside try and catch
+        3. replace te dispatch after signInWithPopup by what the  createOrUpdateUser we have copied.
+        4. Try if it's works well. 
+        5. go to RegisterComplete todo something similar
+            - First we need to access to the reduxtools 
+            - go to Login pages   
+                - copy import { useDispatch, useSelector } from "react-redux" and past it to RegisterComplete.
+                It will allow us to access to the redux store.
+                - copy user cons from Login to RegisterComplete Page 
+                - copy createOrUpdate function from Login to RegisterComplete
+                - let's try to a new User Register if everything work's well. 
+                NB: we will see (email;token,role and id without name) because after registration the user have not give his name. 
+        6. go to Header components 
+            - copy submenu title and past it in controllers->auth.js ({ email, name:email.split("@")[0], picture })
+            - register a new use, before delete the old user. try again a now we have the name of the new user.
+        7. Remove the duplicate createOrUpdateUser function present in RegisterComplete & Login component.
+        8. create functions folder (client->src->functions->auth.js) ,add auth.js file and paste createOrUpdateUser function we have removed early.
+
+
+
+        
+
+
+
+
+        
+
 
 
 

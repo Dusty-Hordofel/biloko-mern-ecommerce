@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createOrUpdateUser } from "../../functions/auth.js";
 
 //we can destructure the history, our entire application is wrap by the browser router, so it will give us the props history
 const RegisterComplete = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  let dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state }));
 
   useEffect(() => {
     setEmail(window.localStorage.getItem("emailForRegistration"));
@@ -48,6 +52,20 @@ const RegisterComplete = ({ history }) => {
         console.log("user", user, "idTokenResult", idTokenResult);
         //redux store
         //we use redux here because we need to access the token in many different pages.
+        createOrUpdateUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
+          .then((res) => {
+            dispatch({
+              type: "LOGGED_IN_USER",
+              payload: {
+                name: res.data.name,
+                email: res.data.email,
+                token: idTokenResult.token,
+                role: res.data.role,
+                _id: res.data._id,
+              }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
+            }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
+          })
+          .catch((err) => {});
         //redirect to home page
         navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
       }
