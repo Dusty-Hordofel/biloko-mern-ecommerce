@@ -397,11 +397,38 @@ Anyone who is up for a challenge
             NB: we will see the authtoken in network and in console
 
 
-
-
-
-
     V. User Admin and Protected Routes
+    37. Create or Update User
+        1. go to auth.js middleware 
+            - add try and catch
+            - in try instruction:
+                -  create firebaseUser const 
+                - use admin.auth().verifiIdToken to return user info from headers.we verify the token this way
+            - catch:
+                - log error
+                - use an appropriate status code
+            - create a request to store user information
+        2. go ahead and use this information to save the user in our database
+            NB: we can access the requested user in our controller
+        3. go to the controller auth.js
+            - replace testuser name by createOrUpdateUser
+            - import user models
+            - destructure req.user information came from the authCheck middleware.
+            NB: if user already exists, we will update the user.if it doesn't exist in the database we create. 
+            -  create const user & use findOneAndUpdate methode
+            -  add if statement to verify if user exist or not
+            
+
+
+
+
+
+
+
+
+
+
+
 
     VI. Categories CRUD
 
