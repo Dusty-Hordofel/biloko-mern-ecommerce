@@ -9,7 +9,7 @@ const myMiddleware = (req, res, next) => {
 const router = express.Router();
 
 //middlewares
-import { authCheck } from "../middlewares/auth.js";
+import { authCheck, adminCheck } from "../middlewares/auth.js";
 
 router.get("/testing", myMiddleware, (req, res) => {
   res.json({ message: "Hello World!" });
@@ -19,4 +19,6 @@ router.post("/create-or-update-user", authCheck, createOrUpdateUser); //the firs
 //middleware is something in the middle of the request and response.
 
 router.post("/current-user", authCheck, currentUser); //currentUser function will give us the current user
+router.post("/current-admin", authCheck, adminCheck, currentUser);
+
 export default router;

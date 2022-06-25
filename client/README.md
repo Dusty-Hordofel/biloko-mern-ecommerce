@@ -476,7 +476,24 @@ Anyone who is up for a challenge
         1. create user folder in pages 
         2. create History Component & add it to App.js
         3.create component->routes  for protect the route
-        4. create UseRoute component & import it in App.js (replace Route by UserRoute)
+        4. create UseRoute component & import it in App.js (replace Route by UserRoute)//see that next time
+    
+    43. Loading to redirect
+        1. create LoandingToRedirect file in routes folder
+        2. test
+    44. Sidebar Nav for User
+        1. create UserNav component & import it in History.js
+    
+    45.  Password Update
+        1. create Password and Wishlist. 
+        2. copy them to App.js
+        3. go to Password & import{ auth} from firebase, toast,useState
+        4. create passwordUpdateForm function 
+        5. create handleSubmit
+    
+    46. Admin Check Middleware
+        1. go to server->middlewares->auth.js
+        2. create adminCheck function
 
         
 
