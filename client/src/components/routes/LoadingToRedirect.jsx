@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const LoadingToRedirect = () => {
@@ -13,7 +12,7 @@ const LoadingToRedirect = () => {
     count === 0 && navigate("/");
     //cleanup
     return () => clearInterval(interval);
-  }, [count]);
+  }, [count, navigate]);
   return (
     <div className="container p-5 text-center">
       Redirecting you in {count} seconds

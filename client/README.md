@@ -494,6 +494,22 @@ Anyone who is up for a challenge
     46. Admin Check Middleware
         1. go to server->middlewares->auth.js
         2. create adminCheck function
+            - import a User Model
+            - add a database query 
+            - find the user & add if statement
+        3. go to auth routes 
+            - add adminCheck middleware function
+
+    47. Admin Route
+        1. go to client->Route->UserRoute.jsx
+        2. copy and create AdminRoute
+        3. go to function->auth.js & create currentAdmin function
+        3. import currentAdmin to AdminRoute.js
+        4. create an admin folder (pages->admin) & AdminDashboard.jsx
+        5. import AdminDashboard to App.js
+        
+        
+
 
         
 

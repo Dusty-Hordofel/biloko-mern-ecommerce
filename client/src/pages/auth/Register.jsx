@@ -12,7 +12,7 @@ const Register = () => {
 
   useEffect(() => {
     if (user && user.token) navigate("/");
-  }, [user]); //if the user is authenticated, then redirect to home page.
+  }, [user, navigate]); //if the user is authenticated, then redirect to home page.
 
   //console.log(email);
   const handleSubmit = async (e) => {

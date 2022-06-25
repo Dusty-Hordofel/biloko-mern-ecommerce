@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createOrUpdateUser } from "../../functions/auth.js";
 
 //we can destructure the history, our entire application is wrap by the browser router, so it will give us the props history
@@ -11,14 +11,14 @@ const RegisterComplete = ({ history }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   let dispatch = useDispatch();
-  const { user } = useSelector((state) => ({ ...state }));
+  //const { user } = useSelector((state) => ({ ...state }));
 
   useEffect(() => {
     setEmail(window.localStorage.getItem("emailForRegistration"));
     //console.log(setEmail);
     // console.log(window.location.href); //window.location.href is the url of the current page
     // console.log(window.localStorage.getItem("emailForRegistration")); //window.localStorage.getItem("emailForRegistration") is used to retrieve email from localStorage
-  }, []);
+  }, [navigate]);
 
   //console.log(email);
   const handleSubmit = async (e) => {

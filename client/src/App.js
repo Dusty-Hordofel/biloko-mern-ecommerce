@@ -15,6 +15,8 @@ import History from "./pages/user/History";
 import Wishlist from "./pages/user/Wishlist";
 import Password from "./pages/user/Password";
 //import UserRoute from "./components/routes/UserRoute";
+//import AdminRoute from "./components/routes/AdminRoute";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -55,7 +57,7 @@ const App = () => {
 
     //cleanup the state.
     return () => unsubscribe();
-  }, []); //useEffect is used to run a piece of code when the component is mounted and unmounted.
+  }, [dispatch]); //useEffect is used to run a piece of code when the component is mounted and unmounted.
   return (
     <div>
       <Header />
@@ -70,6 +72,8 @@ const App = () => {
         <Route path="/user/history" element={<History />} />
         <Route path="/user/password" element={<Password />} />
         <Route path="/user/wishlist" element={<Wishlist />} />
+        {/* <UserRoute path="/user/wishlist" element={<Wishlist />} /> */}
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
   );
