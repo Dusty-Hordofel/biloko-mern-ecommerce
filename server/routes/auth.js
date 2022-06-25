@@ -1,6 +1,6 @@
 import express from "express";
 //controller
-import { createOrUpdateUser } from "../controllers/auth.js";
+import { createOrUpdateUser, currentUser } from "../controllers/auth.js";
 const myMiddleware = (req, res, next) => {
   console.log("Middleware NAYO");
   next();
@@ -17,4 +17,6 @@ router.get("/testing", myMiddleware, (req, res) => {
 
 router.post("/create-or-update-user", authCheck, createOrUpdateUser); //the first argument is a url and the second argument is a function which handles the request.)
 //middleware is something in the middle of the request and response.
+
+router.post("/current-user", authCheck, currentUser); //currentUser function will give us the current user
 export default router;

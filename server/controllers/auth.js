@@ -25,3 +25,12 @@ export const createOrUpdateUser = async (req, res) => {
     res.json(newUser);
   }
 };
+
+export const currentUser = async (req, res) => {
+  User.findOne({
+    email: req.user.email,
+  }).exec((error, user) => {
+    if (error) throw new Error(error.message);
+    res.json(user);
+  }); //req.user came from firebase response in the middleware auth.js. the firebase has the email and we query the database to get the user based on the email.
+};

@@ -455,6 +455,30 @@ Anyone who is up for a challenge
         7. Remove the duplicate createOrUpdateUser function present in RegisterComplete & Login component.
         8. create functions folder (client->src->functions->auth.js) ,add auth.js file and paste createOrUpdateUser function we have removed early.
 
+    40. Current User Endpoint
+        1. create a new endpoint named current user in server->routes->auth.js 
+        2. create currentUser function in controllers->auth.js
+        3. go to client->src->function & create currentUser function. 
+        4. go to App.js:
+            - import currentUser
+            - copy createOrUpdateUser function in RegisterComplete file & paste it in App.js
+            - remove the dispatch present in useEffect  & replace it by our copy
+            - change the name createOrUpdateUser to currentUser
+            - Lets try if we keep all  information in redux store now!
+    
+    41. Role Based Redirect
+        1. go to login, comment navigate function & create rolebasedRedirect below
+            - add the res we got from our API int he function. 
+            -  rolebasedRedirect function in googleLogin  & commente navigate
+            - Let's try!
+
+    42. Protected User Route
+        1. create user folder in pages 
+        2. create History Component & add it to App.js
+        3.create component->routes  for protect the route
+        4. create UseRoute component & import it in App.js (replace Route by UserRoute)
+
+        
 
 
         

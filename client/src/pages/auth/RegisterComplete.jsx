@@ -65,7 +65,9 @@ const RegisterComplete = ({ history }) => {
               }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
             }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
           })
-          .catch((err) => {});
+          .catch((error) => {
+            console.log(error);
+          });
         //redirect to home page
         navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
       }

@@ -20,6 +20,13 @@ const Login = () => {
     if (user && user.token) navigate("/");
   }, [user]); //if the user is authenticated, then redirect to home page.
 
+  const rolebasedRedirect = (res) => {
+    if (res.data.role === "admin") {
+      navigate("/admin/dashboard"); //navigate is a method that we can use to redirect the user to a different page.
+    } else {
+      navigate("/user/history");
+    }
+  };
   //console.log(email);
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -43,10 +50,12 @@ const Login = () => {
               _id: res.data._id,
             }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
           }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
+          rolebasedRedirect(res);
         })
-        .catch((err) => {});
-      navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
-
+        .catch((error) => {
+          console.log(error);
+        });
+      //navigate("/"); //navigate is a method that we can use to redirect the user to a different page.
       // dispatch({
       //   type: "LOGGED_IN_USER",
       //   payload: {
@@ -115,6 +124,7 @@ const Login = () => {
                 _id: res.data._id,
               }, //these coming from our server despite idTokenResult who come from firebase, we don't want to store them in the local storage
             }); //we dispatch these informations to the store as a payload . {type: "LOGGED_IN_USER", payload: {name: res.data.name, email: res.data.email, token: idTokenResult.token, role: res.data.role, _id: res.data._id}}
+            rolebasedRedirect(res);
           })
           .catch((err) => {});
 
@@ -125,7 +135,7 @@ const Login = () => {
         //     token: idTokenResult.token,
         //   },
         // });
-        navigate("/");
+        //navigate("/");
       })
       .catch((error) => {
         console.log(error);
