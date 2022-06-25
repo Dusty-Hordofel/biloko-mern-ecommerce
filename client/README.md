@@ -525,9 +525,13 @@ Anyone who is up for a challenge
             - import category model
             - add different function
     54. category create
-        1. npm i slugify
-        2. fill all function controller's
-        
+        1. npm i slugify & import it 
+        2. fill create Method
+    
+    55. Category List Read Update Delete
+        1. fill list,read,remove method,
+         
+
     
 
 
