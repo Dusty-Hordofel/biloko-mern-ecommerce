@@ -529,7 +529,11 @@ Anyone who is up for a challenge
         2. fill create Method
     
     55. Category List Read Update Delete
-        1. fill list,read,remove method,
+        1. fill list,read,remove & update method,
+    
+    56. Category CRUD Requests
+        1. go to client->components->functions & create category.js
+        2. create getCategories method
          
 
     
