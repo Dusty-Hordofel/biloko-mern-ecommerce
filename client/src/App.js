@@ -12,6 +12,8 @@ import { useDispatch } from "react-redux";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import { currentUser } from "./functions/auth";
 import History from "./pages/user/History";
+import Wishlist from "./pages/user/Wishlist";
+import Password from "./pages/user/Password";
 //import UserRoute from "./components/routes/UserRoute";
 
 const App = () => {
@@ -66,6 +68,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/forgot/password" element={<ForgotPassword />} />
         <Route path="/user/history" element={<History />} />
+        <Route path="/user/password" element={<Password />} />
+        <Route path="/user/wishlist" element={<Wishlist />} />
       </Routes>
     </div>
   );
