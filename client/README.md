@@ -507,33 +507,40 @@ Anyone who is up for a challenge
         3. import currentAdmin to AdminRoute.js
         4. create an admin folder (pages->admin) & AdminDashboard.jsx
         5. import AdminDashboard to App.js
-        
-        
 
-
-        
-
-
-        
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
+    48. Warnings and cleanup
 
     VI. Categories CRUD
+    49.  Category Schema
+        1. go to models folder and create category.js
+
+
+    52. category-list-read-update-delete
+        1. 
+
+    53. Category Routes
+        1. go to the routes->category.js
+        2. copy auth.js & past in category.js
+        3. create  category.js in controllers folder
+            - import category model
+            - add different function
+    54. category create
+        1. npm i slugify
+        2. fill all function controller's
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
     VII. Sub Categories CRUD
 

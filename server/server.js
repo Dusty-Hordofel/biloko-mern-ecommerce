@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { readdirSync } from "fs";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/user.js";
+import categoryRoutes from "./routes/category.js";
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ app.use(cors()); //to allow cross-origin requests
 //routes middleware
 app.use("/api/auth", authRoutes); //to use the authRoute, we prefix the url with /api/auth
 app.use("/api", userRoutes); //to use the authRoute, we prefix the url with /api/auth
+app.use("/api", categoryRoutes); //to use the categoryRoutes, we prefix the url with /api
 //readdirSync("./routes").map((r) => app.use("/api", import("./routes/" + r)));
 
 //port
