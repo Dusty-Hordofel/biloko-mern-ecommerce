@@ -7,6 +7,8 @@ import {
   getCategories,
   removeCategory,
 } from '../../../functions/category';
+import { Link } from 'react-router-dom';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 const CategoryCreate = () => {
   const { user } = useSelector((state) => ({ ...state })); //acess user state from the redux store. we have destructured the state and assigned it to user.
@@ -61,6 +63,27 @@ const CategoryCreate = () => {
     </form>
   );
 
+  const handleRemove = async (slug) => {
+    // let answer = window.confirm('Delete?');
+    // console.log(answer, slug);
+    if (window.confirm('Delete?')) {
+      setLoading(true);
+      //to remove a category we send the slug and the user token to the removeCategoryfunction
+      removeCategory(slug, user.token)
+        .then((res) => {
+          setLoading(false);
+          toast.error(`${res.data.name} deleted`);
+          loadCategories();
+        })
+        .catch((err) => {
+          if (err.response.status === 400) {
+            setLoading(false);
+            toast.error(err.response.data);
+          }
+        });
+    }
+  };
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -75,7 +98,24 @@ const CategoryCreate = () => {
           )}
           {categoryForm()}
           <hr />
-          {JSON.stringify(categories)}
+          {/* {JSON.stringify(categories)} */}
+          {categories.map((c) => (
+            <div className="alert alert-secondary" key={c._id}>
+              {c.name}
+              <span
+                onClick={() => handleRemove(c.slug)}
+                className="btn btn-sm float-right"
+              >
+                <DeleteOutlined className="text-danger" />
+              </span>
+              {/*it will take us to the edit page */}
+              <Link to={`/admin/category/${c.slug}`}>
+                <span className="btn btn-sm float-right">
+                  <EditOutlined className="text-warning" />
+                </span>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
