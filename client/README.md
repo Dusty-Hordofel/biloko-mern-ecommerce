@@ -543,6 +543,18 @@ Anyone who is up for a challenge
     59.  Category Create and List
         1. go to pages->admin->category->CategoryCreate.jsx
         2. import & add useEffect to retrieve data from the backend
+        3. import toast, and useSelector to access to th user token
+        4. create a form  and fill it
+
+    60. Category Render and Delete
+        1. add handleRemove function in CategoryCreate.jsx
+        2. improve the display of data retrieved from the server
+
+    61. Category Update
+        1. create pages->admin->category->CategoryUpdate.jsx
+        2. copy CategoryCreate and update informations
+
+
 
 
 

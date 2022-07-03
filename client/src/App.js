@@ -18,6 +18,7 @@ import Password from './pages/user/Password';
 //import AdminRoute from "./components/routes/AdminRoute";
 import AdminDashboard from './pages/admin/AdminDashboard';
 import CategoryCreate from './pages/admin/category/CategoryCreate';
+import CategoryUpdate from './pages/admin/category/CategoryUpdate';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -79,8 +80,15 @@ const App = () => {
         <UserRoute exact path="/user/wishlist" component={Wishlist} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute exact path="/admin/category" element={CategoryCreate} /> */}
+        {/* <AdminRoute
+          exact
+          path="/admin/category/:slug"
+          component={CategoryUpdate}
+        /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category" element={<CategoryCreate />} />
+        {/*/:slug , slug plugin grab this part from the url */}
+        <Route path="/admin/category/:slug" element={<CategoryUpdate />} />
       </Routes>
     </div>
   );
