@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Header from "./components/nav/Header";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
-import RegisterComplete from "./pages/auth/RegisterComplete";
-import Home from "./pages/Home";
-import { auth } from "./firebase";
-import { useDispatch } from "react-redux";
-import ForgotPassword from "./pages/auth/ForgotPassword";
-import { currentUser } from "./functions/auth";
-import History from "./pages/user/History";
-import Wishlist from "./pages/user/Wishlist";
-import Password from "./pages/user/Password";
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Header from './components/nav/Header';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import RegisterComplete from './pages/auth/RegisterComplete';
+import Home from './pages/Home';
+import { auth } from './firebase';
+import { useDispatch } from 'react-redux';
+import ForgotPassword from './pages/auth/ForgotPassword';
+import { currentUser } from './functions/auth';
+import History from './pages/user/History';
+import Wishlist from './pages/user/Wishlist';
+import Password from './pages/user/Password';
 //import UserRoute from "./components/routes/UserRoute";
 //import AdminRoute from "./components/routes/AdminRoute";
-import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminDashboard from './pages/admin/AdminDashboard';
+import CategoryCreate from './pages/admin/category/CategoryCreate';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -28,11 +29,11 @@ const App = () => {
       //we get the usert from the auth function
       if (user) {
         const idTokenResult = await user.getIdTokenResult(); //we get the idTokenResult from the user
-        console.log("user", user);
+        console.log('user', user);
         currentUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
           .then((res) => {
             dispatch({
-              type: "LOGGED_IN_USER",
+              type: 'LOGGED_IN_USER',
               payload: {
                 name: res.data.name,
                 email: res.data.email,
@@ -73,7 +74,13 @@ const App = () => {
         <Route path="/user/password" element={<Password />} />
         <Route path="/user/wishlist" element={<Wishlist />} />
         {/* <UserRoute path="/user/wishlist" element={<Wishlist />} /> */}
+        {/* <UserRoute exact path="/user/history" component={History} />
+        <UserRoute exact path="/user/password" component={Password} />
+        <UserRoute exact path="/user/wishlist" component={Wishlist} />
+        <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
+        <AdminRoute exact path="/admin/category" element={CategoryCreate} /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/category" element={<CategoryCreate />} />
       </Routes>
     </div>
   );

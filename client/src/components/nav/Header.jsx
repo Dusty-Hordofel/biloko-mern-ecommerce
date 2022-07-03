@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { Menu } from "antd";
+import React, { useState } from 'react';
+import { Menu } from 'antd';
 import {
   AppstoreOutlined,
   SettingOutlined,
   UserOutlined,
   UserAddOutlined,
   LogoutOutlined,
-} from "@ant-design/icons";
-import { Link } from "react-router-dom";
-import firebase from "firebase/compat/app";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const { SubMenu, Item } = Menu;
 
 const Header = () => {
-  const [current, setCurrent] = useState("home");
+  const [current, setCurrent] = useState('home');
 
   let dispatch = useDispatch();
   let { user } = useSelector((state) => ({ ...state })); //useSelector is used to get the data from the state
@@ -29,10 +29,10 @@ const Header = () => {
   const logout = () => {
     firebase.auth().signOut(); // firebase.auth().signOut() will logout the user
     dispatch({
-      type: "LOGGED_OUT_USER",
+      type: 'LOGGED_OUT_USER',
       payload: null,
     }); //to update the state
-    navigate("/login"); //to redirect to login page
+    navigate('/login'); //to redirect to login page
   };
 
   return (
@@ -55,11 +55,20 @@ const Header = () => {
       {user && (
         <SubMenu
           icon={<SettingOutlined />}
-          title={user.email.split("@")[0]} //split method is used to split the string into an array.
+          title={user.email.split('@')[0]} //split method is used to split the string into an array.
           className="float-right"
         >
-          <Item key="setting:1">Option 1</Item>
-          <Item key="setting:2">Option 2</Item>
+          {user && user.role === 'subscriber' && (
+            <Item>
+              <Link to="/user/history">Dashboard</Link>
+            </Item>
+          )}
+
+          {user && user.role === 'admin' && (
+            <Item>
+              <Link to="/admin/dashboard">Dashboard</Link>
+            </Item>
+          )}
           <Item icon={<LogoutOutlined />} onClick={logout}>
             Logout
           </Item>

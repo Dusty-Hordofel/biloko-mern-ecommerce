@@ -1,4 +1,3 @@
-
 Course Highlights
 
 React Client (Frontend)
@@ -50,8 +49,6 @@ Wishlist
 Cash On Delivery (Cashless order)
 
 Deployment to Digital Ocean Cloud
-
-
 
 Project Overview
 
@@ -135,27 +132,27 @@ Anyone who is up for a challenge
         1. create biloko-mern-ecommerce folder
         2. create client folder using npx create-react-app client.
         3. run client folder using npm start after going in client folder (cd client)
-        4. Clean App.js folder 
+        4. Clean App.js folder
 
     - Install react-router
-        1. install react-router-dom (npm i react-router-dom) in  client folder 
+        1. install react-router-dom (npm i react-router-dom) in  client folder
 
     - Routes and Pages
-        1. create pages folder in src and then create Login & Register folder. 
+        1. create pages folder in src and then create Login & Register folder.
         2. create auth folder in pages and drag and drop Login and Register
         3. fill Register & login component (rafce shortcut)
         4. create Home Page component in  pages folder
         5. adding in app.js & import {Routes,Route} from react-router-dom
-        6. Wrap our app in BrowserRouter by importing it. 
+        6. Wrap our app in BrowserRouter by importing it.
 
     - Ant Design Navigation
         1. go to boostrap material()
         2. add this link (...) in public folder to add boostrap
-        3. go to ant Design. 
+        3. go to ant Design.
         4. create folder components & nav nested folder . Add Header component and past ant Design info
         5. install ant Design (npm i @ant-design/icons) & (npm i antd)
         6. import "antd/dist/antd.variable.min.css";
-    
+
     - Ant Design icons
         1. go to Ant Design ,and tap icons to go to icons . copy and past icons we need (Home , register,logout).
         2. useBootstrap className to organize the move icons (we have already install bootstrap material icons)
@@ -166,7 +163,7 @@ Anyone who is up for a challenge
         2. wrapp each icon component in a react-router-dom Link
 
 
-      
+
 
     II. Firebase Authentication and Redux
     - Firebase Setup
@@ -174,13 +171,13 @@ Anyone who is up for a challenge
         2. go to the console, create project (biloko-mern-ecommerce),name it as you want
         3. deseable google analytics
         4. click on the web (</>) & register app (biloko ecommerce)
-        5. create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase. 
-    
+        5. create firebase.js in the root folder, install firebase (npm install firebase) & copy the code we see on firebase.
+
     - Register Form
         - go to pages->auth->Register.jsx
         - setup the form by creating Register function
 
-    - Email link to SignIn 
+    - Email link to SignIn
         -   add react toastify (npm i react-toastify)
         - import { auth } from "../../firebase";
         - import { toast, ToastContainer } from "react-toastify";
@@ -189,14 +186,14 @@ Anyone who is up for a challenge
         - add const config (see firebase doc: Email Link Authentication, ) ,https://firebase.google.com/docs/auth/web/email-link-auth
         - add firebase sendSignInLinkToEmail(https://firebase.google.com/docs/auth/web/email-link-auth) method in Email Link Authentication section.
         - go to the authentication section in firebase to active Adresse e-mail/Mot de passe methode
-        - add google auth method . 
+        - add google auth method .
         - add Toast component in Header.jsx <ToastContainer />
         - test if it's work well trying to register an email in the input.
         - go to network and see the last element to see whats happen after clicking on register button.
         - let's verify if we got the email and click in the link provided to confirm our email.
 
     -  ENV and Toast Notifications
-        - create .env file in the root directory. 
+        - create .env file in the root directory.
         - add REACT_APP_ before naming a variable , it is a requirement
         - add  const config url from Register.jsx and replace it with process.env.(env variable name we've created)
         - import toasts import to our App.js and his component. we want it to be available in our entire App. Remove toasts links from Register.jsx without removing toast .
@@ -204,84 +201,84 @@ Anyone who is up for a challenge
     - Complete Registration Page
         - to make it easyer , grab all the code from register.
         - add one more field (password state)
-        - we need a history object from the react router dom. 
+        - we need a history object from the react router dom.
         - Destructure the props history
         - clean the handleSubmit method.
         - add useEffect to retrieve the email from the localStorage
         -  remove autofocus from input
-        - create an input field for password 
+        - create an input field for password
 
     - Complete Registration
         - add try and catch in handleSubmit method.
         - console.log(window.location.href);//to see what it is
         - console.log(window.localStorage.getItem("emailForRegistration"));//to see what it is
-        - we've passed these tow function in handleSubmit Methode.  
-        - handle the error in catchblock using toastify. 
-        - add if statement using emailVerified method. 
+        - we've passed these tow function in handleSubmit Methode.
+        - handle the error in catchblock using toastify.
+        - add if statement using emailVerified method.
         - useNavigate to redirect to the homePage
 
     - Setup Redux
-        NB: Redux will help us to create a global state, and we need a global state for certain things. 
-        The most import is getting the user information (the most importantly the user token). 
+        NB: Redux will help us to create a global state, and we need a global state for certain things.
+        The most import is getting the user information (the most importantly the user token).
 
-        - Using redux will make the user information accessible any where! 
+        - Using redux will make the user information accessible any where!
         - install redux and react-redux (npm i redux react-redux redux-devtools-extension)
         - go to index.js and create the store and import the provider & composeWithDevTool
-        - create a store with createStore function and insert rootReducer ans composeWithDevTools as agurments. 
+        - create a store with createStore function and insert rootReducer ans composeWithDevTools as agurments.
         - create a reducer folder & rootReducer (to combine all reducers) function in index.js file
         - add userReducer in rootReducer function.
         - create userReducer
 
     23. User in Redux State
         NB: Now we want to update the state with the user we get from the firebase
-        - Go to App.js and use to the firebase auth function to access the currently logged user. 
-        - import auth function from the firebase; 
-        - dipatch action using useDispatch from "react-redux". 
+        - Go to App.js and use to the firebase auth function to access the currently logged user.
+        - import auth function from the firebase;
+        - dipatch action using useDispatch from "react-redux".
         - add useEffect to check firebase auth state
         - create unsubscribe const and use onAuthStateChanged method from firebase
         - create if statement to check if user is logged.
         - dispatch action to the store dispatch({type: x, payload: x})
         NB: we don't have store information in the localStorage, firebase stores everything for us.
-    
+
     24. User Logout
-        1. go to the Header component 
+        1. go to the Header component
         2. import firebase from "firebase/compat/app";
         3. to to dropdown menu,copy one children. remove key, add icon and className.
-        4. add OnClick handler to Logout user using firebase method, add & create logout method. 
+        4. add OnClick handler to Logout user using firebase method, add & create logout method.
         5. import useDispatch hook to update the state adding dispatch method in logout function     dispatch({type: "LOGGED_OUT_USER",payload: null,});
         6. redirect user in login page fater logout.
         7. Change the logout icon
 
-    25. Login Page 
+    25. Login Page
         1. go to register component add placeholder "Your email" and a line break in the email input.
         2. copy Register component code and paste it in Login page.
         3. let's add password state & password input
         4. clean handleSubmit function
-        5. put each div in form-group div 
+        5. put each div in form-group div
         6. make a request to firebase in handleSubmit function after, before console.table(email,password) to see what we submit in to firebase.
-        7. go to Ant design , component->button 
+        7. go to Ant design , component->button
         8. import antd Button and MailOutlined icon in Login Page and add them.
-        9. remove button and replace him with Ant Design Button.    
-        10.Personnalise Button 
-    
+        9. remove button and replace him with Ant Design Button.
+        10.Personnalise Button
+
     26. Signin with Email and Password
         1. add try and catch to log the user with firebase
         2. use auth function & signInWithEmailAndPassword method to login
-        3.test logique with console.log(...) 
+        3.test logique with console.log(...)
         4. import useDispatch from  react-redux
         5. add result , destructure the user and idTokenResult
-        6. disptch action 
-        7. redirect the user to the home page.  
-        8. test the script  
+        6. disptch action
+        7. redirect the user to the home page.
+        8. test the script
         9. add loading state ,setLoading to true in handleSubmit and false in catch block.
-    
+
     23. Login with Google
-        1. add conditionnal rendering in Login Page 
-        2. Add Google Button. 
+        1. add conditionnal rendering in Login Page
+        2. Add Google Button.
         3. create googleLogin function
         4. add auth.signInWithPopup(googleAuthProvider)
         5. then handle response with then and catch.
-        6. test the script. 
+        6. test the script.
 
     24. Conditional Rendering
         1. Go to Header.jsx
@@ -291,15 +288,15 @@ Anyone who is up for a challenge
         5. test the script
         6. Replace username title by the first part of email user.
 
-    25. Forgot Password.  
+    25. Forgot Password.
         1. go to login Page & create a link below the boutton
         2. create ForgotPassword Page & inport all element from login to make things easier
         3. add email & loading state
         4. add a div in our compenent & add it in app.js
         5. add a conditionnal rendering
         6. add a form element & add handleSubmit event handler
-        7. go to submit function and fill it . 
-    
+        7. go to submit function and fill it .
+
     26. Redirect Logged in User
         1. Let's grab the user from the state with useSelector
         2. add useEffect
@@ -311,42 +308,42 @@ Anyone who is up for a challenge
     III. Node MongoDB API (Backend)
     27. Backend API with Node and MongoDB
     28. NPM Packages to install
-        1. create server folder and install npm init -y   
+        1. create server folder and install npm init -y
         2. npm i express mongoose cors morgan express-jwt firebase-admin jsonwebtoken nodemon dotenv
-        
+
 
     xx. Mongoose version
-    xx. Mongo Atlas or local installation 
+    xx. Mongo Atlas or local installation
     29. Server Setup.
-        1. create .env file & put MONGO_URL.    
-        2. add a variable named PORT. 
-        3. create .gitignore file & add file || folder name we don't wan to push in github.     
-        4. create server.js file & go to package.json & add "type":"module". 
+        1. create .env file & put MONGO_URL.
+        2. add a variable named PORT.
+        3. create .gitignore file & add file || folder name we don't wan to push in github.
+        4. create server.js file & go to package.json & add "type":"module".
         5. go to server.js
         6. import express from "express" in server.js ... mongoose,morgan,cors & dotenv
         7. create const app ,connect db with mongoose & listen server
         8. add a middleware section and add morgane-express.json & cors() in it.
         9. add route section and test our route
-        10. go to package.json and add a script in script section ("start":"nodemon server.js") 
+        10. go to package.json and add a script in script section ("start":"nodemon server.js")
         11. define the port constant to connect to the server
         12. listen the server with app.listen
         13. test if we are connected to server & our database. tap npm start in the terminal
-    
-    30. Routes. 
-        1. create routes and auth.js file. 
+
+    30. Routes.
+        1. create routes and auth.js file.
         2. import express,create const router and export it by default
         3. cut the app.get route in server.js and past it in auth.js route
         4. import routes from auth.js & add app.use(url, router);
 
     31. Routes Autoloading
-        1. import fs from "fs" in server.js.  
-        2. 
+        1. import fs from "fs" in server.js.
+        2.
 
     32. Controllers.
         1. create controllers folders
-        2.  create    
-    33. User Schema. 
-        1. create models folder. 
+        2.  create
+    33. User Schema.
+        1. create models folder.
         2. import mongoose from "mongoose";
         3. const { ObjectId } = mongoose.Schema;
         4. create a userSchema
@@ -355,31 +352,31 @@ Anyone who is up for a challenge
 
     IV. Firebase Auth Check (Server side)
     34. Firebase Admin
-        1.install firebase admin 
-        2.go to firebase console to get the firebase service account key to process further. 
+        1.install firebase admin
+        2.go to firebase console to get the firebase service account key to process further.
         3. click on project overview->project settings->service account
-        4. To use firebase admin we need to generate a new key and use the code we see (before to generate a key) to get firebase admin. 
+        4. To use firebase admin we need to generate a new key and use the code we see (before to generate a key) to get firebase admin.
         5. download and save the file in a new root config folder
         6. create another in root folder named firebase, create index.js file inside & paste the Extrait de configuration Admin SDK.
-        7. update the path of serviceAccount in index.js file . 
-    
+        7. update the path of serviceAccount in index.js file .
+
     35. Middleware
         NB: Now we can start using firebase admin tool to validate the token. So when our front-end send the user token to our backend, we will received that in ou auth route.
         1. change your get to post method (route->auth.js)
-        2. to grab that token or verify the middleware & verify the token we can write another middleware function. 
-        3. in the middle we have to made some check to verify the token is valide. 
-        4. in The Middle make sure you get the token and this is valide. 
-        5. create a middlewares folder in the root, add auth.js file. 
+        2. to grab that token or verify the middleware & verify the token we can write another middleware function.
+        3. in the middle we have to made some check to verify the token is valide.
+        4. in The Middle make sure you get the token and this is valide.
+        5. create a middlewares folder in the root, add auth.js file.
             - import admin from firebase/index.js file
             - create authCheck function
-            - check if the token is valid with firebase admin & get the user information  
-            - use this function as middleware in routes->auth.js 
-    
+            - check if the token is valid with firebase admin & get the user information
+            - use this function as middleware in routes->auth.js
+
     36. Auth Check Middleware
-        NB: In this part wa are trying to send the user token from the frontend to the endpoint ("/test"). 
+        NB: In this part wa are trying to send the user token from the frontend to the endpoint ("/test").
         1. go to client->env
-            - add a new variable REACT_APP_API 
-            - you can also add proxy in package.json if you want . 
+            - add a new variable REACT_APP_API
+            - you can also add proxy in package.json if you want .
         2. go to login page
             NB: use axios to make a http request to send our token to the backend.Make sure backend and frontend are runing
             - npm i axios & import that
@@ -388,21 +385,21 @@ Anyone who is up for a challenge
             - use axios & hhtp request
             - add the url , leave the body empty because we dont send any request in the body (like create a product...) just in the token in the headers(headers{}).
             - give this token a name (headers{authtoken:paramter}) and pass the token to this function(authtoken). headersheaders{authtoken:authtoken}
-        
-            - Pass the token to the function we've created 
-            -  go to login function, add createOrUpdateUser and pass it the token. 
+
+            - Pass the token to the function we've created
+            -  go to login function, add createOrUpdateUser and pass it the token.
             NB: when we get the token in Login function , we execute createOrUpdateUser
-            - add promises and handle the error. 
-            - test the script 
+            - add promises and handle the error.
+            - test the script
             NB: we will see the authtoken in network and in console
 
 
     V. User Admin and Protected Routes
     37. Create or Update User
-        1. go to auth.js middleware 
+        1. go to auth.js middleware
             - add try and catch
             - in try instruction:
-                -  create firebaseUser const 
+                -  create firebaseUser const
                 - use admin.auth().verifiIdToken to return user info from headers.we verify the token this way
             - catch:
                 - log error
@@ -414,90 +411,90 @@ Anyone who is up for a challenge
             - replace testuser name by createOrUpdateUser
             - import user models
             - destructure req.user information came from the authCheck middleware.
-            NB: if user already exists, we will update the user.if it doesn't exist in the database we create. 
+            NB: if user already exists, we will update the user.if it doesn't exist in the database we create.
             -  create const user & use findOneAndUpdate methode
             -  add if statement to verify if user exist or not
             - go to client->pages->auth->login & see the createOrUpdateUser function we create before
             - go to the console to see the result , we have CREATE OR UPDATE RES and response as userInformation
-            - in the vscode terminal we have USER CREATED & his infomation. 
-    
+            - in the vscode terminal we have USER CREATED & his infomation.
+
     39. API User Response
-        1.  go to Login page. 
-        NB: Previously in the login page , we were dispatching to the redux tools only the email & the token. it was came from firebase.com. 
-        But now we are able to get the response from our on server using the createOrUpdateUser method. 
+        1.  go to Login page.
+        NB: Previously in the login page , we were dispatching to the redux tools only the email & the token. it was came from firebase.com.
+        But now we are able to get the response from our on server using the createOrUpdateUser method.
             - replace the console.log("CREATE OR UPDATE RES", res) by dispath content commented below
             -  add _id,role,name property(name: res.data.name), update other informations.
             - go to redux devtools and try if every thing works as we want.
             - go to network (create-or-update-user) see the response:
-                - we send authtoke to the headers 
-                -& we get response the response contening user information. 
-        
-        NB:unfortunately it doesn't persit in the redux devtools. 
+                - we send authtoke to the headers
+                -& we get response the response contening user information.
+
+        NB:unfortunately it doesn't persit in the redux devtools.
         if you refresh the page we only have email and token  we got from firebase.
-        that means we have to create one more endpoint that give us the current user. and in App.js we can create the request to our backend. 
-        we can make request to our Backend in backend using  existing UseEffect in App.js 
+        that means we have to create one more endpoint that give us the current user. and in App.js we can create the request to our backend.
+        we can make request to our Backend in backend using  existing UseEffect in App.js
 
         2. go to Login.js & copy the entire createOrUpdateUser function witch is inside try and catch
         3. replace te dispatch after signInWithPopup by what the  createOrUpdateUser we have copied.
-        4. Try if it's works well. 
+        4. Try if it's works well.
         5. go to RegisterComplete todo something similar
-            - First we need to access to the reduxtools 
-            - go to Login pages   
+            - First we need to access to the reduxtools
+            - go to Login pages
                 - copy import { useDispatch, useSelector } from "react-redux" and past it to RegisterComplete.
                 It will allow us to access to the redux store.
-                - copy user cons from Login to RegisterComplete Page 
+                - copy user cons from Login to RegisterComplete Page
                 - copy createOrUpdate function from Login to RegisterComplete
-                - let's try to a new User Register if everything work's well. 
-                NB: we will see (email;token,role and id without name) because after registration the user have not give his name. 
-        6. go to Header components 
+                - let's try to a new User Register if everything work's well.
+                NB: we will see (email;token,role and id without name) because after registration the user have not give his name.
+        6. go to Header components
             - copy submenu title and past it in controllers->auth.js ({ email, name:email.split("@")[0], picture })
             - register a new use, before delete the old user. try again a now we have the name of the new user.
         7. Remove the duplicate createOrUpdateUser function present in RegisterComplete & Login component.
         8. create functions folder (client->src->functions->auth.js) ,add auth.js file and paste createOrUpdateUser function we have removed early.
 
     40. Current User Endpoint
-        1. create a new endpoint named current user in server->routes->auth.js 
+        1. create a new endpoint named current user in server->routes->auth.js
         2. create currentUser function in controllers->auth.js
-        3. go to client->src->function & create currentUser function. 
+        3. go to client->src->function & create currentUser function.
         4. go to App.js:
             - import currentUser
             - copy createOrUpdateUser function in RegisterComplete file & paste it in App.js
             - remove the dispatch present in useEffect  & replace it by our copy
             - change the name createOrUpdateUser to currentUser
             - Lets try if we keep all  information in redux store now!
-    
+
     41. Role Based Redirect
         1. go to login, comment navigate function & create rolebasedRedirect below
-            - add the res we got from our API int he function. 
+            - add the res we got from our API int he function.
             -  rolebasedRedirect function in googleLogin  & commente navigate
             - Let's try!
 
     42. Protected User Route
-        1. create user folder in pages 
+        1. create user folder in pages
         2. create History Component & add it to App.js
         3.create component->routes  for protect the route
         4. create UseRoute component & import it in App.js (replace Route by UserRoute)//see that next time
-    
+
     43. Loading to redirect
         1. create LoandingToRedirect file in routes folder
         2. test
     44. Sidebar Nav for User
         1. create UserNav component & import it in History.js
-    
+
     45.  Password Update
-        1. create Password and Wishlist. 
+        1. create Password and Wishlist.
         2. copy them to App.js
         3. go to Password & import{ auth} from firebase, toast,useState
-        4. create passwordUpdateForm function 
+        4. create passwordUpdateForm function
         5. create handleSubmit
-    
+
     46. Admin Check Middleware
         1. go to server->middlewares->auth.js
         2. create adminCheck function
             - import a User Model
-            - add a database query 
+            - add a database query
             - find the user & add if statement
-        3. go to auth routes 
+        3. go to auth routes
             - add adminCheck middleware function
 
     47. Admin Route
@@ -516,7 +513,7 @@ Anyone who is up for a challenge
 
 
     52. category-list-read-update-delete
-        1. 
+        1.
 
     53. Category Routes
         1. go to the routes->category.js
@@ -525,18 +522,29 @@ Anyone who is up for a challenge
             - import category model
             - add different function
     54. category create
-        1. npm i slugify & import it 
+        1. npm i slugify & import it
         2. fill create Method
-    
+
     55. Category List Read Update Delete
         1. fill list,read,remove & update method,
-    
+
     56. Category CRUD Requests
         1. go to client->components->functions & create category.js
-        2. create getCategories method
-         
+        2. create getCategories method to send a request to our backend.
 
-    
+    57.  Dynamic Dashboard Link
+        1. edit Header component by adding a conditional rendering (dashboard & history)
+
+    58.Admin Sidebar Nav
+        1. create nav->AdminNav.jsx
+        2. create pages->admin->category->CategoryCreate.jsx
+        3. import CategoryCreate in App.js
+
+    59.  Category Create and List
+        1. go to pages->admin->category->CategoryCreate.jsx
+        2. import & add useEffect to retrieve data from the backend
+
+
 
 
 
@@ -582,7 +590,7 @@ Anyone who is up for a challenge
 
     XXII. Admin Dashboard (Order Management)
 
-   XXIII. Wishlist
+XXIII. Wishlist
 
     XXIV. Cash On Delivery (Cashless order)
 
