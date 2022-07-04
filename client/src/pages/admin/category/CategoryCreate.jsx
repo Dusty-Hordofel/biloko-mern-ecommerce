@@ -17,6 +17,8 @@ const CategoryCreate = () => {
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
+  // step 1 (searching and filtering)
+  const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
     loadCategories(); //te retrieve the all categories from the database
@@ -46,24 +48,6 @@ const CategoryCreate = () => {
       });
   };
 
-  // const categoryForm = () => (
-  //   <form onSubmit={handleSubmit}>
-  //     <div className="form-group">
-  //       <label>Name</label>
-  //       <input
-  //         type="text"
-  //         className="form-control"
-  //         onChange={(e) => setName(e.target.value)}
-  //         value={name}
-  //         autoFocus
-  //         required
-  //       />
-  //       <br />
-  //       <button className="btn btn-outline-primary">Save</button>
-  //     </div>
-  //   </form>
-  // );
-
   const handleRemove = async (slug) => {
     // let answer = window.confirm('Delete?');
     // console.log(answer, slug);
@@ -84,7 +68,14 @@ const CategoryCreate = () => {
         });
     }
   };
+  // step 3
+  const handleSearchChange = (e) => {
+    e.preventDefault();
+    setKeyword(e.target.value.toLowerCase());
+  };
 
+  // step 4
+  const searched = (keyword) => (c) => c.name.toLowerCase().includes(keyword);
   return (
     <div className="container-fluid">
       <div className="row">
@@ -103,9 +94,19 @@ const CategoryCreate = () => {
             setName={setName}
           />
 
+          {/* step 2 */}
+          <input
+            type="search"
+            placeholder="Filter"
+            value={keyword}
+            onChange={handleSearchChange}
+            className="form-control mb-4"
+          />
+
           <hr />
-          {/* {JSON.stringify(categories)} */}
-          {categories.map((c) => (
+          {/* step 5 */}
+          {categories.filter(searched(keyword)).map((c) => (
+            //searched function verify if the keyword is in the categories name
             <div className="alert alert-secondary" key={c._id}>
               {c.name}
               <span
@@ -114,7 +115,6 @@ const CategoryCreate = () => {
               >
                 <DeleteOutlined className="text-danger" />
               </span>
-              {/*it will take us to the edit page */}
               <Link to={`/admin/category/${c.slug}`}>
                 <span className="btn btn-sm float-right">
                   <EditOutlined className="text-warning" />
@@ -122,6 +122,7 @@ const CategoryCreate = () => {
               </Link>
             </div>
           ))}
+          {/* {JSON.stringify(categories)} */}
         </div>
       </div>
     </div>

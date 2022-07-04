@@ -559,9 +559,15 @@ Anyone who is up for a challenge
     II. create categoryForm & remove form content from categoryForm function(delete it after in CategoryCreate & CategoryUpdate) incategoryUpdate.js
     III. destructure information from our form
     IV. add categoryForm in CategoryUpdate et CategoryCreate.jsx
-    V.
 
-63. VII. Sub Categories CRUD
+63. Search Filter Category
+    I. go to CategoryCreate Page
+    II. set Keyword state
+    III. create an iput field.
+    IV. create handleSearchChange function.  
+    V. create searched function & use it with map method below
+
+    VII. Sub Categories CRUD
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
 
