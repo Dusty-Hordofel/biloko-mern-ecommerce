@@ -575,11 +575,13 @@ Anyone who is up for a challenge
     VII. Sub Categories CRUD
 
 65. Sub Categories CRUD
-
     I. create sub.js controller,route and model
     II. import default route in server.js
 
 66. Sub Categories Functions
+    I. create pages->admin->sub->SubCreate.jsx
+    II. import <AdminNav />
+    III. add <SubCreate /> to App.js.
 
 Sub Category Create 72. Showing Sub Categories and Remove
 Sub Category Update

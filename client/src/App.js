@@ -7,10 +7,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import RegisterComplete from './pages/auth/RegisterComplete';
 import Home from './pages/Home';
-import { auth } from './firebase';
-import { useDispatch } from 'react-redux';
 import ForgotPassword from './pages/auth/ForgotPassword';
-import { currentUser } from './functions/auth';
 import History from './pages/user/History';
 import Wishlist from './pages/user/Wishlist';
 import Password from './pages/user/Password';
@@ -19,6 +16,11 @@ import Password from './pages/user/Password';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import CategoryCreate from './pages/admin/category/CategoryCreate';
 import CategoryUpdate from './pages/admin/category/CategoryUpdate';
+import SubCreate from './pages/admin/sub/SubCreate';
+
+import { auth } from './firebase';
+import { useDispatch } from 'react-redux';
+import { currentUser } from './functions/auth';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -85,10 +87,12 @@ const App = () => {
           path="/admin/category/:slug"
           component={CategoryUpdate}
         /> */}
+        {/* <AdminRoute exact path="/admin/sub" component={SubCreate} /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category" element={<CategoryCreate />} />
         {/*/:slug , slug plugin grab this part from the url */}
         <Route path="/admin/category/:slug" element={<CategoryUpdate />} />
+        <Route exact path="/admin/sub" element={<SubCreate />} />
       </Routes>
     </div>
   );
