@@ -9,6 +9,7 @@ import {
 } from '../../../functions/category';
 import { Link } from 'react-router-dom';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import CategoryForm from '../../../components/forms/CategoryForm';
 
 const CategoryCreate = () => {
   const { user } = useSelector((state) => ({ ...state })); //acess user state from the redux store. we have destructured the state and assigned it to user.
@@ -45,23 +46,23 @@ const CategoryCreate = () => {
       });
   };
 
-  const categoryForm = () => (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Name</label>
-        <input
-          type="text"
-          className="form-control"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          autoFocus
-          required
-        />
-        <br />
-        <button className="btn btn-outline-primary">Save</button>
-      </div>
-    </form>
-  );
+  // const categoryForm = () => (
+  //   <form onSubmit={handleSubmit}>
+  //     <div className="form-group">
+  //       <label>Name</label>
+  //       <input
+  //         type="text"
+  //         className="form-control"
+  //         onChange={(e) => setName(e.target.value)}
+  //         value={name}
+  //         autoFocus
+  //         required
+  //       />
+  //       <br />
+  //       <button className="btn btn-outline-primary">Save</button>
+  //     </div>
+  //   </form>
+  // );
 
   const handleRemove = async (slug) => {
     // let answer = window.confirm('Delete?');
@@ -96,7 +97,12 @@ const CategoryCreate = () => {
           ) : (
             <h4>Create category</h4>
           )}
-          {categoryForm()}
+          <CategoryForm
+            handleSubmit={handleSubmit}
+            name={name}
+            setName={setName}
+          />
+
           <hr />
           {/* {JSON.stringify(categories)} */}
           {categories.map((c) => (

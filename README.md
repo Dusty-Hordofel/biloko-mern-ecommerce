@@ -554,27 +554,14 @@ Anyone who is up for a challenge
         1. create pages->admin->category->CategoryUpdate.jsx
         2. copy CategoryCreate and update informations
 
-    62.  Code Refactor - Reusable Component
-        1.
+62. Code Refactor - Reusable Component
+    I. create forms folder component
+    II. create categoryForm & remove form content from categoryForm function(delete it after in CategoryCreate & CategoryUpdate) incategoryUpdate.js
+    III. destructure information from our form
+    IV. add categoryForm in CategoryUpdate et CategoryCreate.jsx
+    V.
 
-    63.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    VII. Sub Categories CRUD
+63. VII. Sub Categories CRUD
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
 
