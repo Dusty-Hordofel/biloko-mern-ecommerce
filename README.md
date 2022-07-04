@@ -588,14 +588,17 @@ Anyone who is up for a challenge
     I. copy CategoryCreate content & paste it in SubCreate.jsx
     II. edit the SubCreate content
     III.create select element to select the parent category
-    IV.
 
 68. Showing Sub Categories and Remove
-    1. add getSubs function
-    2. add loadSubs category
-    3. add filtering sytem
+    I. add getSubs function
+    II. add loadSubs category
+    III. add filtering sytem
+    IV. add remove option
 
-Sub Category Update
+69. Sub Category Update
+    I. copy <CategoryUpdate /> content and create <SubUpdate />
+    II. import <SubUpdate /> in App.js
+    III. update <SubUpdate />
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
 
