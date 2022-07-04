@@ -567,6 +567,11 @@ Anyone who is up for a challenge
     IV. create handleSearchChange function.  
     V. create searched function & use it with map method below
 
+64. Refactor Search filter
+    I. create forms->LocalSearch.jsx
+    II. add step 2 and 3 inside from CategoryCreate.jsx
+    III. destructure content from LocalSearch
+
     VII. Sub Categories CRUD
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
