@@ -582,8 +582,19 @@ Anyone who is up for a challenge
     I. create pages->admin->sub->SubCreate.jsx
     II. import <AdminNav />
     III. add <SubCreate /> to App.js.
+    IV. create functions->sub.js and fill it using category.js
 
-Sub Category Create 72. Showing Sub Categories and Remove
+67. Sub Category Create
+    I. copy CategoryCreate content & paste it in SubCreate.jsx
+    II. edit the SubCreate content
+    III.create select element to select the parent category
+    IV.
+
+68. Showing Sub Categories and Remove
+    1. add getSubs function
+    2. add loadSubs category
+    3. add filtering sytem
+
 Sub Category Update
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
