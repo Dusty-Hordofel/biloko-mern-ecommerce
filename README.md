@@ -602,7 +602,10 @@ Anyone who is up for a challenge
 
     VIII. Creating Products with Categories and Sub Categories (Advance)
 
-    IX. Multiple Image Uploads with Client Side Resize
+70. Product Model
+    I. create models->product.js
+
+71. IX. Multiple Image Uploads with Client Side Resize
 
     X. Update and Delete Products (Advance)
 
