@@ -612,7 +612,14 @@ Anyone who is up for a challenge
 72. Create Product Page
     I. create pages->admin->product->ProductCreate.jsx
     II. create src->functions->product.jsx
-    III.
+
+73. Product Create Form
+    I. create a state & initial state.
+    II. create a <form onSubmit={handleSubmit}>
+    III. ceate an input for title & add a dynamic <input onChange={handleChange}/> event handler
+    IV. destructure values from the state
+    V. ceate an input for dscription,price,shipping,quantity,color & brand
+    VI.
 
 IX. Multiple Image Uploads with Client Side Resize
 
