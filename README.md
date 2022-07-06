@@ -604,8 +604,17 @@ Anyone who is up for a challenge
 
 70. Product Model
     I. create models->product.js
+71. Product Create Backend
+    I. create routes->product.js
+    II. create controllers->product.js
+    III. import productRoutes in server.js
 
-71. IX. Multiple Image Uploads with Client Side Resize
+72. Create Product Page
+    I. create pages->admin->product->ProductCreate.jsx
+    II. create src->functions->product.jsx
+    III.
+
+IX. Multiple Image Uploads with Client Side Resize
 
     X. Update and Delete Products (Advance)
 

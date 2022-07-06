@@ -22,6 +22,7 @@ import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
 import { currentUser } from './functions/auth';
 import SubUpdate from './pages/admin/sub/SubUpdate';
+import ProductCreate from './pages/admin/product/ProductCreate';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -90,6 +91,7 @@ const App = () => {
         /> */}
         {/* <AdminRoute exact path="/admin/sub" component={SubCreate} /> */}
         {/* <AdminRoute exact path="/admin/sub/:slug" component={SubUpdate} /> */}
+        {/* <AdminRoute exact path="/admin/product" component={ProductCreate} /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category" element={<CategoryCreate />} />
         {/*/:slug , slug plugin grab this part from the url */}
@@ -97,6 +99,7 @@ const App = () => {
 
         <Route exact path="/admin/sub" element={<SubCreate />} />
         <Route exact path="/admin/sub/:slug" element={<SubUpdate />} />
+        <Route exact path="/admin/product" element={<ProductCreate />} />
       </Routes>
     </div>
   );
