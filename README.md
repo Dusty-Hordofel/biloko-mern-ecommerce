@@ -635,6 +635,10 @@ Anyone who is up for a challenge
     II. add read method controller
 
 78. Code Refactor
+    I. refactor ProductCreate.jsx component
+    II. create a new form components->form->ProductCreateForm.jsx
+    III. import <ProductCreateForm/> in <ProductCreate/>
+    IV. Pass values,handleSubmit and handleChange as Props in <ProductCreateForm/>
 
 IX. Multiple Image Uploads with Client Side Resize
 
