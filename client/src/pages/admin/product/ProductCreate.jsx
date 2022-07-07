@@ -23,7 +23,7 @@ const initialState = {
 const ProductCreate = () => {
   const [values, setValues] = useState(initialState); //we set one state instead of many
 
-  // destructure
+  // destructure all values from the state instead of typing (values.tile,values.description...)
   const {
     title,
     description,

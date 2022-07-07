@@ -619,7 +619,7 @@ Anyone who is up for a challenge
     III. ceate an input for title & add a dynamic <input onChange={handleChange}/> event handler
     IV. destructure values from the state
     V. ceate an input for dscription,price,shipping,quantity,color & brand
-    VI.
+74. Create Product
 
 IX. Multiple Image Uploads with Client Side Resize
 
