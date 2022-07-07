@@ -5,6 +5,21 @@ import { useSelector } from 'react-redux';
 import { createProduct } from '../../../functions/product';
 
 const initialState = {
+  title: 'Macbook Pro',
+  description: 'This is the best Apple product',
+  price: '45000',
+  categories: [],
+  category: '',
+  subs: [],
+  shipping: 'Yes',
+  quantity: '50',
+  images: [],
+  colors: ['Black', 'Brown', 'Silver', 'White', 'Blue'],
+  brands: ['Apple', 'Samsung', 'Microsoft', 'Lenovo', 'ASUS'],
+  color: 'White',
+  brand: 'Apple',
+};
+/*const initialState = {
   title: '',
   descriptioin: '',
   price: '',
@@ -18,7 +33,7 @@ const initialState = {
   brands: ['Apple', 'Samsung', 'Microsoft', 'Lenovo', 'ASUS'],
   color: '',
   brand: '',
-};
+};*/
 
 const ProductCreate = () => {
   const [values, setValues] = useState(initialState); //we set one state instead of many
@@ -49,6 +64,8 @@ const ProductCreate = () => {
     createProduct(values, user.token)
       .then((res) => {
         console.log(res);
+        window.alert(`"${res.data.title}" is created`);
+        window.location.reload(); // window.location.reload() is used to reload the page after the product is created.
       })
       .catch((err) => {
         console.log(err);

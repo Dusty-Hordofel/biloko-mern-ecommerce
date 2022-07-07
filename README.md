@@ -624,6 +624,9 @@ Anyone who is up for a challenge
     II.comment category,subs & images . we will user them later .
     III.try to create a new product.
 75. Alert and Reload after Product Create
+    I. go to productCreate & add window.alert
+    II. reload the page
+    III. update the initialState because of dev process
 
 IX. Multiple Image Uploads with Client Side Resize
 
