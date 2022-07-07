@@ -640,6 +640,21 @@ Anyone who is up for a challenge
     III. import <ProductCreateForm/> in <ProductCreate/>
     IV. Pass values,handleSubmit and handleChange as Props in <ProductCreateForm/>
 
+79. Create Product with Category
+    I. fetch all categories using {getCategories} functions.
+    II. add useEffect to load categories when the component is mounted
+    III. create loadCategories function.
+    IV. go to sub -> SubCreate.jsx and copy <div className="form-group">
+    V. Paste elements we have copied from <SubCreate/>
+    VI. uncomment models->product.js category field
+
+80. Sub Categories Endpoint
+81. Sub Categories Endpoint
+82. List Sub Categories Based on Parent Category
+83. Sub Categories Props
+84. Multi Select Ant Design
+85. Create Product with Sub Categories
+
 IX. Multiple Image Uploads with Client Side Resize
 
     X. Update and Delete Products (Advance)

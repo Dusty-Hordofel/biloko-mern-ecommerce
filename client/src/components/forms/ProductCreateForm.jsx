@@ -20,7 +20,6 @@ const ProductCreateForm = ({ handleSubmit, handleChange, values }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* {JSON.stringify(values)},to see changes while typing*/}
       <div className="form-group">
         <label>Title</label>
         <input
@@ -99,6 +98,23 @@ const ProductCreateForm = ({ handleSubmit, handleChange, values }) => {
               {b}
             </option>
           ))}
+        </select>
+      </div>
+
+      <div className="form-group">
+        <label>Category</label>
+        <select
+          name="category"
+          className="form-control"
+          onChange={handleChange}
+        >
+          <option>Please select</option>
+          {categories.length > 0 &&
+            categories.map((c) => (
+              <option key={c._id} value={c._id}>
+                {c.name}
+              </option>
+            ))}
         </select>
       </div>
 
