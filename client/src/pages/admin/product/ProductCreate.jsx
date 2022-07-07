@@ -23,6 +23,9 @@ const initialState = {
 const ProductCreate = () => {
   const [values, setValues] = useState(initialState); //we set one state instead of many
 
+  // redux store
+  const { user } = useSelector((state) => ({ ...state })); //we grab the user token from the state
+
   // destructure all values from the state instead of typing (values.tile,values.description...)
   const {
     title,
@@ -42,11 +45,21 @@ const ProductCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //
+    //to createProduct we need all informations available in the state & the user token that we grab from the useSelector
+    createProduct(values, user.token)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.response.status === 400) toast.error(err.response.data);
+      });
   };
 
   const handleChange = (e) => {
-    //
+    setValues({ ...values, [e.target.name]: e.target.value }); //setValues to update the state
+    //we will not update all the state, we will update only the value that we want. it's why we use the spread operator after the setValues we want to update
+    //console.log(e.target.name, ' ----- ', e.target.value);
   };
 
   return (
@@ -59,7 +72,7 @@ const ProductCreate = () => {
         <div className="col-md-10">
           <h4>Product create</h4>
           <hr />
-
+          {/* {JSON.stringify(values)},to see changes while typing*/}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Title</label>

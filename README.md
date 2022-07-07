@@ -620,6 +620,10 @@ Anyone who is up for a challenge
     IV. destructure values from the state
     V. ceate an input for dscription,price,shipping,quantity,color & brand
 74. Create Product
+    I. fill handleSubmit & handleChange
+    II.comment category,subs & images . we will user them later .
+    III.try to create a new product.
+75. Alert and Reload after Product Create
 
 IX. Multiple Image Uploads with Client Side Resize
 

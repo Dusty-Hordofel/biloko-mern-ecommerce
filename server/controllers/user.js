@@ -1,3 +1,3 @@
 export const user = (req, res) => {
-  res.json({ message: "Hello User!" });
+  res.json({ message: 'Hello User!' });
 };
