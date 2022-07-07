@@ -628,6 +628,13 @@ Anyone who is up for a challenge
     II. reload the page
     III. update the initialState because of dev process
 
+76. Product Create Error Message
+    I. go to the controllers->product.js & update catch block
+    II. grab the error message in productCreate.jsx
+
+77. GET Endpoint - Products
+78. Code Refactor
+
 IX. Multiple Image Uploads with Client Side Resize
 
     X. Update and Delete Products (Advance)
