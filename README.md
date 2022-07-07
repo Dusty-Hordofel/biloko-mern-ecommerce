@@ -652,11 +652,16 @@ Anyone who is up for a challenge
     I. uncomment sub element models->product.js
     II. go to routes->category.js
 
-81. Sub Categories Endpoint
-82. List Sub Categories Based on Parent Category
-83. Sub Categories Props
-84. Multi Select Ant Design
-85. Create Product with Sub Categories
+81. List Sub Categories Based on Parent Category
+    I. write a function to fetch subs category.  
+    II. create getCategorySubs function & import it in getCategorySubs.  
+    III. create handleCatagoryChange & destructure it in ProductCreateForm.
+    IV. replace handleChange by handleCatagoryChange.
+    V. add subOptions and setSubOptions state in ProductCreat.jsx
+
+82. Sub Categories Props
+83. Multi Select Ant Design
+84. Create Product with Sub Categories
 
 IX. Multiple Image Uploads with Client Side Resize
 I.

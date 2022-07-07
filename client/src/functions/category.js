@@ -27,3 +27,6 @@ export const createCategory = async (category, authtoken) =>
       authtoken,
     }, //we nedd to send the authtoken in the header to make sure that the user is authorized to delete the category.
   });
+
+export const getCategorySubs = async (_id) =>
+  await axios.get(`${process.env.REACT_APP_API}/category/subs/${_id}`);
