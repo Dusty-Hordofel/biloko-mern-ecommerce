@@ -16,3 +16,8 @@ export const create = async (req, res) => {
     });
   }
 };
+
+export const read = async (req, res) => {
+  let products = await Product.find({}); //populate('category')
+  res.json(products);
+};

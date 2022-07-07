@@ -627,12 +627,13 @@ Anyone who is up for a challenge
     I. go to productCreate & add window.alert
     II. reload the page
     III. update the initialState because of dev process
-
 76. Product Create Error Message
     I. go to the controllers->product.js & update catch block
     II. grab the error message in productCreate.jsx
-
 77. GET Endpoint - Products
+    I. create a endpoint to fetch all products in routes->product.js
+    II. add read method controller
+
 78. Code Refactor
 
 IX. Multiple Image Uploads with Client Side Resize
