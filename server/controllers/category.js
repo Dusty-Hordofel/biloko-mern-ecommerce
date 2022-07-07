@@ -1,5 +1,6 @@
-import Category from "../models/category.js";
-import slugify from "slugify";
+import Category from '../models/category.js';
+import Sub from '../models/sub.js';
+import slugify from 'slugify';
 
 export const create = async (req, res) => {
   try {
@@ -9,7 +10,7 @@ export const create = async (req, res) => {
     res.json(await new Category({ name, slug: slugify(name) }).save()); //you can lowercase the name and slugify the name or slugify(name).toLowerCase();
   } catch (err) {
     console.log(err);
-    res.status(400).send("Create category failed"); //res.status(400) is used for error
+    res.status(400).send('Create category failed'); //res.status(400) is used for error
   }
 };
 
@@ -31,7 +32,7 @@ export const update = async (req, res) => {
     );
     res.json(updated);
   } catch (err) {
-    res.status(400).send("Create update failed");
+    res.status(400).send('Create update failed');
   }
 };
 
@@ -40,6 +41,13 @@ export const remove = async (req, res) => {
     const deleted = await Category.findOneAndDelete({ slug: req.params.slug }); //we finf based on the slug.we dont' use id but slug.
     res.json(deleted);
   } catch (err) {
-    res.status(400).send("Create delete failed");
+    res.status(400).send('Create delete failed');
   }
 };
+
+export const getSubs = (req, res) => {
+  Sub.find({ parent: req.params._id }).exec((err, subs) => {
+    if (err) console.log(err);
+    res.json(subs);
+  });
+}; //we try to find all the sub category. we use the parent as parameter.

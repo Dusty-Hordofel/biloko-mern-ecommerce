@@ -649,6 +649,9 @@ Anyone who is up for a challenge
     VI. uncomment models->product.js category field
 
 80. Sub Categories Endpoint
+    I. uncomment sub element models->product.js
+    II. go to routes->category.js
+
 81. Sub Categories Endpoint
 82. List Sub Categories Based on Parent Category
 83. Sub Categories Props
@@ -656,6 +659,7 @@ Anyone who is up for a challenge
 85. Create Product with Sub Categories
 
 IX. Multiple Image Uploads with Client Side Resize
+I.
 
     X. Update and Delete Products (Advance)
 
