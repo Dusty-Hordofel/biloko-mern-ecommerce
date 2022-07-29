@@ -664,7 +664,13 @@ VI. Categories CRUD 49. Category Schema
         I. add subOptions conditional rendering
 
 83. Multi Select Ant Design
+
+    <ProductCreateForm/>
+        I. go to (https://ant.design/components/select/#header) and search ant Design <select/>
+        II. import { Select } from "antd" & add <Select/> info
+
 84. Create Product with Sub Categories
+    I.
 
 IX. Multiple Image Uploads with Client Side Resize
 I.
