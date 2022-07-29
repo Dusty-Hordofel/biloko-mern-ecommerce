@@ -34,7 +34,7 @@ const App = () => {
       //we get the usert from the auth function
       if (user) {
         const idTokenResult = await user.getIdTokenResult(); //we get the idTokenResult from the user
-        console.log('user', user);
+        console.log('user', user._delegate.accessToken);
         currentUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
           .then((res) => {
             dispatch({

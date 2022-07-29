@@ -6,8 +6,9 @@ export const create = async (req, res) => {
   try {
     //Notice: to create category we want the data that coming from the frontend. So we need to get the data from the req.body.The only thing we need is name
     const { name } = req.body;
-    //we can alse create const category = await new Category({ name, slug: slugify(name) }).save() then send the category to the frontend using res.json(category).;
-    res.json(await new Category({ name, slug: slugify(name) }).save()); //you can lowercase the name and slugify the name or slugify(name).toLowerCase();
+    const category = await new Category({ name, slug: slugify(name) }).save();
+    res.status(201).json(category);
+    //we can alse create do res.json(await new Category({ name, slug: slugify(name) }).save()); //you can lowercase the name and slugify the name or slugify(name).toLowerCase();
   } catch (err) {
     console.log(err);
     res.status(400).send('Create category failed'); //res.status(400) is used for error
@@ -20,7 +21,7 @@ export const list = async (req, res) =>
 export const read = async (req, res) => {
   let category = await Category.findOne({ slug: req.params.slug }); //req.params.slug is the slug of the category.findOne({ slug: req.params.slug }) is the query that we want to find a specific category using the slug as parameter.
   res.json(category);
-};
+}; //to get a single category, we use a slug of that category.
 
 export const update = async (req, res) => {
   const { name } = req.body;

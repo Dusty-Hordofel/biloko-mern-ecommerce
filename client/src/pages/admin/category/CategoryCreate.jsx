@@ -22,7 +22,7 @@ const CategoryCreate = () => {
   const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
-    loadCategories(); //te retrieve the all categories from the database
+    loadCategories(); //to retrieve the all categories from the database
   }, []); //useEffect will run when the component is mounted.
 
   const loadCategories = () =>
@@ -30,7 +30,7 @@ const CategoryCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); //e.preventDefault() will prevent the default behaviour of the form.
-    // console.log(name);
+    // console.log(name);//the name we are going to send to our backend !
     setLoading(true);
     //to create a category we send the name of the category and the user token to the createCategory function
     createCategory({ name }, user.token)

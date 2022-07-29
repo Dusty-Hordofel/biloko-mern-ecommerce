@@ -507,52 +507,46 @@ Anyone who is up for a challenge
 
     48. Warnings and cleanup
 
-    VI. Categories CRUD
-    49.  Category Schema
-        1. go to models folder and create category.js
+VI. Categories CRUD 49. Category Schema
 
+    1. go to models folder and create category.js
 
-    52. category-list-read-update-delete
-        1.
+52. category-list-read-update-delete
+    I. xxxxxxx
 
-    53. Category Routes
-        1. go to the routes->category.js
-        2. copy auth.js & past in category.js
-        3. create  category.js in controllers folder
-            - import category model
-            - add different function
-    54. category create
-        1. npm i slugify & import it
-        2. fill create Method
+53. Category Routes
+    I. go to the routes->category.js
+    II. copy auth.js & past in category.js
+    III. create category.js in controllers folder - import category model - add different function
 
-    55. Category List Read Update Delete
-        1. fill list,read,remove & update method,
+54. category create
+    I. npm i slugify & import it
+    II. fill create Method
 
-    56. Category CRUD Requests
-        1. go to client->components->functions & create category.js
-        2. create getCategories method to send a request to our backend.
+55. Category List Read Update Delete
+    I. fill list,read,remove & update method,
 
-    57.  Dynamic Dashboard Link
-        1. edit Header component by adding a conditional rendering (dashboard & history)
+56. Category CRUD Requests (frontend)
+    I. go to client->components->functions & create category.js 2. create getCategories method to send a request to our backend.
 
-    58.Admin Sidebar Nav
-        1. create nav->AdminNav.jsx
-        2. create pages->admin->category->CategoryCreate.jsx
-        3. import CategoryCreate in App.js
+57. Dynamic Dashboard Link
+    I. edit Header component by adding a conditional rendering (dashboard & history)
 
-    59.  Category Create and List
-        1. go to pages->admin->category->CategoryCreate.jsx
-        2. import & add useEffect to retrieve data from the backend
-        3. import toast, and useSelector to access to th user token
-        4. create a form  and fill it
+58. Admin Sidebar Nav
+    I. create nav->AdminNav.jsx
+    II. create pages->admin->category->CategoryCreate.jsx 3. import CategoryCreate in App.js
 
-    60. Category Render and Delete
-        1. add handleRemove function in CategoryCreate.jsx
-        2. improve the display of data retrieved from the server
+59. Category Create and List
+    I. go to pages->admin->category->CategoryCreate.jsx
+    II. import & add useEffect to retrieve data from the backend
+    III. import toast, and useSelector to access to th user token
+    IV. create a form and fill it
 
-    61. Category Update
-        1. create pages->admin->category->CategoryUpdate.jsx
-        2. copy CategoryCreate and update informations
+60. Category Render and Delete 1. add handleRemove function in CategoryCreate.jsx 2. improve the display of data retrieved from the server
+
+61. Category Update
+    I. create pages->admin->category->CategoryUpdate.jsx
+    II. copy CategoryCreate and update informations
 
 62. Code Refactor - Reusable Component
     I. create forms folder component
@@ -577,6 +571,8 @@ Anyone who is up for a challenge
 65. Sub Categories CRUD
     I. create sub.js controller,route and model
     II. import default route in server.js
+    NB: subscategories will be associated with category.
+    Each subcategory must belong to one parent category.
 
 66. Sub Categories Functions
     I. create pages->admin->sub->SubCreate.jsx
@@ -660,6 +656,8 @@ Anyone who is up for a challenge
     V. add subOptions and setSubOptions state in ProductCreat.jsx
 
 82. Sub Categories Props
+    I. add
+
 83. Multi Select Ant Design
 84. Create Product with Sub Categories
 

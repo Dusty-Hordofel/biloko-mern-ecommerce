@@ -1,19 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import "antd/dist/antd.variable.min.css";
-import { createStore } from "redux"; //createStore is a function that allow us to create a store
-import { Provider } from "react-redux"; //Provider allow us to access the store from any component
-import { composeWithDevTools } from "redux-devtools-extension"; //composeWithDevTools is used to enable the redux devtools
-import rootReducer from "./reducers";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import 'antd/dist/antd.variable.min.css';
+import { createStore } from 'redux'; //createStore is a function that allow us to create a store
+import { Provider } from 'react-redux'; //Provider allow us to access the store from any component
+import { composeWithDevTools } from 'redux-devtools-extension'; //composeWithDevTools is used to enable the redux devtools
+import rootReducer from './reducers';
 
 //store is a object that contain all the state of the application
 const store = createStore(rootReducer, composeWithDevTools()); // store is a function that takes a reducer and returns a store.
+//create a variable stores in our window object
+window.store = store; //we can access this variable in our browser console.
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <React.StrictMode>
