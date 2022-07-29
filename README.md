@@ -656,7 +656,12 @@ VI. Categories CRUD 49. Category Schema
     V. add subOptions and setSubOptions state in ProductCreat.jsx
 
 82. Sub Categories Props
-    I. add
+
+    <ProductCreate/>
+        I. add [showSub, setShowSub]  states
+        II. Pass showSub and subOptions to <ProductCreateForm/>
+    <ProductCreateForm/>
+        I. add subOptions conditional rendering
 
 83. Multi Select Ant Design
 84. Create Product with Sub Categories

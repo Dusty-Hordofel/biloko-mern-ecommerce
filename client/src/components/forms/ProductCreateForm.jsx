@@ -5,6 +5,8 @@ const ProductCreateForm = ({
   handleChange,
   values,
   handleCatagoryChange,
+  subOptions,
+  showSub,
 }) => {
   // destructure all values from the state instead of typing (values.tile,values.description...)
   const {
@@ -122,6 +124,7 @@ const ProductCreateForm = ({
             ))}
         </select>
       </div>
+      {subOptions ? subOptions.length : 'no subs yet'}
 
       <button className="btn btn-outline-info">Save</button>
     </form>
