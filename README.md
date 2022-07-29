@@ -670,7 +670,11 @@ VI. Categories CRUD 49. Category Schema
         II. import { Select } from "antd" & add <Select/> info
 
 84. Create Product with Sub Categories
-    I.
+
+     <ProductCreateForm/>
+        I. add showSub conditional rendering inside <Select/> and outside.
+        II. add setShowSub & subs in <ProductCreate>->handleCategoryChange()
+
 
 IX. Multiple Image Uploads with Client Side Resize
 I.

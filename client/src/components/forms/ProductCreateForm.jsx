@@ -129,24 +129,32 @@ const ProductCreateForm = ({
         </select>
       </div>
       {/* {subOptions ? subOptions.length : 'no subs yet'} */}
-      <div>
-        <label>Sub Categories</label>
-        <Select
-          mode="multiple"
-          allowClear
-          style={{
-            width: '100%',
-          }}
-          placeholder="Please select"
-          //defaultValue={subs}
-          value={subs}
-          onChange={(value) => setValues({ ...values, subs: value })}
-          name="subs"
-        >
-          <Option value="one">option one</Option>
-          <Option value="two">option tow</Option>
-        </Select>
-      </div>
+
+      {showSub && (
+        <div>
+          <label>Sub Categories</label>
+          <Select
+            mode="multiple"
+            allowClear
+            style={{
+              width: '100%',
+            }}
+            placeholder="Please select"
+            //defaultValue={subs}
+            value={subs}
+            onChange={(value) => setValues({ ...values, subs: value })}
+            name="subs"
+          >
+            {subOptions.length &&
+              subOptions.map((s) => (
+                <Option key={s._id} value={s._id}>
+                  {s.name}
+                </Option>
+              ))}
+          </Select>
+        </div>
+      )}
+      <br />
 
       <button className="btn btn-outline-info">Save</button>
     </form>

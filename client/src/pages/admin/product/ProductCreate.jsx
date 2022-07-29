@@ -60,11 +60,12 @@ const ProductCreate = () => {
   const handleCatagoryChange = (e) => {
     e.preventDefault();
     console.log('CLICKED CATEGORY', e.target.value); //e.target.value is the category id
-    setValues({ ...values, category: e.target.value });
+    setValues({ ...values, subs: [], category: e.target.value });
     getCategorySubs(e.target.value).then((res) => {
       console.log('SUB OPTIONS ON CATGORY CLICK', res); //response will contain all subscategories that belongs to,this parent category
       setSubOptions(res.data);
     });
+    setShowSub(true);
   };
 
   return (
