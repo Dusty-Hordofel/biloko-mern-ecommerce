@@ -733,6 +733,15 @@ X. Update and Delete Products (Advance)
     II. update product controllers to limit the number of fetching data.
     III. change read controllers to listAll and and limit,populate & sort products in it
 
+92. Fetch All Products in Admin Dashboard
+    I. create a function to fetch all in components->functions->products.
+    II. go to pages->admin-> <AdminDashboard/>
+
+        I. import { getProductsByCount } from "../../functions/product";
+        II. add a state and create loadAllProducts()
+        III. add useEffect to fetch the product when the component mount.
+        IV. add a conditional rendering inside
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System

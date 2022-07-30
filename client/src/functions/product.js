@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const createProduct = async (product, authtoken) =>
   await axios.post(`${process.env.REACT_APP_API}/product`, product, {
@@ -6,3 +6,6 @@ export const createProduct = async (product, authtoken) =>
       authtoken,
     },
   });
+
+export const getProductsByCount = async (count) =>
+  await axios.get(`${process.env.REACT_APP_API}/products/${count}`);
