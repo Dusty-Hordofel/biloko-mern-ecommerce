@@ -742,6 +742,12 @@ X. Update and Delete Products (Advance)
         III. add useEffect to fetch the product when the component mount.
         IV. add a conditional rendering inside
 
+93. Admin Products Card
+    I. map all products in <AdminDashboard />
+    II. create <AdminProductCard/> & import it in <AdminDashboard />
+
+94.
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
