@@ -728,7 +728,12 @@ IX. Multiple Image Uploads
 
 X. Update and Delete Products (Advance)
 
-91. XI. Displaying Products Pagination and Carousel
+91. List All PRoducts Endpoint
+    I. update Products route to fetch all products
+    II. update product controllers to limit the number of fetching data.
+    III. change read controllers to listAll and and limit,populate & sort products in it
+
+XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
 

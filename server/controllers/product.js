@@ -17,7 +17,13 @@ export const create = async (req, res) => {
   }
 };
 
-export const read = async (req, res) => {
-  let products = await Product.find({}); //populate('category')
+export const listAll = async (req, res) => {
+  let products = await Product.find({})
+    .limit(parseInt(req.params.count)) //to be sure it's an integer not a string
+    .populate('category')
+    .populate('subs')
+    .sort([['createdAt', 'desc']]);
+
+  //populate is used to bring us the information we need . here we want to bring the category and the subs
   res.json(products);
 };
