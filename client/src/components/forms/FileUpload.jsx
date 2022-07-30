@@ -1,7 +1,7 @@
 import Resizer from 'react-image-file-resizer';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { Avatar } from 'antd';
+import { Avatar, Badge } from 'antd';
 
 const FileUpload = ({ values, setValues, setLoading }) => {
   const { user } = useSelector((state) => ({ ...state })); //we have to send the token to the server to upload the image
@@ -55,17 +55,52 @@ const FileUpload = ({ values, setValues, setLoading }) => {
     // set url to images[] in the parent component state - ProductCreate
   };
 
+  const handleImageRemove = (public_id) => {
+    setLoading(true);
+    console.log('remove image', public_id);
+    axios
+      .post(
+        `${process.env.REACT_APP_API}/removeimage`,
+        { public_id },
+        {
+          headers: {
+            authtoken: user ? user.token : '',
+          },
+        }
+      ) //we send the public_id to the server to remove the image from cloudinary
+      .then((res) => {
+        setLoading(false);
+        const { images } = values;
+        let filteredImages = images.filter((item) => {
+          return item.public_id !== public_id;
+        });
+        setValues({ ...values, images: filteredImages }); //setValues is used to update the state. we remove the image from the state, the backend and cloudinary
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
+  };
+
   return (
     <>
       <div className="row">
         {values.images &&
           values.images.map((image) => (
-            <Avatar
+            <Badge
+              count="X"
               key={image.public_id}
-              src={image.url}
-              size={100}
-              className="m-3"
-            />
+              onClick={() => handleImageRemove(image.public_id)}
+              style={{ cursor: 'pointer' }}
+            >
+              <Avatar
+                // key={image.public_id}
+                src={image.url}
+                size={100}
+                className="ml-3"
+                shape="square"
+              />
+            </Badge>
           ))}
       </div>
       <div className="row">

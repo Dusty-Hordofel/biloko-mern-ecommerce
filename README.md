@@ -717,18 +717,18 @@ IX. Multiple Image Uploads
         II. map all images from values.images
 
 90. Product Create with Multiple Images
+    <FileUpload/>
 
-    I. create allUploadedFiles const to get all images
-    II.
-
-    IV. Our server will upload to cloudinary and receives the uploaded url's
-    V. Those uploaded url's will be sent from backend to frontend
-    VI. At this point, our frontend will have images with the uploaded url's
-    VII. Now we can save a product in database with image url's
+        I. add shape in <Avatar/>
+        II. import <Badge/> from "antd" & make it clickable using onClick
+        III. create handleImageRemove() to remove image from the backend,cloudinary & the state.
+        IV. add loading ant design icon (https://ant.design/components/icon/) to the parent compoenent  <ProductCreate/>
+        V. uncomment images property in products model .
+        VI. try to create a new product in front & verify it in the backend.
 
 X. Update and Delete Products (Advance)
 
-    XI. Displaying Products Pagination and Carousel
+91. XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
 
