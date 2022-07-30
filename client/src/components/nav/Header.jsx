@@ -57,15 +57,16 @@ const Header = () => {
           icon={<SettingOutlined />}
           title={user.email.split('@')[0]} //split method is used to split the string into an array.
           className="float-right"
+          key="zero"
         >
           {user && user.role === 'subscriber' && (
-            <Item>
+            <Item key="one">
               <Link to="/user/history">Dashboard</Link>
             </Item>
           )}
 
           {user && user.role === 'admin' && (
-            <Item>
+            <Item key="two">
               <Link to="/admin/dashboard">Dashboard</Link>
             </Item>
           )}

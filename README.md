@@ -692,6 +692,12 @@ IX. Multiple Image Uploads
     I. create components->forms-><FileUpload/> content
     II. import <FileUpload/> in <ProductCreate/>
 
+87. File Resize in React
+    I. npm i react-image-file-resizer
+    <FileUpload/>
+    I. get the token from the user using the store
+    II. get all the file creating files const and add a file statement
+
         IV. Our server will upload to cloudinary and receives the uploaded url's
         V. Those uploaded url's will be sent from backend to frontend
         VI. At this point, our frontend will have images with the uploaded url's
