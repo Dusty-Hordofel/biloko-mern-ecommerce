@@ -42,7 +42,8 @@ mongoose.connection.on('disconnected', () => {
 
 //middleware
 app.use(morgan('dev')); //morgan is a function which logs the requests
-app.use(express.json()); //to send JSON.object
+app.use(express.json({ limit: '25mb' })); //to send JSON.object & limit the size of the body
+app.use(express.urlencoded({ extended: true })); //to send URL encoded data
 app.use(cors()); //to allow cross-origin requests
 
 //routes middleware

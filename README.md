@@ -694,14 +694,33 @@ IX. Multiple Image Uploads
 
 87. File Resize in React
     I. npm i react-image-file-resizer
-    <FileUpload/>
-    I. get the token from the user using the store
-    II. get all the file creating files const and add a file statement
+    II. <FileUpload/>
 
-        IV. Our server will upload to cloudinary and receives the uploaded url's
-        V. Those uploaded url's will be sent from backend to frontend
-        VI. At this point, our frontend will have images with the uploaded url's
-        VII. Now we can save a product in database with image url's
+        I. get the token from the user using the store
+        II. get all the file creating files const and add a file statement
+
+88. Muliple Image Uploads
+    I. <ProductCreate/>
+
+        I. create const [loading, setLoading] = useState(false);
+        II. pass { values, setValues, setLoading } as props in <FileUpload/> to access the state
+
+    II. <FileUpload/>
+
+        I. add images to te backend using axios.
+        II. add limit size to our uploaded file in server.js
+
+89. Image Preview
+
+90. Product Create with Multiple Images
+
+    I. create allUploadedFiles const to get all images
+    II.
+
+    IV. Our server will upload to cloudinary and receives the uploaded url's
+    V. Those uploaded url's will be sent from backend to frontend
+    VI. At this point, our frontend will have images with the uploaded url's
+    VII. Now we can save a product in database with image url's
 
 X. Update and Delete Products (Advance)
 
