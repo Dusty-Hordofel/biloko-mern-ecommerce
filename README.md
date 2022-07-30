@@ -675,11 +675,24 @@ VI. Categories CRUD 49. Category Schema
         I. add showSub conditional rendering inside <Select/> and outside.
         II. add setShowSub & subs in <ProductCreate>->handleCategoryChange()
 
+IX. Multiple Image Uploads
 
-IX. Multiple Image Uploads with Client Side Resize
-I.
+85. Cloudinary Upload Endpoints
+    I. signup to cloudinary to get API key/secret & put them in server->env file
 
-    X. Update and Delete Products (Advance)
+    II. create server endpoints to upload and remove files from cloudinary
+
+        I. create cloudinary routes
+        II. npm i cloudinary
+        III. create cloudinary controllers
+
+    III.Resize the file in frontend and send to our Server
+    IV. Our server will upload to cloudinary and receives the uploaded url's
+    V. Those uploaded url's will be sent from backend to frontend
+    VI. At this point, our frontend will have images with the uploaded url's
+    VII. Now we can save a product in database with image url's
+
+X. Update and Delete Products (Advance)
 
     XI. Displaying Products Pagination and Carousel
 

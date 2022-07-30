@@ -9,6 +9,7 @@ import userRoutes from './routes/user.js';
 import categoryRoutes from './routes/category.js';
 import subCategoryRoutes from './routes/sub.js';
 import productRoutes from './routes/product.js';
+import cloudinaryRoutes from './routes/cloudinary.js';
 
 dotenv.config();
 
@@ -50,6 +51,7 @@ app.use('/api', userRoutes); //to use the authRoute, we prefix the url with /api
 app.use('/api', categoryRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', subCategoryRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', productRoutes); //to use the categoryRoutes, we prefix the url with /api
+app.use('/api', cloudinaryRoutes); //to use the categoryRoutes, we prefix the url with /api
 //readdirSync("./routes").map((r) => app.use("/api", import("./routes/" + r)));
 
 //port
