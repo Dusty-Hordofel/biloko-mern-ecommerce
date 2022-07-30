@@ -711,6 +711,10 @@ IX. Multiple Image Uploads
         II. add limit size to our uploaded file in server.js
 
 89. Image Preview
+    <FileUpload/>
+
+        I. import { Avatar } from 'antd';
+        II. map all images from values.images
 
 90. Product Create with Multiple Images
 
