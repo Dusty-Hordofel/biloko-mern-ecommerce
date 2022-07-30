@@ -686,11 +686,16 @@ IX. Multiple Image Uploads
         II. npm i cloudinary
         III. create cloudinary controllers
 
-    III.Resize the file in frontend and send to our Server
-    IV. Our server will upload to cloudinary and receives the uploaded url's
-    V. Those uploaded url's will be sent from backend to frontend
-    VI. At this point, our frontend will have images with the uploaded url's
-    VII. Now we can save a product in database with image url's
+86. File upload components
+    Objectif: Resize the file in frontend and send to our Server
+
+    I. create components->forms-><FileUpload/> content
+    II. import <FileUpload/> in <ProductCreate/>
+
+        IV. Our server will upload to cloudinary and receives the uploaded url's
+        V. Those uploaded url's will be sent from backend to frontend
+        VI. At this point, our frontend will have images with the uploaded url's
+        VII. Now we can save a product in database with image url's
 
 X. Update and Delete Products (Advance)
 
