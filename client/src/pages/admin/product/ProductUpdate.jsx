@@ -31,6 +31,7 @@ const ProductUpdate = () => {
   const [subOptions, setSubOptions] = useState([]);
   const [arrayOfSubs, setArrayOfSubs] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const { user } = useSelector((state) => ({ ...state }));
   // router
@@ -107,8 +108,21 @@ const ProductUpdate = () => {
         </div>
 
         <div className="col-md-10">
-          <h4>Product update</h4>
-          {JSON.stringify(values)}
+          {/* {JSON.stringify(values)} */}
+          {loading ? (
+            <LoadingOutlined className="text-danger h1" />
+          ) : (
+            <h4>Product update</h4>
+          )}
+          <hr />
+
+          <div className="p-3">
+            <FileUpload
+              values={values}
+              setValues={setValues}
+              setLoading={setLoading}
+            />
+          </div>
 
           <ProductUpdateForm
             handleSubmit={handleSubmit}

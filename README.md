@@ -816,7 +816,9 @@ X. Update and Delete Products (Advance)
 
             I. use selectedCategory as a value in category section.
 
-104.  mage Uploads in Product Update
+104.  image Uploads in Product Update
+      <ProductUpdate/>
+      I. add <FileUpload/> & create [loading, setLoading] state
 
 105.  Product Update Endpoint
 
