@@ -751,6 +751,11 @@ X. Update and Delete Products (Advance)
     II. Move <AdminDashboard / > to product-><AllProducts/>
     III. import <AllProducts/> in App.js
 
+95. Default Image Ant Icons and Product Description
+    I. create src->images & import laptop in <AdminProductCard/>
+    II. import { EditOutlined, DeleteOutlined } in <AdminProductCard/>
+    III. add space between cards in <AllProducts/>
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
