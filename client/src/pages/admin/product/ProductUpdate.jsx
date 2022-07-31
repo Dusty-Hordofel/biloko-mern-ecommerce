@@ -13,7 +13,6 @@ const initialState = {
   title: '',
   description: '',
   price: '',
-  categories: [],
   category: '',
   subs: [],
   shipping: '',
@@ -28,6 +27,8 @@ const initialState = {
 const ProductUpdate = () => {
   // state
   const [values, setValues] = useState(initialState);
+  const [categories, setCategories] = useState([]);
+  const [subOptions, setSubOptions] = useState([]);
 
   const { user } = useSelector((state) => ({ ...state }));
   // router
@@ -35,6 +36,7 @@ const ProductUpdate = () => {
 
   useEffect(() => {
     loadProduct();
+    loadCategories();
   }, []);
 
   const loadProduct = () => {
@@ -44,6 +46,12 @@ const ProductUpdate = () => {
     });
   };
 
+  const loadCategories = () =>
+    getCategories().then((c) => {
+      console.log('GET CATEGORIES IN UPDATE PRODUCT', c.data);
+      setCategories(c.data);
+    });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //
@@ -52,6 +60,16 @@ const ProductUpdate = () => {
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
     // console.log(e.target.name, ' ----- ', e.target.value);
+  };
+
+  const handleCatagoryChange = (e) => {
+    e.preventDefault();
+    console.log('CLICKED CATEGORY', e.target.value);
+    setValues({ ...values, subs: [], category: e.target.value });
+    getCategorySubs(e.target.value).then((res) => {
+      console.log('SUB OPTIONS ON CATGORY CLICK', res);
+      setSubOptions(res.data);
+    });
   };
 
   return (
@@ -70,6 +88,9 @@ const ProductUpdate = () => {
             handleChange={handleChange}
             setValues={setValues}
             values={values}
+            handleCatagoryChange={handleCatagoryChange}
+            categories={categories}
+            subOptions={subOptions}
           />
           <hr />
         </div>

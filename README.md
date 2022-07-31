@@ -790,6 +790,14 @@ X. Update and Delete Products (Advance)
 
 101.  Pre Populate Category
 
+      <ProductUpdate/>
+      I. add loadCategories() & handleCatagoryChange()
+      II. create [categories, setCategories] & pass {handleCatagoryChange,categories,subOptions} them as a props
+
+      <ProductUpdateForm/>
+      I. use {handleCatagoryChange,categories,subOptions} props
+      II. add Category script
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
