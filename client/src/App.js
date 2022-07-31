@@ -24,6 +24,7 @@ import { currentUser } from './functions/auth';
 import SubUpdate from './pages/admin/sub/SubUpdate';
 import ProductCreate from './pages/admin/product/ProductCreate';
 import AllProducts from './pages/admin/product/AllProducts';
+import ProductUpdate from './pages/admin/product/ProductUpdate';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -103,6 +104,7 @@ const App = () => {
         <Route path="/admin/sub/:slug" element={<SubUpdate />} />
         <Route path="/admin/product" element={<ProductCreate />} />
         <Route path="/admin/products" element={<AllProducts />} />
+        <Route path="/admin/product/:slug" element={<ProductUpdate />} />
       </Routes>
     </div>
   );

@@ -39,3 +39,10 @@ export const remove = async (req, res) => {
     return res.staus(400).send('Product delete failed');
   }
 };
+
+export const read = async (req, res) => {
+  const product = await Product.findOne({ slug: req.params.slug }) //we find the product by its slug who come from the url
+    .populate('category')
+    .populate('subs');
+  res.json(product);
+};

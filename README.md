@@ -765,6 +765,20 @@ X. Update and Delete Products (Advance)
     III. create handleRemove() & use removeProduct() in <AllProducts/>
     IV. pass handleRemove has a props in <AdminProductCard/>
 
+98. Product Update Page & Product Slug from Router
+    <AdminProductCard/>
+
+    I. import { Link } from "react-router-dom";
+    II. wrap edit icon with <Link/>
+
+    III. create <ProductUpdate/> page to grap the slug from the url in the <Link/>
+
+        I. copy <ProductCreate/> and update informations
+        II. import <ProductUpdate/> in App.js
+
+    IV. create a single product endpoint and controller in the backend
+    V. create functions->product->getProduct()
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
