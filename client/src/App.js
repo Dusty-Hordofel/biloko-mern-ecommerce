@@ -23,6 +23,7 @@ import { useDispatch } from 'react-redux';
 import { currentUser } from './functions/auth';
 import SubUpdate from './pages/admin/sub/SubUpdate';
 import ProductCreate from './pages/admin/product/ProductCreate';
+import AllProducts from './pages/admin/product/AllProducts';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -92,14 +93,16 @@ const App = () => {
         {/* <AdminRoute exact path="/admin/sub" component={SubCreate} /> */}
         {/* <AdminRoute exact path="/admin/sub/:slug" component={SubUpdate} /> */}
         {/* <AdminRoute exact path="/admin/product" component={ProductCreate} /> */}
+        {/* <AdminRoute exact path="/admin/products" component={AllProducts} /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category" element={<CategoryCreate />} />
         {/*/:slug , slug plugin grab this part from the url */}
         <Route path="/admin/category/:slug" element={<CategoryUpdate />} />
 
-        <Route exact path="/admin/sub" element={<SubCreate />} />
-        <Route exact path="/admin/sub/:slug" element={<SubUpdate />} />
-        <Route exact path="/admin/product" element={<ProductCreate />} />
+        <Route path="/admin/sub" element={<SubCreate />} />
+        <Route path="/admin/sub/:slug" element={<SubUpdate />} />
+        <Route path="/admin/product" element={<ProductCreate />} />
+        <Route path="/admin/products" element={<AllProducts />} />
       </Routes>
     </div>
   );

@@ -746,7 +746,10 @@ X. Update and Delete Products (Advance)
     I. map all products in <AdminDashboard />
     II. create <AdminProductCard/> & import it in <AdminDashboard />
 
-94.
+94. Code Organization
+    I. set p-1 instead of m-2 in <AdminProductCard/>
+    II. Move <AdminDashboard / > to product-><AllProducts/>
+    III. import <AllProducts/> in App.js
 
 XI. Displaying Products Pagination and Carousel
 
