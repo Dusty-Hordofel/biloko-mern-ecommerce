@@ -789,7 +789,6 @@ X. Update and Delete Products (Advance)
       II. add a value to color & brand.
 
 101.  Pre Populate Category
-
       <ProductUpdate/>
       I. add loadCategories() & handleCatagoryChange()
       II. create [categories, setCategories] & pass {handleCatagoryChange,categories,subOptions} them as a props
@@ -797,6 +796,23 @@ X. Update and Delete Products (Advance)
       <ProductUpdateForm/>
       I. use {handleCatagoryChange,categories,subOptions} props
       II. add Category script
+
+102.  Pre Populate Sub Categories
+      I. add subCategory script from <ProductCreateForm/> to <ProductUpdateForm/>
+      II. pass arrayOfSubs from <ProductUpdate/> to <ProductCreateForm/>
+
+      <ProductUpdate/>
+
+            I. update loadProduct()
+            II. add [arrayOfSubs, setArrayOfSubs] and pass them like a props in  <ProductUpdateForm/>
+
+103.  Category and Sub Category Sync on Update
+
+104.  mage Uploads in Product Update
+
+105.  Product Update Endpoint
+
+106.  Update A Product
 
 XI. Displaying Products Pagination and Carousel
 
