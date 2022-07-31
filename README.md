@@ -824,6 +824,8 @@ X. Update and Delete Products (Advance)
       I. create an update endpoint & controller in the backend.
 
 106.  Update A Product
+      I. create functions-> updateProduct() & import it in <ProductUpdate/>
+      II. update handleSubmit() in <ProductUpdate/>
 
 XI. Displaying Products Pagination and Carousel
 
