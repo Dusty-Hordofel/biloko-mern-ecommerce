@@ -784,6 +784,12 @@ X. Update and Delete Products (Advance)
     II. use <ProductUpdateForm/> in <ProductUpdate/>
     III. create handleSubmit() et handleChange()
 
+100.  Pre Populate Shipping Color and Brand
+      I. add a conditional rendering in <ProductUpdateForm/> -> Shipping
+      II. add a value to color & brand.
+
+101.  Pre Populate Category
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System

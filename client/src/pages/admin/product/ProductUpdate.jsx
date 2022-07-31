@@ -63,6 +63,7 @@ const ProductUpdate = () => {
 
         <div className="col-md-10">
           <h4>Product update</h4>
+          {JSON.stringify(values)}
 
           <ProductUpdateForm
             handleSubmit={handleSubmit}
@@ -70,7 +71,6 @@ const ProductUpdate = () => {
             setValues={setValues}
             values={values}
           />
-          {/* {JSON.stringify(values)} */}
           <hr />
         </div>
       </div>

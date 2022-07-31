@@ -1,5 +1,5 @@
-import React from "react";
-import { Select } from "antd";
+import React from 'react';
+import { Select } from 'antd';
 
 const { Option } = Select;
 
@@ -65,10 +65,11 @@ const ProductUpdateForm = ({
         <label>Shipping</label>
         <select
           name="shipping"
+          value={shipping === 'Yes' ? 'Yes' : 'No'}
           className="form-control"
           onChange={handleChange}
         >
-          <option>Please select</option>
+          {/* <option>Please select</option> */}
           <option value="No">No</option>
           <option value="Yes">Yes</option>
         </select>
@@ -87,8 +88,13 @@ const ProductUpdateForm = ({
 
       <div className="form-group">
         <label>Color</label>
-        <select name="color" className="form-control" onChange={handleChange}>
-          <option>Please select</option>
+        <select
+          value={color}
+          name="color"
+          className="form-control"
+          onChange={handleChange}
+        >
+          {/* <option>Please select</option> */}
           {colors.map((c) => (
             <option key={c} value={c}>
               {c}
@@ -99,8 +105,13 @@ const ProductUpdateForm = ({
 
       <div className="form-group">
         <label>Brand</label>
-        <select name="brand" className="form-control" onChange={handleChange}>
-          <option>Please select</option>
+        <select
+          value={brand}
+          name="brand"
+          className="form-control"
+          onChange={handleChange}
+        >
+          {/* <option>Please select</option> */}
           {brands.map((b) => (
             <option key={b} value={b}>
               {b}
