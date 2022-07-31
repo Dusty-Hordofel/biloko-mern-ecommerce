@@ -779,6 +779,11 @@ X. Update and Delete Products (Advance)
     IV. create a single product endpoint and controller in the backend
     V. create functions->product->getProduct()
 
+99. Product Update Component
+    I. create <ProductUpdateForm/> based on <ProductCreateForm/>
+    II. use <ProductUpdateForm/> in <ProductUpdate/>
+    III. create handleSubmit() et handleChange()
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
