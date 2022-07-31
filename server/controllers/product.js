@@ -27,3 +27,15 @@ export const listAll = async (req, res) => {
   //populate is used to bring us the information we need . here we want to bring the category and the subs
   res.json(products);
 };
+
+export const remove = async (req, res) => {
+  try {
+    const deleted = await Product.findOneAndRemove({
+      slug: req.params.slug,
+    });
+    res.json(deleted);
+  } catch (err) {
+    console.log(err);
+    return res.staus(400).send('Product delete failed');
+  }
+};

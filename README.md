@@ -756,6 +756,11 @@ X. Update and Delete Products (Advance)
     II. import { EditOutlined, DeleteOutlined } in <AdminProductCard/>
     III. add space between cards in <AllProducts/>
 
+96. Product Delete Endpoint
+    I. add Product Delete Endpoint in the backend and his controller.
+
+97.
+
 XI. Displaying Products Pagination and Carousel
 
     XII. Star Rating System
