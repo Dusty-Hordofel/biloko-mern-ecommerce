@@ -759,7 +759,11 @@ X. Update and Delete Products (Advance)
 96. Product Delete Endpoint
     I. add Product Delete Endpoint in the backend and his controller.
 
-97.
+97. Delete A Product
+    I. create a removeProduct method to fetch data in the Frontend
+    II. add useSelector to get the token
+    III. create handleRemove() & use removeProduct() in <AllProducts/>
+    IV. pass handleRemove has a props in <AdminProductCard/>
 
 XI. Displaying Products Pagination and Carousel
 
