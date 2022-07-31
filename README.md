@@ -821,6 +821,7 @@ X. Update and Delete Products (Advance)
       I. add <FileUpload/> & create [loading, setLoading] state
 
 105.  Product Update Endpoint
+      I. create an update endpoint & controller in the backend.
 
 106.  Update A Product
 
