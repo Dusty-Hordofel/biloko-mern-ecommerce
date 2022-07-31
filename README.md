@@ -807,6 +807,14 @@ X. Update and Delete Products (Advance)
             II. add [arrayOfSubs, setArrayOfSubs] and pass them like a props in  <ProductUpdateForm/>
 
 103.  Category and Sub Category Sync on Update
+      I. <ProductUpdate/>
+
+            I. update handleCatagoryChange with selectedCategory
+            II. create const [selectedCategory, setSelectedCategory] & pass it has a props
+
+      II. <ProductUpdateForm/>
+
+            I. use selectedCategory as a value in category section.
 
 104.  mage Uploads in Product Update
 
