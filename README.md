@@ -835,6 +835,16 @@ XI. Displaying Products Pagination and Carousel
      II. add [products, setProducts] & [loading, setLoading] states
      III. add useEffect and create loadAllProducts const
 
+108. Product Card Component
+     I. create components->card-><ProductCard/>
+     II. map product infomation in <Home/> and pass them as a props in <ProductCard/>
+
+109. Using Ant Design Card
+
+110. . Typewriter Effect
+
+111. Loading Card
+
 
     XII. Star Rating System
 
