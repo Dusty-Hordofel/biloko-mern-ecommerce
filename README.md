@@ -878,6 +878,7 @@ PAGINATION: to make pagination we need to:
       I. create a new endpoint & controller to get Total Products Count
 
 115.  List Products Endpoint with Pagination
+      I. update our control of products at list endpoint because of sending page number
 
 116.  New Arrivals Pagination
 

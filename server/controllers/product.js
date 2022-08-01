@@ -67,15 +67,37 @@ export const update = async (req, res) => {
   }
 };
 
+// WITHOUT PAGINATION
+// export const list = async (req, res) => {
+//   try {
+//     // createdAt/updatedAt, desc/asc, 3
+//     const { sort, order, limit } = req.body;
+//     const products = await Product.find({})
+//       .populate('category')
+//       .populate('subs')
+//       .sort([[sort, order]])
+//       .limit(limit);
+
+//     res.json(products);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// WITH PAGINATION
 export const list = async (req, res) => {
   try {
     // createdAt/updatedAt, desc/asc, 3
-    const { sort, order, limit } = req.body;
+    const { sort, order, page } = req.body;
+    const currentPage = page || 1; //if currentPage is not defined we set it to 1
+    const perPage = 3; // 3,the number of products per page
+
     const products = await Product.find({})
+      .skip((currentPage - 1) * perPage) //skip is used to skip the number of products we want to skip
       .populate('category')
       .populate('subs')
       .sort([[sort, order]])
-      .limit(limit);
+      .limit(perPage);
 
     res.json(products);
   } catch (err) {
