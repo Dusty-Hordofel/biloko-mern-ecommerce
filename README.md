@@ -840,6 +840,10 @@ XI. Displaying Products Pagination and Carousel
      II. map product infomation in <Home/> and pass them as a props in <ProductCard/>
 
 109. Using Ant Design Card
+     <ProductCard/>
+     I. import { Card },{ EyeOutlined, ShoppingCartOutlined },laptop & Link
+     II. destructure product information
+     III. add a script in <Card/>
 
 110. . Typewriter Effect
 
