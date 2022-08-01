@@ -829,6 +829,13 @@ X. Update and Delete Products (Advance)
 
 XI. Displaying Products Pagination and Carousel
 
+107. Fetch Products in Home Page
+     <Home/>
+     I. import functions->product->getProductsByCount()
+     II. add [products, setProducts] & [loading, setLoading] states
+     III. add useEffect and create loadAllProducts const
+
+
     XII. Star Rating System
 
     XIII. Products based on Categories and Sub Categories
