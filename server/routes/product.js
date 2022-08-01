@@ -11,6 +11,7 @@ import {
   remove,
   read,
   update,
+  list,
 } from '../controllers/product.js';
 
 // routes
@@ -19,5 +20,7 @@ router.get('/products/:count', listAll); //we can't fetch all products at once b
 router.delete('/product/:slug', authCheck, adminCheck, remove);
 router.get('/product/:slug', read);
 router.put('/product/:slug', authCheck, adminCheck, update);
+
+router.post('/products', list);
 
 export default router;

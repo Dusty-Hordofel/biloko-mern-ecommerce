@@ -854,6 +854,34 @@ XI. Displaying Products Pagination and Carousel
      I. create <LoadingCard /> & import it in <Home/>
      II. Pass a count props for display the number of skeleton
 
+112. List Product with Sort Order and Limit
+     I. create a new endpoint and controller to Sort Order and Limit product
+113. New Arrivals
+
+114. Best Sellers
+
+115. Best Sellers
+
+116. Get Total Products Count
+
+117. List Products Endpoint with Pagination
+
+118. New Arrivals Pagination
+
+119. Best Sellers Pagination
+
+120. View Products Page
+
+121. Single Product Component
+
+122. Single Product Component
+
+123. Default Image
+
+124. Product List Items Component
+
+125. Tabs
+
 
     XII. Star Rating System
 
