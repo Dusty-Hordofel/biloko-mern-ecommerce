@@ -851,6 +851,8 @@ XI. Displaying Products Pagination and Carousel
      III. pass an Array of text as a props in <Home/>
 
 111. Loading Card
+     I. create <LoadingCard /> & import it in <Home/>
+     II. Pass a count props for display the number of skeleton
 
 
     XII. Star Rating System
