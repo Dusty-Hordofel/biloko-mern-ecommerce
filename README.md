@@ -866,7 +866,16 @@ XI. Displaying Products Pagination and Carousel
       III. create components <NewArrivals /> and <BestSellers /> based on <Home/> script
       IV. update <Home/> script
 
+PAGINATION: to make pagination we need to:
+
+    - get total quantity of products from database
+    - have the page number available in the state
+    - use ant design Pagination component.
+    - to click pagination and update count state
+    - ...make request to backend based on that page number
+
 114.  Get Total Products Count
+      I. create a new endpoint & controller to get Total Products Count
 
 115.  List Products Endpoint with Pagination
 
