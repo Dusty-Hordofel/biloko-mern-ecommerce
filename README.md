@@ -846,6 +846,9 @@ XI. Displaying Products Pagination and Carousel
      III. add a script in <Card/>
 
 110. . Typewriter Effect
+     I. npm i typewriter-effect
+     II. create components->card-><Jumbotron/>
+     III. pass an Array of text as a props in <Home/>
 
 111. Loading Card
 
