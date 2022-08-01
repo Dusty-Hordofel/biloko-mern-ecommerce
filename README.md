@@ -829,58 +829,62 @@ X. Update and Delete Products (Advance)
 
 XI. Displaying Products Pagination and Carousel
 
-107. Fetch Products in Home Page
-     <Home/>
-     I. import functions->product->getProductsByCount()
-     II. add [products, setProducts] & [loading, setLoading] states
-     III. add useEffect and create loadAllProducts const
+107.  Fetch Products in Home Page
+      <Home/>
+      I. import functions->product->getProductsByCount()
+      II. add [products, setProducts] & [loading, setLoading] states
+      III. add useEffect and create loadAllProducts const
 
-108. Product Card Component
-     I. create components->card-><ProductCard/>
-     II. map product infomation in <Home/> and pass them as a props in <ProductCard/>
+108.  Product Card Component
+      I. create components->card-><ProductCard/>
+      II. map product infomation in <Home/> and pass them as a props in <ProductCard/>
 
-109. Using Ant Design Card
-     <ProductCard/>
-     I. import { Card },{ EyeOutlined, ShoppingCartOutlined },laptop & Link
-     II. destructure product information
-     III. add a script in <Card/>
+109.  Using Ant Design Card
+      <ProductCard/>
+      I. import { Card },{ EyeOutlined, ShoppingCartOutlined },laptop & Link
+      II. destructure product information
+      III. add a script in <Card/>
 
-110. . Typewriter Effect
-     I. npm i typewriter-effect
-     II. create components->card-><Jumbotron/>
-     III. pass an Array of text as a props in <Home/>
+110.  . Typewriter Effect
+      I. npm i typewriter-effect
+      II. create components->card-><Jumbotron/>
+      III. pass an Array of text as a props in <Home/>
 
-111. Loading Card
-     I. create <LoadingCard /> & import it in <Home/>
-     II. Pass a count props for display the number of skeleton
+111.  Loading Card
+      I. create <LoadingCard /> & import it in <Home/>
+      II. Pass a count props for display the number of skeleton
 
-112. List Product with Sort Order and Limit
-     I. create a new endpoint and controller to Sort Order and Limit product
-113. New Arrivals
+112.  List Product with Sort Order and Limit
+      I. create a new endpoint and controller to Sort Order and Limit product
 
-114. Best Sellers
+113.  New Arrivals & Best Sellers
+      I. create getProducts() function.
+      II. <Home/>
 
-115. Best Sellers
+            I. instead of using getProductsByCoun, use getProducts
 
-116. Get Total Products Count
+      III. create components <NewArrivals /> and <BestSellers /> based on <Home/> script
+      IV. update <Home/> script
 
-117. List Products Endpoint with Pagination
+114.  Get Total Products Count
 
-118. New Arrivals Pagination
+115.  List Products Endpoint with Pagination
 
-119. Best Sellers Pagination
+116.  New Arrivals Pagination
 
-120. View Products Page
+117.  Best Sellers Pagination
 
-121. Single Product Component
+118.  View Products Page
 
-122. Single Product Component
+119.  Single Product Component
 
-123. Default Image
+120.  Single Product Component
 
-124. Product List Items Component
+121.  Default Image
 
-125. Tabs
+122.  Product List Items Component
+
+123.  Tabs
 
 
     XII. Star Rating System
