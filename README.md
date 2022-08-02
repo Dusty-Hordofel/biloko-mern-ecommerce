@@ -911,6 +911,10 @@ PAGINATION: to make pagination we need to:
       I. create components->card-> <SingleProduct/> and import it in <Product/>
 
 120.  Default Image
+      <SingleProduct/>
+      I. npm i react-responsive-carousel (https://www.npmjs.com/package/react-responsive-carousel)
+      II. add <Carousel /> and map images
+      III. style images in index.css
 
 121.  Product List Items Component
 
