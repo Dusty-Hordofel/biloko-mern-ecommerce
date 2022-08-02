@@ -1,5 +1,6 @@
 import Product from '../models/product.js'; //product model
 import slugify from 'slugify'; //slugify is a function which converts a string into a url-friendly string
+//import shortid from 'shortid'; //shortid is used to create a unique id for the category.
 
 export const create = async (req, res) => {
   try {
@@ -86,6 +87,7 @@ export const update = async (req, res) => {
 
 // WITH PAGINATION
 export const list = async (req, res) => {
+  console.table(req.body);
   try {
     // createdAt/updatedAt, desc/asc, 3
     const { sort, order, page } = req.body;
@@ -106,6 +108,6 @@ export const list = async (req, res) => {
 };
 
 export const productsCount = async (req, res) => {
-  let total = await Product.find({}).estimatedDocumentCount().exec();
+  let total = await Product.find({}).estimatedDocumentCount();
   res.json(total);
 };
