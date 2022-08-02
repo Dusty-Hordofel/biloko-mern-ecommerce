@@ -938,9 +938,13 @@ PAGINATION: to make pagination we need to:
 
              I. add a reting system using <StarRating/>
 
-
 125.  Modal for Rating
+      I. create components->modal-><RatingModal/> using antd Modal
+      II. implement <RatingModal/> in <SingleProduct/>
+
 126.  Login to Leave Rating
+      I.
+
 127.  Redirect to Intended Page
 128.  API Request with Rating
 129.  Show Users Existing Star Rating
