@@ -921,6 +921,9 @@ PAGINATION: to make pagination we need to:
       II. add a conditional rendering in <SingleProduct/> & <ProductListItems/>
 
 122.  Tabs
+      <SingleProduct/>
+      I. import { abs } from 'antd' & destructure const { TabPane } = Tabs
+      II. add <Tabs/> & <TabPane/>
 
 
     XII. Star Rating System
