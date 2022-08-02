@@ -889,6 +889,12 @@ PAGINATION: to make pagination we need to:
             III. add Pagination using ant <Pagination/>
 
 117.  Best Sellers Pagination
+      I. create getProductsCount() function & implement it in <BestSellers/>
+      II. <BestSellers/>
+
+            I. create [productsCount, setProductsCount] & [page, setPage]
+            II. add useEffect to getProductsCount() & import { Pagination } from "antd";
+            III. add Pagination using ant <Pagination/>
 
 118.  View Products Page
 
