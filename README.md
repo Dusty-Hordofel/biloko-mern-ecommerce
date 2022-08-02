@@ -897,6 +897,15 @@ PAGINATION: to make pagination we need to:
             III. add Pagination using ant <Pagination/>
 
 118.  View Products Page
+      NB: we grab the slug info from the url and make the request to our backend to get the single product.
+      we use router.get('/product/:slug', read) endpoint and read method from the controllers to do that.
+
+      I. create a pages-><Product/> to grab the slug from the url
+
+                I. create [product, setProduct] states
+                II. retrieve the slug from the url using useParams()
+                III. add useEffect and getProduct()
+                IV. add Product in App.js
 
 119.  Single Product Component
 
