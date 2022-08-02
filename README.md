@@ -917,6 +917,8 @@ PAGINATION: to make pagination we need to:
       III. style images in index.css
 
 121.  Product List Items Component
+      I. create <ProductListItems/> and import it in <SingleProduct/>
+      II. add a conditional rendering in <SingleProduct/> & <ProductListItems/>
 
 122.  Tabs
 
