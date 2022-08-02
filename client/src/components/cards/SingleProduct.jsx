@@ -6,15 +6,17 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Laptop from '../../images/laptop.png';
 import ProductListItems from './ProductListItems';
+import StarRating from 'react-star-ratings';
 
 const { TabPane } = Tabs;
 
 const SingleProduct = ({ product }) => {
-  const { title, images, description } = product;
+  const { title, images, description, _id } = product;
 
   return (
     <>
       <div className="col-md-7">
+        {/* images */}
         {images && images.length ? (
           <Carousel showArrows={true} autoPlay infiniteLoop>
             {images && images.map((i) => <img src={i.url} key={i.public_id} />)}
@@ -23,6 +25,7 @@ const SingleProduct = ({ product }) => {
           <Card cover={<img src={Laptop} className="mb-3 card-image" />}></Card>
         )}
 
+        {/* Tabs */}
         <Tabs type="card">
           <TabPane tab="Description" key="1">
             {description && description}
@@ -35,6 +38,20 @@ const SingleProduct = ({ product }) => {
 
       <div className="col-md-5">
         <h1 className="bg-info p-3">{title}</h1>
+
+        {/* Rating System */}
+        <StarRating
+          name={_id}
+          numberOfStars={5}
+          rating={2}
+          changeRating={(newRating, name) =>
+            console.log('newRating', newRating, 'name', name)
+          }
+          isSelectable={true}
+          starRatedColor="red"
+        />
+
+        {/* Call to action buttons  */}
         <Card
           actions={[
             <>

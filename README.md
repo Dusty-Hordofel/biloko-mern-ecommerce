@@ -928,20 +928,26 @@ PAGINATION: to make pagination we need to:
 
     XII. Star Rating System
 
-123. Star Rating System Backend
-     I. uncomment rating system in Product model.
-     II create a rating endpoint and controller
+123.  Star Rating System Backend
+      I. uncomment rating system in Product model.
+      II create a rating endpoint and controller
 
-124. React Star Rating
-125. Modal for Rating
-126. Login to Leave Rating
-127. Redirect to Intended Page
-128. API Request with Rating
-129. Show Users Existing Star Rating
-130. Show Average Rating
-131. Show Average Rating in Home Page
-132. Related Products Backend
-133. Show Related Products
+124.  React Star Rating
+      I. npm i react-star-ratings (https://www.npmjs.com/package/react-star-ratings)
+      II. <SingleProduct/>
+
+             I. add a reting system using <StarRating/>
+
+
+125.  Modal for Rating
+126.  Login to Leave Rating
+127.  Redirect to Intended Page
+128.  API Request with Rating
+129.  Show Users Existing Star Rating
+130.  Show Average Rating
+131.  Show Average Rating in Home Page
+132.  Related Products Backend
+133.  Show Related Products
 
 XIII. Products based on Categories and Sub Categories
 
