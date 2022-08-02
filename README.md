@@ -945,7 +945,13 @@ PAGINATION: to make pagination we need to:
 126.  Login to Leave Rating
       I. create handleModal() in <RatingModal/> to redirect user
 
-127.  Redirect to Intended Page
+127.  Redirect to Intended Page (Previous Page after login)
+      <RatingModal/>
+      I. update handleModal()
+
+      <Login/>
+      I. update rolebasedRedirect() & useEffect to redirect user
+
 128.  API Request with Rating
 129.  Show Users Existing Star Rating
 130.  Show Average Rating

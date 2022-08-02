@@ -3,20 +3,25 @@ import { Modal, Button } from 'antd';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { StarOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const RatingModal = ({ children }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [modalVisible, setModalVisible] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation(); // <-- get current location being accessed
+  //const { slug } = useParams();
+  //console.log('slug', slug);
+  //console.log(location);
 
   const handleModal = () => {
     if (user && user.token) {
       setModalVisible(true);
     } else {
-      navigate('/login');
+      navigate('/login', { state: { from: location } }); // <-- pass in route state
+      // navigate('/login', { state: { from: `/product/${slug}` } });
     }
-  };
+  }; // slug is the name we use in the backend to identify the product. we have to use the same name in the frontend to access the params.
 
   return (
     <>

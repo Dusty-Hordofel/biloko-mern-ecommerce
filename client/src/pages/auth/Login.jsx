@@ -1,32 +1,47 @@
-import { useState, useEffect } from "react";
-import { auth, googleAuthProvider } from "../../firebase";
-import { toast } from "react-toastify";
-import { Button } from "antd";
-import { GoogleOutlined, MailOutlined } from "@ant-design/icons";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
-import { createOrUpdateUser } from "../../functions/auth.js";
+import { useState, useEffect } from 'react';
+import { auth, googleAuthProvider } from '../../firebase';
+import { toast } from 'react-toastify';
+import { Button } from 'antd';
+import { GoogleOutlined, MailOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { createOrUpdateUser } from '../../functions/auth.js';
 
 const Login = () => {
-  const [email, setEmail] = useState("hordofel@gmail.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState('hordofel@gmail.com');
+  const [password, setPassword] = useState('123456');
   const [loading, setLoading] = useState(false);
 
   const { user } = useSelector((state) => ({ ...state }));
   let dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation(); // to get current location being accessed
+
+  // const from = location.state?.from || '/';
 
   useEffect(() => {
-    if (user && user.token) navigate("/");
-  }, [user, navigate]); //if the user is authenticated, then redirect to home page.
+    // Get redirect location or provide fallback
+    const from = location.state?.from;
+    if (from) {
+      return;
+    } else {
+      if (user && user.token) navigate('/');
+    }
+  }, [user, navigate, location]);
 
   const rolebasedRedirect = (res) => {
-    if (res.data.role === "admin") {
-      navigate("/admin/dashboard"); //navigate is a method that we can use to redirect the user to a different page.
+    const from = location.state?.from;
+    if (from) {
+      navigate(from);
     } else {
-      navigate("/user/history");
+      if (res.data.role === 'admin') {
+        navigate('/admin/dashboard'); //navigate is a method that we can use to redirect the user to a different page.
+      } else {
+        navigate('/user/history');
+      }
     }
   };
+
   //console.log(email);
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -41,7 +56,7 @@ const Login = () => {
       createOrUpdateUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
         .then((res) => {
           dispatch({
-            type: "LOGGED_IN_USER",
+            type: 'LOGGED_IN_USER',
             payload: {
               name: res.data.name,
               email: res.data.email,
@@ -115,7 +130,7 @@ const Login = () => {
         createOrUpdateUser(idTokenResult.token) //idTokenResult.token will give us the user token and we will send it to our backend as authtoken
           .then((res) => {
             dispatch({
-              type: "LOGGED_IN_USER",
+              type: 'LOGGED_IN_USER',
               payload: {
                 name: res.data.name,
                 email: res.data.email,
