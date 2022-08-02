@@ -943,7 +943,7 @@ PAGINATION: to make pagination we need to:
       II. implement <RatingModal/> in <SingleProduct/>
 
 126.  Login to Leave Rating
-      I.
+      I. create handleModal() in <RatingModal/> to redirect user
 
 127.  Redirect to Intended Page
 128.  API Request with Rating

@@ -1,18 +1,28 @@
-import React, { useState } from "react";
-import { Modal, Button } from "antd";
-import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
-import { StarOutlined } from "@ant-design/icons";
+import React, { useState } from 'react';
+import { Modal, Button } from 'antd';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { StarOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const RatingModal = ({ children }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [modalVisible, setModalVisible] = useState(false);
+  const navigate = useNavigate();
+
+  const handleModal = () => {
+    if (user && user.token) {
+      setModalVisible(true);
+    } else {
+      navigate('/login');
+    }
+  };
 
   return (
     <>
-      <div onClick={() => setModalVisible(true)}>
-        <StarOutlined className="text-danger" /> <br />{" "}
-        {user ? "Leave rating" : "Login to leave rating"}
+      <div onClick={handleModal}>
+        <StarOutlined className="text-danger" /> <br />{' '}
+        {user ? 'Leave rating' : 'Login to leave rating'}
       </div>
       <Modal
         title="Leave your rating"
@@ -20,7 +30,7 @@ const RatingModal = ({ children }) => {
         visible={modalVisible}
         onOk={() => {
           setModalVisible(false);
-          toast.success("Thanks for your review. It will apper soon");
+          toast.success('Thanks for your review. It will apper soon');
         }}
         onCancel={() => setModalVisible(false)}
       >
