@@ -928,25 +928,40 @@ PAGINATION: to make pagination we need to:
 
     XII. Star Rating System
 
-    XIII. Products based on Categories and Sub Categories
+123. Star Rating System Backend
+     I. uncomment rating system in Product model.
+     II create a rating endpoint and controller
 
-    XIV. Advance Searching and Filtering (9 Different Ways)
+124. React Star Rating
+125. Modal for Rating
+126. Login to Leave Rating
+127. Redirect to Intended Page
+128. API Request with Rating
+129. Show Users Existing Star Rating
+130. Show Average Rating
+131. Show Average Rating in Home Page
+132. Related Products Backend
+133. Show Related Products
 
-    XV. Add to Cart
+XIII. Products based on Categories and Sub Categories
 
-    XVI. Checkout
+     XIV. Advance Searching and Filtering (9 Different Ways)
 
-    XVII. Coupon
+     XV. Add to Cart
 
-    XVIII. Payment with Stripe
+     XVI. Checkout
 
-    XIX. Orders
+     XVII. Coupon
 
-    XX. User Dashboard (Purchase History)
+     XVIII. Payment with Stripe
 
-    XXI. PDF/Invoice Download
+     XIX. Orders
 
-    XXII. Admin Dashboard (Order Management)
+     XX. User Dashboard (Purchase History)
+
+     XXI. PDF/Invoice Download
+
+     XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 

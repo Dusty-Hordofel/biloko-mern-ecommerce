@@ -1,5 +1,6 @@
 import Product from '../models/product.js'; //product model
 import slugify from 'slugify'; //slugify is a function which converts a string into a url-friendly string
+import User from '../models/user.js'; //user model
 //import shortid from 'shortid'; //shortid is used to create a unique id for the category.
 
 export const create = async (req, res) => {
@@ -110,4 +111,41 @@ export const list = async (req, res) => {
 export const productsCount = async (req, res) => {
   let total = await Product.find({}).estimatedDocumentCount();
   res.json(total);
+};
+
+export const productStar = async (req, res) => {
+  const product = await Product.findById(req.params.productId); //productId is the id of the product we want to rate
+  const user = await User.findOne({ email: req.user.email }); //we find the logged user  by its email
+  const { star } = req.body; //we get the star from the request body
+
+  // who is updating?
+  // check if currently logged in user have already added rating to this product?
+  let existingRatingObject = product.ratings.find(
+    (ele) => ele.postedBy.toString() === user._id.toString() //you have to use toString if you use === equality operator
+  ); //check if the user has already rated the product
+
+  // if user haven't left rating yet, push it
+  if (existingRatingObject === undefined) {
+    let ratingAdded = await Product.findByIdAndUpdate(
+      product._id,
+      {
+        $push: { ratings: { star, postedBy: user._id } }, //we push this object { star, postedBy: user._id } to the ratings array. push method is used to add an element to an array
+      },
+      { new: true } //we want to return the new rating
+    ); //you can also use req.params.productId instead of product._id
+
+    console.log('ratingAdded', ratingAdded);
+    res.json(ratingAdded);
+  } else {
+    // if user have already left rating, update it
+    const ratingUpdated = await Product.updateOne(
+      {
+        ratings: { $elemMatch: existingRatingObject }, //$elemMatch is used to find the element in the ratings array
+      },
+      { $set: { 'ratings.$.star': star } }, //$set method is used to update the element in the ratings array. ratings.$.star means is the star we want to update
+      { new: true } //we want to return the new rating
+    );
+    console.log('ratingUpdated', ratingUpdated);
+    res.json(ratingUpdated);
+  }
 };
