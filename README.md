@@ -908,14 +908,13 @@ PAGINATION: to make pagination we need to:
                 IV. add Product in App.js
 
 119.  Single Product Component
+      I. create components->card-> <SingleProduct/> and import it in <Product/>
 
-120.  Single Product Component
+120.  Default Image
 
-121.  Default Image
+121.  Product List Items Component
 
-122.  Product List Items Component
-
-123.  Tabs
+122.  Tabs
 
 
     XII. Star Rating System
