@@ -1009,20 +1009,27 @@ XIII. Products based on Categories and Sub Categories
      II. create <SubList/> based on <CategoryList> script & and import it in <Home/>
      III. create <SubHome/> page base on <CategoryHome/>
 
-138.
-139.
-140.
-141.
-142.
-143.
-144.
-145.
-146.
-147.
-148.
-149. XIV. Advance Searching and Filtering (9 Different Ways)
+XIV. Advance Searching and Filtering (9 Different Ways)
 
-     XV. Add to Cart
+138. Search Filter Backend
+     I. create a search endpoint, handleQuery and searchFilters controller
+
+139. Search Redux Setup
+140. Shop Page
+141. Search By Text
+142. Filter By Price Range Backend
+143. Filter By Price Range Frontend
+144. Filter By Categories Backend
+145. Filter By Categories Frontend
+146. Filter By Star Rating Backend
+147. Filter By Sub Category Backend
+148. Filter By Sub Category Frontend
+149. Filter By Shipping Color and Brand Backend
+150. Filter By Brands Frontend
+151. Filter By Colors Frontend
+152. Filter By Shipping Frontend
+
+XV. Add to Cart
 
      XVI. Checkout
 

@@ -15,6 +15,7 @@ import {
   productsCount,
   productStar,
   listRelated,
+  searchFilters,
 } from '../controllers/product.js';
 
 // routes
@@ -32,4 +33,6 @@ router.put('/product/star/:productId', authCheck, productStar); //authCheck make
 // related
 router.get('/product/related/:productId', listRelated);
 
+// search
+router.post('/search/filters', searchFilters);
 export default router;

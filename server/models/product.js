@@ -8,13 +8,13 @@ const productSchema = new mongoose.Schema(
       trim: true,
       required: true,
       maxlength: 32,
-      text: true,
+      text: true, //we want to query based on the text that we send
     },
     slug: {
       type: String,
       unique: true,
       lowercase: true,
-      index: true,
+      index: true, //we want to query based on the text that we send
     },
     description: {
       type: String,

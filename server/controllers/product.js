@@ -164,3 +164,25 @@ export const listRelated = async (req, res) => {
 
   res.json(related);
 };
+
+// SERACH / FILTER
+
+const handleQuery = async (req, res, query) => {
+  //search query based on the toHaveTextContent the text we want to search
+  const products = await Product.find({ $text: { $search: query } }) //$text is used to search in the title and description.we want to search the products that match the query { $search: query } and we want to return the products
+    .populate('category', '_id name') //we want to populate the category with the _id and name
+    .populate('subs', '_id name') //we want to populate the subs with the _id and name
+    .populate('postedBy', '_id name'); //we want to populate the postedBy with the _id and name
+
+  res.json(products);
+};
+
+export const searchFilters = async (req, res) => {
+  //you can call query any thing like text, color ... all you want.
+  const { query } = req.body; //query is the search query that we get from the request body
+
+  if (query) {
+    console.log('query', query);
+    await handleQuery(req, res, query);
+  }
+};
