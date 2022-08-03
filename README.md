@@ -964,7 +964,13 @@ PAGINATION: to make pagination we need to:
             III. create functions->product.js->productStar() && <Product/>
 
 129.  Show Users Existing Star Rating
+      <Product/>
+
+             I. replace star parameter by newRating in onStarClick()
+             II. add a useEffect to display star
+
 130.  Show Average Rating
+
 131.  Show Average Rating in Home Page
 132.  Related Products Backend
 133.  Show Related Products

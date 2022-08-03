@@ -12,20 +12,30 @@ const Product = ({ match }) => {
 
   const { slug } = useParams();
 
+  console.log(product);
+
   useEffect(() => {
     const loadSingleProduct = () =>
       getProduct(slug).then((res) => setProduct(res.data));
     loadSingleProduct();
-    console.log(product);
   }, [slug]);
+
+  useEffect(() => {
+    if (product.ratings && user) {
+      let existingRatingObject = product.ratings.find(
+        (ele) => ele.postedBy.toString() === user._id.toString()
+      ); //we copy this code in productStar function in the backend
+      existingRatingObject && setStar(existingRatingObject.star); // current user's star
+    }
+  }, [product.ratings, user]);
 
   const loadSingleProduct = () =>
     getProduct(slug).then((res) => setProduct(res.data));
 
   const onStarClick = (newRating, name) => {
     setStar(newRating);
-    // console.table(newRating, name);
-    productStar(name, star, user.token).then((res) => {
+    console.table(newRating, name);
+    productStar(name, newRating, user.token).then((res) => {
       console.log('rating clicked', res.data);
       loadSingleProduct(); // if you want to show updated rating in real time
     });
