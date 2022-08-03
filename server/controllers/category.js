@@ -1,4 +1,5 @@
 import Category from '../models/category.js';
+import Product from '../models/product.js'; //product model
 import Sub from '../models/sub.js';
 import slugify from 'slugify';
 
@@ -20,7 +21,13 @@ export const list = async (req, res) =>
 
 export const read = async (req, res) => {
   let category = await Category.findOne({ slug: req.params.slug }); //req.params.slug is the slug of the category.findOne({ slug: req.params.slug }) is the query that we want to find a specific category using the slug as parameter.
-  res.json(category);
+  // res.json(category);
+  const products = await Product.find({ category }).populate('category'); //find products that have the same category as the category we found.
+
+  res.json({
+    category,
+    products,
+  });
 }; //to get a single category, we use a slug of that category.
 
 export const update = async (req, res) => {

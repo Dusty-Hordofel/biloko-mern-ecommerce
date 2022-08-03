@@ -996,6 +996,9 @@ XIII. Products based on Categories and Sub Categories
      I. create category-><CategoryList> & use it in <Home/>
 
 135. Categories Home Page
+     I. create pages->caegory-><CategoryHome/> & import it in App.js
+     II. go to the cread category ontrollers and modify it to get all product that belongs to this category.
+
 136. Category with Products Backend
 137. Category Page with Products
 138. Category Page with Products
