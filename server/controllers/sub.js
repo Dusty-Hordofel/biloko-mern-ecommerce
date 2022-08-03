@@ -1,4 +1,5 @@
 import Sub from '../models/sub.js';
+import Product from '../models/product.js'; //product model
 import slugify from 'slugify';
 
 export const create = async (req, res) => {
@@ -16,7 +17,13 @@ export const list = async (req, res) =>
 
 export const read = async (req, res) => {
   let sub = await Sub.findOne({ slug: req.params.slug }).exec();
-  res.json(sub);
+  // res.json(sub);
+  const products = await Product.find({ subs: sub }).populate('category');
+
+  res.json({
+    sub,
+    products,
+  });
 };
 
 export const update = async (req, res) => {

@@ -1004,7 +1004,11 @@ XIII. Products based on Categories and Sub Categories
 
      I. add a conditionnal rendering to show all product that belongs to the same category.
 
-137. Category Page with Products
+137. Sub Categories with Products
+     I. go to the read sub controllers method and modify it to get all product that belongs to this subCategory.
+     II. create <SubList/> based on <CategoryList> script & and import it in <Home/>
+     III. create <SubHome/> page base on <CategoryHome/>
+
 138.
 139.
 140.
