@@ -970,6 +970,8 @@ PAGINATION: to make pagination we need to:
              II. add a useEffect to display star
 
 130.  Show Average Rating
+      I. create functions->rating.js to display the average rating
+      II. import rating() in <SingleProduct/>
 
 131.  Show Average Rating in Home Page
 132.  Related Products Backend
