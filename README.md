@@ -990,10 +990,27 @@ PAGINATION: to make pagination we need to:
             II. make a request to get a related product in loadSingleProduct()
             III. display related product using a conditionnal rendering
 
-
 XIII. Products based on Categories and Sub Categories
 
-     XIV. Advance Searching and Filtering (9 Different Ways)
+134. Categories List
+     I. create category-><CategoryList> & use it in <Home/>
+
+135. Categories Home Page
+136. Category with Products Backend
+137. Category Page with Products
+138. Category Page with Products
+139.
+140.
+141.
+142.
+143.
+144.
+145.
+146.
+147.
+148.
+149.
+150. XIV. Advance Searching and Filtering (9 Different Ways)
 
      XV. Add to Cart
 
