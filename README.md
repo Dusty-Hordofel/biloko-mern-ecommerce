@@ -982,6 +982,14 @@ PAGINATION: to make pagination we need to:
       I. create a related product endpoint and controller.
 
 133.  Show Related Products
+      I. create function->getRelated() & use it in <Product/>
+
+      <Product/>
+
+            I. create const [related, setRelated] = useState([])
+            II. make a request to get a related product in loadSingleProduct()
+            III. display related product using a conditionnal rendering
+
 
 XIII. Products based on Categories and Sub Categories
 

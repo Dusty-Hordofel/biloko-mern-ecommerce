@@ -160,7 +160,7 @@ export const listRelated = async (req, res) => {
     .limit(3)
     .populate('category')
     .populate('subs')
-    .populate('ratings.postedBy'); //we can't just populate('postedBy') , it's not in the schema. We have to populate ('ratings.postedBy') or ({path: 'ratings.postedBy',select:'name email role cart adress',});
+    .populate({ path: 'ratings.postedBy' }); //we can't just populate('postedBy') , it's not in the schema. We have to populate ('ratings.postedBy') or ({path: 'ratings.postedBy',select:'name email role cart adress',});
 
   res.json(related);
 };

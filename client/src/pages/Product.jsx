@@ -3,9 +3,12 @@ import { getProduct, productStar } from '../functions/product';
 import SingleProduct from '../components/cards/SingleProduct';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getRelated } from '../functions/product';
+import ProductCard from '../components/cards/ProductCard';
 
 const Product = ({ match }) => {
   const [product, setProduct] = useState({});
+  const [related, setRelated] = useState([]);
   const [star, setStar] = useState(0);
   // redux
   const { user } = useSelector((state) => ({ ...state }));
@@ -13,10 +16,11 @@ const Product = ({ match }) => {
   const { slug } = useParams();
 
   console.log(product);
+  console.log(related);
 
   useEffect(() => {
-    const loadSingleProduct = () =>
-      getProduct(slug).then((res) => setProduct(res.data));
+    // const loadSingleProduct = () =>
+    //   getProduct(slug).then((res) => setProduct(res.data));
     loadSingleProduct();
   }, [slug]);
 
@@ -24,13 +28,18 @@ const Product = ({ match }) => {
     if (product.ratings && user) {
       let existingRatingObject = product.ratings.find(
         (ele) => ele.postedBy.toString() === user._id.toString()
-      ); //we copy this code in productStar function in the backend
+      );
       existingRatingObject && setStar(existingRatingObject.star); // current user's star
     }
-  }, [product.ratings, user]);
+  });
 
-  const loadSingleProduct = () =>
-    getProduct(slug).then((res) => setProduct(res.data));
+  const loadSingleProduct = () => {
+    getProduct(slug).then((res) => {
+      setProduct(res.data);
+      // load related
+      getRelated(res.data._id).then((res) => setRelated(res.data)); //we need the product _id to get related products
+    }); //when we getProduct(slug), we get the id in the response , we use this id to get related products
+  };
 
   const onStarClick = (newRating, name) => {
     setStar(newRating);
@@ -56,7 +65,20 @@ const Product = ({ match }) => {
           <hr />
           <h4>Related Products</h4>
           <hr />
+          {/* {JSON.stringify(related)} */}
         </div>
+      </div>
+
+      <div className="row pb-5">
+        {related.length ? (
+          related.map((r) => (
+            <div key={r._id} className="col-md-4">
+              <ProductCard product={r} />
+            </div>
+          ))
+        ) : (
+          <div className="text-center col">No Products Found</div>
+        )}
       </div>
     </div>
   );
