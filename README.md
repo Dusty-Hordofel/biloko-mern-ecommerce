@@ -997,11 +997,15 @@ XIII. Products based on Categories and Sub Categories
 
 135. Categories Home Page
      I. create pages->caegory-><CategoryHome/> & import it in App.js
-     II. go to the cread category ontrollers and modify it to get all product that belongs to this category.
+     II. go to the cread category controllers and modify it to get all product that belongs to this category.
 
-136. Category with Products Backend
+136. Category Page with Products
+     <CategoryHome/>
+
+     I. add a conditionnal rendering to show all product that belongs to the same category.
+
 137. Category Page with Products
-138. Category Page with Products
+138.
 139.
 140.
 141.
@@ -1012,8 +1016,7 @@ XIII. Products based on Categories and Sub Categories
 146.
 147.
 148.
-149.
-150. XIV. Advance Searching and Filtering (9 Different Ways)
+149. XIV. Advance Searching and Filtering (9 Different Ways)
 
      XV. Add to Cart
 
