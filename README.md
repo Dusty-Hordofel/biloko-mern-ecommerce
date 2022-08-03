@@ -974,6 +974,10 @@ PAGINATION: to make pagination we need to:
       II. import rating() in <SingleProduct/>
 
 131.  Show Average Rating in Home Page
+      I. update <SingleProduct/> informations.
+      II. add the Number of rating in showAverage() and update style.
+      III. addd show the rating in <Productcard/> using <SingleProduct/> script
+
 132.  Related Products Backend
 133.  Show Related Products
 
