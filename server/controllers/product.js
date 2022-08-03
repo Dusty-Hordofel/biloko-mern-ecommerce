@@ -149,3 +149,18 @@ export const productStar = async (req, res) => {
     res.json(ratingUpdated);
   }
 };
+
+export const listRelated = async (req, res) => {
+  const product = await Product.findById(req.params.productId); //productId is the id of the related product
+
+  const related = await Product.find({
+    _id: { $ne: product._id }, //$ne is used to find the element in the array that is not equal to the productId
+    category: product.category,
+  })
+    .limit(3)
+    .populate('category')
+    .populate('subs')
+    .populate('ratings.postedBy'); //we can't just populate('postedBy') , it's not in the schema. We have to populate ('ratings.postedBy') or ({path: 'ratings.postedBy',select:'name email role cart adress',});
+
+  res.json(related);
+};

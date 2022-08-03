@@ -14,6 +14,7 @@ import {
   list,
   productsCount,
   productStar,
+  listRelated,
 } from '../controllers/product.js';
 
 // routes
@@ -28,5 +29,7 @@ router.put('/product/:slug', authCheck, adminCheck, update);
 router.post('/products', list);
 // rating
 router.put('/product/star/:productId', authCheck, productStar); //authCheck make user available from firebase based on user email (req.user.email)
+// related
+router.get('/product/related/:productId', listRelated);
 
 export default router;

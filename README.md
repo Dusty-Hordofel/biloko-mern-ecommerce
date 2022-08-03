@@ -979,6 +979,8 @@ PAGINATION: to make pagination we need to:
       III. addd show the rating in <Productcard/> using <SingleProduct/> script
 
 132.  Related Products Backend
+      I. create a related product endpoint and controller.
+
 133.  Show Related Products
 
 XIII. Products based on Categories and Sub Categories
