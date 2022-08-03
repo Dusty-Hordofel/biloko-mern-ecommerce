@@ -11,22 +11,24 @@ import RatingModal from '../modal/RatingModal';
 
 const { TabPane } = Tabs;
 
-const SingleProduct = ({ product }) => {
+// this is childrend component of Product page
+const SingleProduct = ({ product, onStarClick, star }) => {
   const { title, images, description, _id } = product;
 
   return (
     <>
       <div className="col-md-7">
-        {/* images */}
         {images && images.length ? (
           <Carousel showArrows={true} autoPlay infiniteLoop>
-            {images && images.map((i) => <img src={i.url} key={i.public_id} />)}
+            {images &&
+              images.map((i) => <img src={i.url} key={i.public_id} alt="" />)}
           </Carousel>
         ) : (
-          <Card cover={<img src={Laptop} className="mb-3 card-image" />}></Card>
+          <Card
+            cover={<img src={Laptop} className="mb-3 card-image" alt="" />}
+          ></Card>
         )}
 
-        {/* Tabs */}
         <Tabs type="card">
           <TabPane tab="Description" key="1">
             {description && description}
@@ -40,7 +42,6 @@ const SingleProduct = ({ product }) => {
       <div className="col-md-5">
         <h1 className="bg-info p-3">{title}</h1>
 
-        {/* Call to action buttons  */}
         <Card
           actions={[
             <>
@@ -51,14 +52,11 @@ const SingleProduct = ({ product }) => {
               <HeartOutlined className="text-info" /> <br /> Add to Wishlist
             </Link>,
             <RatingModal>
-              {/* Rating System */}
               <StarRating
                 name={_id}
                 numberOfStars={5}
-                rating={2}
-                changeRating={(newRating, name) =>
-                  console.log('newRating', newRating, 'name', name)
-                }
+                rating={star}
+                changeRating={onStarClick}
                 isSelectable={true}
                 starRatedColor="red"
               />

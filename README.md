@@ -953,6 +953,16 @@ PAGINATION: to make pagination we need to:
       I. update rolebasedRedirect() & useEffect to redirect user
 
 128.  API Request with Rating
+      I. <SingleProduct/>
+
+            I. cut changeRating() in  <StarRating/>, paste in <Product/> & pass as props in <SingleProduct/>
+
+      II. <Product/>
+
+            I. create [star, setStar] state
+            II. create onStarClick() and pass it as a props in
+            III. create functions->product.js->productStar() && <Product/>
+
 129.  Show Users Existing Star Rating
 130.  Show Average Rating
 131.  Show Average Rating in Home Page
