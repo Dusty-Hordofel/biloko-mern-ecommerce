@@ -1035,6 +1035,8 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       III. create functions->fetchProductsByFilter()
 
 142.  Filter By Price Range Backend
+      I. create handlePrice() and update searchFilters controller.
+
 143.  Filter By Price Range Frontend
 144.  Filter By Categories Backend
 145.  Filter By Categories Frontend

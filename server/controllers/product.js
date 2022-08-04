@@ -178,12 +178,38 @@ const handleQuery = async (req, res, query) => {
   res.json(products);
 };
 
+const handlePrice = async (req, res, price) => {
+  try {
+    let products = await Product.find({
+      price: {
+        $gte: price[0], //$gte is used to find the element in the array that is greater than or equal to the price[0]
+        $lte: price[1], //$lte is used to find the element in the array that is less than or equal to the price[1]
+      },
+    })
+      .populate('category', '_id name')
+      .populate('subs', '_id name')
+      // .populate({ path: 'ratings.postedBy', select: '_id name' })
+      .populate('postedBy', '_id name')
+      .exec();
+
+    res.json(products);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const searchFilters = async (req, res) => {
-  const { query } = req.body;
+  const { query, price } = req.body;
 
   if (query) {
     console.log('query', query);
     await handleQuery(req, res, query);
+  }
+
+  // price [20, 200]
+  if (price !== undfined) {
+    console.log('price ---> ', price);
+    await handlePrice(req, res, price);
   }
 };
 
