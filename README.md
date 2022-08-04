@@ -1011,27 +1011,35 @@ XIII. Products based on Categories and Sub Categories
 
 XIV. Advance Searching and Filtering (9 Different Ways)
 
-138. Search Filter Backend
-     I. create a search endpoint, handleQuery and searchFilters controller
+138.  Search Filter Backend
+      I. create a search endpoint, handleQuery and searchFilters controller
 
-139. Search Redux Setup
-     NB: Implement search feature in the navbar
-     I. create searchReducer
-     II. create forms-><Search/> & import it in nav-><Header/>
+139.  Search Redux Setup
+      NB: Implement search feature in the navbar
+      I. create searchReducer
+      II. create forms-><Search/> & import it in nav-><Header/>
 
-140. Shop Page
-141. Search By Text
-142. Filter By Price Range Backend
-143. Filter By Price Range Frontend
-144. Filter By Categories Backend
-145. Filter By Categories Frontend
-146. Filter By Star Rating Backend
-147. Filter By Sub Category Backend
-148. Filter By Sub Category Frontend
-149. Filter By Shipping Color and Brand Backend
-150. Filter By Brands Frontend
-151. Filter By Colors Frontend
-152. Filter By Shipping Frontend
+140.  Shop Page
+      I. create <Shop/> and import it in App.js
+
+                   I. import getProductsByCount() to show the limited number of product
+                   II. import <ProductCard/>
+                   III. create [products, setProducts] to store product & [loading, setLoading] to show loading
+                   IV. loadAllProducts() using useEffect.
+                   V. add Shop in the <Header/>
+
+141.  Search By Text
+142.  Filter By Price Range Backend
+143.  Filter By Price Range Frontend
+144.  Filter By Categories Backend
+145.  Filter By Categories Frontend
+146.  Filter By Star Rating Backend
+147.  Filter By Sub Category Backend
+148.  Filter By Sub Category Frontend
+149.  Filter By Shipping Color and Brand Backend
+150.  Filter By Brands Frontend
+151.  Filter By Colors Frontend
+152.  Filter By Shipping Frontend
 
 XV. Add to Cart
 
