@@ -14,13 +14,13 @@ const productSchema = new mongoose.Schema(
       type: String,
       unique: true,
       lowercase: true,
-      index: true, //we want to query based on the text that we send
+      index: true,
     },
     description: {
       type: String,
       required: true,
       maxlength: 2000,
-      text: true,
+      text: true, //we want to query based on the text that we send
     },
     price: {
       type: Number,

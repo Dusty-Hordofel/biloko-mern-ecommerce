@@ -11,7 +11,7 @@ const NewArrivals = () => {
   const [page, setPage] = useState(1);
 
   // console.log(page);
-  console.log(productsCount);
+  //console.log(productsCount);
 
   useEffect(() => {
     const loadAllProducts = () => {

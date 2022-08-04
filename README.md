@@ -1029,6 +1029,11 @@ XIV. Advance Searching and Filtering (9 Different Ways)
                    V. add Shop in the <Header/>
 
 141.  Search By Text
+      <Shop/>
+      I.access search from our redux store
+      II. Make a request to the backend every time text changes to fetch the product
+      III. create functions->fetchProductsByFilter()
+
 142.  Filter By Price Range Backend
 143.  Filter By Price Range Frontend
 144.  Filter By Categories Backend

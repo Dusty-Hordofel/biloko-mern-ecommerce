@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
-  getProductsByCount,
   fetchProductsByFilter,
+  getProductsByCount,
 } from '../functions/product';
 import { useSelector, useDispatch } from 'react-redux';
 import ProductCard from '../components/cards/ProductCard';
@@ -10,8 +10,11 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  let { search } = useSelector((state) => ({ ...state }));
-  const { text } = search;
+  let { search } = useSelector((state) => ({ ...state })); //
+  const { text } = search; //to select the text from the state
+
+  console.log(text);
+  console.log(products);
 
   useEffect(() => {
     loadAllProducts();
@@ -26,22 +29,33 @@ const Shop = () => {
   };
 
   // 2. load products on user search input
-  useEffect(() => {
-    //console.log('voici le text', text);
+  /*useEffect(() => {
     const delayed = setTimeout(() => {
-      fetchProducts({ query: text });
-    }, 300);
+      fetchProducts({ query: text }); //we use query because we are excepting to receive this as the name of query in our backend.
+    }, 300); //text is the value of the text input (user input that we populate in the redux store)
     return () => clearTimeout(delayed);
-    //fetchProducts({ query: text }); //we use query because we are excepting to receive this as the name of query in our backend.
+  }, [text]);*/
+  useEffect(() => {
+    fetchProducts({ query: text }); //we use query because we are excepting to receive this as the name of query in our backend.
   }, [text]);
 
-  console.log(text);
-  console.log(products);
-  const fetchProducts = (arg) => {
-    fetchProductsByFilter(arg).then((res) => {
+  const fetchProducts = (text) => {
+    fetchProductsByFilter(text).then((res) => {
       setProducts(res.data);
     });
   };
+
+  //we can also use useEffect to load products on user search input in this way , but it is not the best.
+  // useEffect(() => {
+  //   const delayed = setTimeout(() => {
+  //     fetchProducts({query:text})
+  // }, [text]);
+
+  // const fetchProducts = (text) => {
+  //   fetchProductsByFilter(text).then((res) => {
+  //     setProducts(res.data);
+  //   });
+  //}
 
   return (
     <div className="container-fluid">

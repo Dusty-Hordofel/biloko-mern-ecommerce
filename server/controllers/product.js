@@ -160,7 +160,8 @@ export const listRelated = async (req, res) => {
     .limit(3)
     .populate('category')
     .populate('subs')
-    .populate({ path: 'ratings.postedBy' }); //we can't just populate('postedBy') , it's not in the schema. We have to populate ('ratings.postedBy') or ({path: 'ratings.postedBy',select:'name email role cart adress',});
+    .populate({ path: 'ratings.postedBy' })
+    .exec(); //we can't just populate('postedBy') , it's not in the schema. We have to populate ('ratings.postedBy') or ({path: 'ratings.postedBy',select:'name email role cart adress',});
 
   res.json(related);
 };
@@ -168,11 +169,31 @@ export const listRelated = async (req, res) => {
 // SERACH / FILTER
 
 const handleQuery = async (req, res, query) => {
+  const products = await Product.find({ $text: { $search: query } });
+  // .populate('category', '_id name')
+  // .populate('subs', '_id name')
+  // .populate('postedBy', '_id name')
+  // .exec();
+
+  res.json(products);
+};
+
+export const searchFilters = async (req, res) => {
+  const { query } = req.body;
+
+  if (query) {
+    console.log('query', query);
+    await handleQuery(req, res, query);
+  }
+};
+
+/*const handleQuery = async (req, res, query) => {
   //search query based on the toHaveTextContent the text we want to search
   const products = await Product.find({ $text: { $search: query } }) //$text is used to search in the title and description.we want to search the products that match the query { $search: query } and we want to return the products
     .populate('category', '_id name') //we want to populate the category with the _id and name
     .populate('subs', '_id name') //we want to populate the subs with the _id and name
-    .populate('postedBy', '_id name'); //we want to populate the postedBy with the _id and name
+    .populate({ path: 'ratings.postedBy', select: '_id name' })
+    .exec(); //we want to populate the postedBy with the _id and name
 
   res.json(products);
 };
@@ -185,4 +206,4 @@ export const searchFilters = async (req, res) => {
     console.log('query', query);
     await handleQuery(req, res, query);
   }
-};
+};*/
