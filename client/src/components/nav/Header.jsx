@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Search from '../forms/Search';
 
 const { SubMenu, Item } = Menu;
 
@@ -75,6 +76,10 @@ const Header = () => {
           </Item>
         </SubMenu>
       )}
+
+      <span className="float-right p-1">
+        <Search />
+      </span>
     </Menu>
   );
 };

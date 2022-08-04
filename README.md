@@ -1015,6 +1015,10 @@ XIV. Advance Searching and Filtering (9 Different Ways)
      I. create a search endpoint, handleQuery and searchFilters controller
 
 139. Search Redux Setup
+     NB: Implement search feature in the navbar
+     I. create searchReducer
+     II. create forms-><Search/> & import it in nav-><Header/>
+
 140. Shop Page
 141. Search By Text
 142. Filter By Price Range Backend
