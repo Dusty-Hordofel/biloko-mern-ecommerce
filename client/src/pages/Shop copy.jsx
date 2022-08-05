@@ -33,9 +33,8 @@ const Shop = () => {
     'Microsoft',
     'Lenovo',
     'ASUS',
-  ]);
+  ]); //we use this array because don't want to fetch all the brands every time we fetch the products knowing it's hard coded in the backend
   const [brand, setBrand] = useState('');
-
   let dispatch = useDispatch();
   let { search } = useSelector((state) => ({ ...state }));
   const { text } = search;
@@ -48,11 +47,16 @@ const Shop = () => {
     getSubs().then((res) => setSubs(res.data));
   }, []);
 
+  // console.log(text);
+  // console.log(products);
+
+  //To fetchProductsByFilter
   const fetchProducts = (arg) => {
     fetchProductsByFilter(arg).then((res) => {
       setProducts(res.data);
     });
   };
+  //
 
   // 1. load products by default on page load
   const loadAllProducts = () => {
@@ -64,30 +68,30 @@ const Shop = () => {
 
   // 2. load products on user search input
   useEffect(() => {
+    //console.log('voici le text', text);
     const delayed = setTimeout(() => {
       fetchProducts({ query: text });
     }, 300);
     return () => clearTimeout(delayed);
+    //fetchProducts({ query: text }); //we use query because we are excepting to receive this as the name of query in our backend.
   }, [text]);
 
   // 3. load products based on price range
   useEffect(() => {
     console.log('ok to request');
     fetchProducts({ price });
-  }, [ok]);
+  }, [ok, price]);
 
   const handleSlider = (value) => {
     dispatch({
       type: 'SEARCH_QUERY',
       payload: { text: '' },
     });
-
     // reset
     setCategoryIds([]);
     setPrice(value);
     setStar('');
     setSub('');
-    setBrand('');
     setTimeout(() => {
       setOk(!ok);
     }, 300);
@@ -113,19 +117,18 @@ const Shop = () => {
 
   // handle check for categories
   const handleCheck = (e) => {
-    // reset
     dispatch({
       type: 'SEARCH_QUERY',
       payload: { text: '' },
     });
+    //reset
     setPrice([0, 0]);
     setStar('');
     setSub('');
-    setBrand('');
     // console.log(e.target.value);
-    let inTheState = [...categoryIds];
+    let inTheState = [...categoryIds]; //
     let justChecked = e.target.value;
-    let foundInTheState = inTheState.indexOf(justChecked); // index or -1
+    let foundInTheState = inTheState.indexOf(justChecked); // index or -1, if justChecked is found in inTheState, we get the index of justChecked
 
     // indexOf method ?? if not found returns -1 else return index [1,2,3,4,5]
     if (foundInTheState === -1) {
@@ -142,16 +145,19 @@ const Shop = () => {
 
   // 5. show products by star rating
   const handleStarClick = (num) => {
-    // console.log(num);
+    //num refers to the number of stars: 1,2,3,4,5
+    console.log(num);
     dispatch({
       type: 'SEARCH_QUERY',
       payload: { text: '' },
     });
+    //reset
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar(num);
     setSub('');
-    setBrand('');
+    //setStar number of stars
+    setStar(num);
+    //fetch the products from the backend
     fetchProducts({ stars: num });
   };
 
@@ -188,7 +194,6 @@ const Shop = () => {
     setPrice([0, 0]);
     setCategoryIds([]);
     setStar('');
-    setBrand('');
     fetchProducts({ sub });
   };
 
@@ -230,7 +235,8 @@ const Shop = () => {
             defaultOpenKeys={['1', '2', '3', '4', '5', '6', '7']}
             mode="inline"
           >
-            {/* price */}
+            {/* key 1 is used in Submenu with key="1 " ...*/}
+            {/* price*/}
             <SubMenu
               key="1"
               title={
@@ -250,7 +256,6 @@ const Shop = () => {
                 />
               </div>
             </SubMenu>
-
             {/* category */}
             <SubMenu
               key="2"
