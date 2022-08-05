@@ -1099,8 +1099,18 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       VI. create <handleSub /> to make a request to the backend.
 
 152.  Filter By Colors Frontend
+      <Shop>
+      I. create [brands, setBrands] & = useState('');
+      II. ceate <SubMenu/> to return all colors
+      V. ceate < showColors/> to show all colors
+      VI. create <handleColor  /> to make a request to the backend.
 
 153.  Filter By Shipping Frontend
+      <Shop>
+      I. create [brands, setBrands] & = useState('');
+      II. ceate <SubMenu/> to return all brands
+      V. ceate <showShipping /> to show all brands
+      VI. create <handleShippingchange /> to make a request to the backend.
 
 XV. Add to Cart
 
