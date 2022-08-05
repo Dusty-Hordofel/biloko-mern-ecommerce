@@ -1038,6 +1038,15 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       I. create handlePrice() and update searchFilters controller.
 
 143.  Filter By Price Range Frontend
+      <Shop/>
+      I. add useDispatch() to dispatch
+      II. create [price, setPrice] & [ok, setOk]
+      III. destructure { SubMenu, ItemGroup } from Menu;
+      IV. import { Menu, Slider } & { DollarOutlined }
+      V. update search/filter section
+      V. load products based on price range
+      VI. add a price to the <ProductCard/>
+
 144.  Filter By Categories Backend
 145.  Filter By Categories Frontend
 146.  Filter By Star Rating Backend

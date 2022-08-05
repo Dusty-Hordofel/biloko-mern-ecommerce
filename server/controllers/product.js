@@ -188,8 +188,8 @@ const handlePrice = async (req, res, price) => {
     })
       .populate('category', '_id name')
       .populate('subs', '_id name')
-      // .populate({ path: 'ratings.postedBy', select: '_id name' })
-      .populate('postedBy', '_id name')
+      .populate({ path: 'ratings.postedBy', select: '_id name' })
+      //.populate('postedBy', '_id name')
       .exec();
 
     res.json(products);
@@ -207,7 +207,7 @@ export const searchFilters = async (req, res) => {
   }
 
   // price [20, 200]
-  if (price !== undfined) {
+  if (price !== undefined) {
     console.log('price ---> ', price);
     await handlePrice(req, res, price);
   }
