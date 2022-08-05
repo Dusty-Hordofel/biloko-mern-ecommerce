@@ -1051,7 +1051,12 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       I. add a category handler in controller->Produt.jsx
 
 145.  Filter By Categories Frontend
-      I.
+      <Shop/>
+      I. import functions->getCategories() & create [categories, setCategories]
+      II. Make a request to the backend to get allCategories in useEffect (getCategories())
+      III. add a <Submenu/> categories
+      IV. create handleCheck () & showCategories ()
+      V. add showCategories () in <Submenu/> categories
 146.  Filter By Star Rating Backend
 147.  Filter By Sub Category Backend
 148.  Filter By Sub Category Frontend
