@@ -1048,7 +1048,10 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       VI. add a price to the <ProductCard/>
 
 144.  Filter By Categories Backend
+      I. add a category handler in controller->Produt.jsx
+
 145.  Filter By Categories Frontend
+      I.
 146.  Filter By Star Rating Backend
 147.  Filter By Sub Category Backend
 148.  Filter By Sub Category Frontend
