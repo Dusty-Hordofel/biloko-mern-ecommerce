@@ -239,7 +239,7 @@ const handleStar = (req, res, stars) => {
 };
 
 export const searchFilters = async (req, res) => {
-  const { query, price, category } = req.body;
+  const { query, price, category, stars } = req.body;
 
   if (query) {
     console.log('query', query);

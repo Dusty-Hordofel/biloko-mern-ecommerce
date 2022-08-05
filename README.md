@@ -1059,13 +1059,29 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       V. add showCategories () in <Submenu/> categories
 
 146.  Filter By Star Rating Backend
-      I. add a Star handler in controller->Produt.jsx
-147.  Filter By Sub Category Backend
-148.  Filter By Sub Category Frontend
-149.  Filter By Shipping Color and Brand Backend
-150.  Filter By Brands Frontend
-151.  Filter By Colors Frontend
-152.  Filter By Shipping Frontend
+      I. add a Star handler in controller->Product.jsx
+
+147.  Filter By Star Rating Frontend
+      I. create components->froms-> <Star/>
+
+              I. import StarRating from "react-star-ratings"
+              II. pass { starClick, numberOfStars } as a props from <Shop/>.
+
+      <Shop>
+
+              I. import {StarOutlined} from '@ant-design/icons';
+              II. import Star from '../components/forms/Star';
+              III. add const [star, setStar] states.
+              IV. ceate <SubMenu/> to return < <Star/> 5 times
+              V. ceate <showStars/> to show all stars
+              VI. create <handleStarClick /> to make a request to the backend.
+
+148.  Filter By Sub Category Backend
+149.  Filter By Sub Category Frontend
+150.  Filter By Shipping Color and Brand Backend
+151.  Filter By Brands Frontend
+152.  Filter By Colors Frontend
+153.  Filter By Shipping Frontend
 
 XV. Add to Cart
 
