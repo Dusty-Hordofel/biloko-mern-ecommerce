@@ -169,10 +169,10 @@ export const listRelated = async (req, res) => {
 // SERACH / FILTER
 
 const handleQuery = async (req, res, query) => {
-  const products = await Product.find({ $text: { $search: query } });
-  // .populate('category', '_id name')
-  // .populate('subs', '_id name')
-  // .populate('postedBy', '_id name')
+  const products = await Product.find({ $text: { $search: query } })
+    .populate('category', '_id name')
+    .populate('subs', '_id name')
+    .populate({ path: 'ratings.postedBy', select: '_id name' });
   // .exec();
 
   res.json(products);
@@ -210,6 +210,34 @@ const handleCategory = async (req, res, category) => {
   }
 };
 
+const handleStar = (req, res, stars) => {
+  //aggregate is used to find the element in the array that is greater than or equal to the stars[0]. learn aggragation here: https://www.mongodb.com/docs/manual/aggregation/
+  Product.aggregate([
+    {
+      $project: {
+        document: '$$ROOT', //$$ROOT iis a specific method that give you the access to the entire project document. learn more here: https://docs.mongodb.com/manual/reference/operator/aggregation/project/#pipe._S_project
+        // title: "$title",//this is the same as above,it's just a shorter way to write the same thing
+        floorAverage: {
+          $floor: { $avg: '$ratings.star' }, // $avg is used to find the average of the element in the array.
+        }, //$floor is used to round the value down to the nearest integer
+      },
+    }, //$project is used to generate a project based on document.
+    { $match: { floorAverage: stars } }, //$match is used to find the element. In the array that match in our case with { floorAverage: stars }
+  ])
+    .limit(12)
+    .exec((err, aggregates) => {
+      if (err) console.log('AGGREGATE ERROR', err);
+      Product.find({ _id: aggregates })
+        .populate('category', '_id name')
+        .populate('subs', '_id name')
+        .populate({ path: 'ratings.postedBy', select: '_id name' })
+        .exec((err, products) => {
+          if (err) console.log('PRODUCT AGGREGATE ERROR', err);
+          res.json(products);
+        });
+    }); //you can call the function anything , we call it aggregate
+};
+
 export const searchFilters = async (req, res) => {
   const { query, price, category } = req.body;
 
@@ -227,6 +255,11 @@ export const searchFilters = async (req, res) => {
   if (category) {
     console.log('category ---> ', category);
     await handleCategory(req, res, category);
+  }
+
+  if (stars) {
+    console.log('stars ---> ', stars);
+    await handleStar(req, res, stars);
   }
 };
 

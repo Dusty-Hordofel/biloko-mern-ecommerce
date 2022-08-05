@@ -1057,7 +1057,9 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       III. add a <Submenu/> categories
       IV. create handleCheck () & showCategories ()
       V. add showCategories () in <Submenu/> categories
+
 146.  Filter By Star Rating Backend
+      I. add a Star handler in controller->Produt.jsx
 147.  Filter By Sub Category Backend
 148.  Filter By Sub Category Frontend
 149.  Filter By Shipping Color and Brand Backend
