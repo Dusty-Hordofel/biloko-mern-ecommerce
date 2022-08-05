@@ -1077,6 +1077,8 @@ XIV. Advance Searching and Filtering (9 Different Ways)
               VI. create <handleStarClick /> to make a request to the backend.
 
 148.  Filter By Sub Category Backend
+      I. add a Sub handler in controller->Product.jsx
+
 149.  Filter By Sub Category Frontend
 150.  Filter By Shipping Color and Brand Backend
 151.  Filter By Brands Frontend

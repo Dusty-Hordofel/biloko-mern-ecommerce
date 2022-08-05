@@ -238,6 +238,16 @@ const handleStar = (req, res, stars) => {
     }); //you can call the function anything , we call it aggregate
 };
 
+const handleSub = async (req, res, sub) => {
+  const products = await Product.find({ subs: sub })
+    .populate('category', '_id name')
+    .populate('subs', '_id name')
+    .populate({ path: 'ratings.postedBy', select: '_id name' })
+    .exec();
+
+  res.json(products);
+};
+
 export const searchFilters = async (req, res) => {
   const { query, price, category, stars } = req.body;
 
@@ -260,6 +270,11 @@ export const searchFilters = async (req, res) => {
   if (stars) {
     console.log('stars ---> ', stars);
     await handleStar(req, res, stars);
+  }
+
+  if (sub) {
+    console.log('sub ---> ', sub);
+    await handleSub(req, res, sub);
   }
 };
 
