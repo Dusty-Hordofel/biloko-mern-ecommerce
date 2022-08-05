@@ -1080,7 +1080,17 @@ XIV. Advance Searching and Filtering (9 Different Ways)
       I. add a Sub handler in controller->Product.jsx
 
 149.  Filter By Sub Category Frontend
+      <Shop>
+      I. import { getSubs } from "../functions/sub";
+      II. create [subs, setSubs] & [sub, setSub]
+      III. fetch getSubs() using useEffect
+      IV. ceate <SubMenu/> to return all Sub Categories
+      V. ceate <showSubs/> to show all SubsCategories
+      VI. create <handleSub /> to make a request to the backend.
+
 150.  Filter By Shipping Color and Brand Backend
+      I. add Shipping Color and Brand handler in controller->Product.jsx
+
 151.  Filter By Brands Frontend
 152.  Filter By Colors Frontend
 153.  Filter By Shipping Frontend
