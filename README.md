@@ -1119,6 +1119,10 @@ XV. Add to Cart
      II. npm i lodash && import \_ from "lodash" (https://lodash.com/docs/#uniqWith)
 
 155. Tooltip
+     I. import { Tooltip } from 'antd';
+     II. create [tooltip, setTooltip] state
+     III. wrap Add to Cart with <Toolti/>
+
 156. Cart in Redux State
 157. Dispatch Add To Cart
 158. Cart Page Setup
