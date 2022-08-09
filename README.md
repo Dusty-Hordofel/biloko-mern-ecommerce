@@ -1190,20 +1190,38 @@ XV. Add to Cart
       II. create <SideDrawer/> & make it available globaly.
 
 167.  Cart Items in Side Drawer
+      <ProductCard/> & <SingleProduct/>
+
+             I. show cart items in side drawer
+
+      <SideDrawer/>
+
+             I. add onClose to dispatch 'SET_VISIBLE' action type
+             II. update <Drawer/>
+             III. dipatch action to the payload using Button
 
 XVI. Checkout
 
-      XVII. Coupon
+168.
+169.
+170.
+171.
+172.
+173.
+174.
+175.
+176.
+177. XVII. Coupon
 
-      XVIII. Payment with Stripe
+     XVIII. Payment with Stripe
 
-      XIX. Orders
+     XIX. Orders
 
-      XX. User Dashboard (Purchase History)
+     XX. User Dashboard (Purchase History)
 
-      XXI. PDF/Invoice Download
+     XXI. PDF/Invoice Download
 
-      XXII. Admin Dashboard (Order Management)
+     XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
