@@ -1135,7 +1135,10 @@ XV. Add to Cart
 
 158. Cart Page Setup
      I. create pages->Cart.jsx
+
 159. Cart Page Order Summary
+     I. update <Cart/>
+
 160. Redirect Back to Cart Page After Login
 161. Cart Items in Table
 162. React Modal Image
