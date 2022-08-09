@@ -1134,6 +1134,7 @@ XV. Add to Cart
      II. show the quantity in the navbar (nav->Header)
 
 158. Cart Page Setup
+     I. create pages->Cart.jsx
 159. Cart Page Order Summary
 160. Redirect Back to Cart Page After Login
 161. Cart Items in Table
