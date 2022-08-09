@@ -1159,6 +1159,14 @@ XV. Add to Cart
             II.diplay images with <ModalImage/>
 
 163.  Pick A Color in Cart Page
+      <ProductCardInCheckout/>
+
+
+    I. create ['Black', 'Brown', 'Silver', 'White', 'Blue'] const based on backend model.
+    II. create handleColorChange() function
+    III. add a contionnal rendering  in color table data to display color & map colors.
+    IV. dispatch updated color to the store
+
 164.  Quantity Update in Cart
 165.  Remove Products From Cart
 166.  Side Drawer Component
