@@ -1,6 +1,7 @@
 import ModalImage from 'react-modal-image';
 import { useDispatch } from 'react-redux';
 import laptop from '../../images/laptop.png';
+import { toast } from 'react-toastify';
 
 const ProductCardInCheckout = ({ p }) => {
   //P comes from ProductCardInCheckout.jsx
@@ -13,7 +14,7 @@ const ProductCardInCheckout = ({ p }) => {
     let cart = [];
     if (typeof window !== 'undefined') {
       if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
+        cart = JSON.parse(localStorage.getItem('cart')); //to populate cart array
       }
 
       cart.map((product, i) => {
@@ -27,6 +28,36 @@ const ProductCardInCheckout = ({ p }) => {
       dispatch({
         type: 'ADD_TO_CART',
         payload: cart, //the updated cart
+      });
+    }
+  };
+
+  const handleQuantityChange = (e) => {
+    // console.log("available quantity", p.quantity);
+    let count = e.target.value < 1 ? 1 : e.target.value; //if quantity is less than 1, set it to 1
+
+    if (count > p.quantity) {
+      toast.error(`Max available quantity: ${p.quantity}`); //toast error if quantity is greater than available quantity
+      return;
+    }
+
+    let cart = [];
+
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart')); //to populate cart array
+      }
+
+      cart.map((product, i) => {
+        if (product._id == p._id) {
+          cart[i].count = count;
+        }
+      });
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      dispatch({
+        type: 'ADD_TO_CART',
+        payload: cart,
       });
     }
   };
@@ -64,7 +95,14 @@ const ProductCardInCheckout = ({ p }) => {
               ))}
           </select>
         </td>
-        <td>{p.count}</td>
+        <td className="text-center">
+          <input
+            type="number"
+            className="form-control"
+            value={p.count}
+            onChange={handleQuantityChange}
+          />
+        </td>
         <td>Shipping Icon</td>
         <td>Delete Icon</td>
       </tr>

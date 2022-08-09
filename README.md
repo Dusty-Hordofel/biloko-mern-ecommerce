@@ -1168,6 +1168,14 @@ XV. Add to Cart
     IV. dispatch updated color to the store
 
 164.  Quantity Update in Cart
+      <ProductCardInCheckout/>
+
+
+    I. add an input in count table data to display count
+    II.import { toast } from "react-toastify";
+    III. create handleQuantityChange() to change quantity
+    IV. dispatch updated count to the store
+
 165.  Remove Products From Cart
 166.  Side Drawer Component
 167.  Cart Items in Side Drawer
