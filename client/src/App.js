@@ -2,9 +2,12 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import Header from './components/nav/Header';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import SideDrawer from './components/drawer/SideDrawer';
+
 import RegisterComplete from './pages/auth/RegisterComplete';
 import Home from './pages/Home';
 import ForgotPassword from './pages/auth/ForgotPassword';
@@ -74,6 +77,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <SideDrawer />
       <ToastContainer />
       {/*Toastify will we available on our entire App */}
       <Routes>

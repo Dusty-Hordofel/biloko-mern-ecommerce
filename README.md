@@ -1186,6 +1186,9 @@ XV. Add to Cart
     IV. dispatch changes to the store
 
 166.  Side Drawer Component
+      I. create drawerReducer & add it in roootReducer
+      II. create <SideDrawer/> & make it available globaly.
+
 167.  Cart Items in Side Drawer
 
 XVI. Checkout
