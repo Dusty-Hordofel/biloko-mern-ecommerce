@@ -1114,19 +1114,37 @@ XIV. Advance Searching and Filtering (9 Different Ways)
 
 XV. Add to Cart
 
-     XVI. Checkout
+154. Add Product to Local Storage
+     I. create compoenents->cards->handleAddToCart to add product to a local storage
+     II. npm i lodash && import \_ from "lodash" (https://lodash.com/docs/#uniqWith)
 
-     XVII. Coupon
+155. Tooltip
+156. Cart in Redux State
+157. Dispatch Add To Cart
+158. Cart Page Setup
+159. Cart Page Order Summary
+160. Redirect Back to Cart Page After Login
+161. Cart Items in Table
+162. React Modal Image
+163. Pick A Color in Cart Page
+164. Quantity Update in Cart
+165. Remove Products From Cart
+166. Side Drawer Component
+167. Cart Items in Side Drawer
 
-     XVIII. Payment with Stripe
+XVI. Checkout
 
-     XIX. Orders
+      XVII. Coupon
 
-     XX. User Dashboard (Purchase History)
+      XVIII. Payment with Stripe
 
-     XXI. PDF/Invoice Download
+      XIX. Orders
 
-     XXII. Admin Dashboard (Order Management)
+      XX. User Dashboard (Purchase History)
+
+      XXI. PDF/Invoice Download
+
+      XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 

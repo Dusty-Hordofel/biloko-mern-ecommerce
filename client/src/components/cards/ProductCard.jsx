@@ -3,10 +3,34 @@ import { EyeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import laptop from '../../images/laptop.png';
 import { Link } from 'react-router-dom';
 import { showAverage } from '../../functions/rating';
+import _ from 'lodash'; //you can import lodash or _ from 'lodash'
 
 const { Meta } = Card;
 
 const ProductCard = ({ product }) => {
+  const handleAddToCart = () => {
+    // create cart array
+    let cart = [];
+    if (typeof window !== 'undefined') {
+      // if cart is in local storage GET it
+      if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart')); //parse is used to convert string to array
+      }
+
+      // push new product to cart
+      cart.push({
+        ...product,
+        count: 1,
+      }); //spread operator is used to copy all properties of product to cart, count is 1 because we want to add 1 product to cart
+
+      // remove duplicates
+      let unique = _.uniqWith(cart, _.isEqual); //uniqWith is used to remove duplicates from cart array
+      // save to local storage
+      // console.log('unique', unique)
+      localStorage.setItem('cart', JSON.stringify(unique)); //stringify is used to convert array to string
+    }
+  };
+
   // destructure
   const { images, title, description, slug, price } = product;
   return (
@@ -29,9 +53,10 @@ const ProductCard = ({ product }) => {
           <Link to={`/product/${slug}`}>
             <EyeOutlined className="text-warning" /> <br /> View Product
           </Link>,
-          <>
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <a onClick={handleAddToCart}>
             <ShoppingCartOutlined className="text-danger" /> <br /> Add to Cart
-          </>,
+          </a>,
         ]}
       >
         <Meta
