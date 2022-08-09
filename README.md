@@ -1126,9 +1126,13 @@ XV. Add to Cart
 156. Cart in Redux State
      I. create cartReducer
      II. import cartReducer in rootReducer
-     III. import the store in ProductCard
+     III. import the store in <ProductCard/>
 
 157. Dispatch Add To Cart
+     I. dispact 'ADD_TO_CART' action type to the store.
+     II. add handleAddToCart and redux store in <SingleProduct/>
+     II. show the quantity in the navbar (nav->Header)
+
 158. Cart Page Setup
 159. Cart Page Order Summary
 160. Redirect Back to Cart Page After Login

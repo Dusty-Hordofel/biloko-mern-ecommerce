@@ -36,8 +36,15 @@ const ProductCard = ({ product }) => {
       // save to local storage
       // console.log('unique', unique)
       localStorage.setItem('cart', JSON.stringify(unique)); //stringify is used to convert array to string
+
       // show tooltip
       setTooltip('Added');
+
+      // add to redux state
+      dispatch({
+        type: 'ADD_TO_CART',
+        payload: unique,
+      });
     }
   };
 
