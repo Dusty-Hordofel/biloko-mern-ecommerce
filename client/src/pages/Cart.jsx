@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, user } = useSelector((state) => ({ ...state }));
@@ -10,6 +10,10 @@ const Cart = () => {
     return cart.reduce((currentValue, nextValue) => {
       return currentValue + nextValue.count * nextValue.price;
     }, 0);
+  };
+
+  const saveOrderToDb = () => {
+    //
   };
 
   return (
@@ -23,7 +27,7 @@ const Cart = () => {
               No products in cart. <Link to="/shop">Continue Shopping.</Link>
             </p>
           ) : (
-            "show cart items"
+            'show cart items'
           )}
         </div>
         <div className="col-md-4">
@@ -41,12 +45,23 @@ const Cart = () => {
           Total: <b>${getTotal()}</b>
           <hr />
           {user ? (
-            <button className="btn btn-sm btn-primary mt-2">
+            <button
+              onClick={saveOrderToDb}
+              className="btn btn-sm btn-primary mt-2"
+              disabled={!cart.length}
+            >
               Proceed to Checkout
             </button>
           ) : (
             <button className="btn btn-sm btn-primary mt-2">
-              Login to Checkout
+              <Link
+                to={{
+                  pathname: '/login',
+                  state: { from: 'cart' },
+                }}
+              >
+                Login to Checkout
+              </Link>
             </button>
           )}
         </div>
