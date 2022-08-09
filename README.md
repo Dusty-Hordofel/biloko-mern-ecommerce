@@ -1114,44 +1114,50 @@ XIV. Advance Searching and Filtering (9 Different Ways)
 
 XV. Add to Cart
 
-154. Add Product to Local Storage
-     I. create compoenents->cards->handleAddToCart to add product to a local storage
-     II. npm i lodash && import \_ from "lodash" (https://lodash.com/docs/#uniqWith)
+154.  Add Product to Local Storage
+      I. create compoenents->cards->handleAddToCart to add product to a local storage
+      II. npm i lodash && import \_ from "lodash" (https://lodash.com/docs/#uniqWith)
 
-155. Tooltip
-     I. import { Tooltip } from 'antd';
-     II. create [tooltip, setTooltip] state
-     III. wrap Add to Cart with <Toolti/>
+155.  Tooltip
+      I. import { Tooltip } from 'antd';
+      II. create [tooltip, setTooltip] state
+      III. wrap Add to Cart with <Toolti/>
 
-156. Cart in Redux State
-     I. create cartReducer
-     II. import cartReducer in rootReducer
-     III. import the store in <ProductCard/>
+156.  Cart in Redux State
+      I. create cartReducer
+      II. import cartReducer in rootReducer
+      III. import the store in <ProductCard/>
 
-157. Dispatch Add To Cart
-     I. dispact 'ADD_TO_CART' action type to the store.
-     II. add handleAddToCart and redux store in <SingleProduct/>
-     II. show the quantity in the navbar (nav->Header)
+157.  Dispatch Add To Cart
+      I. dispact 'ADD_TO_CART' action type to the store.
+      II. add handleAddToCart and redux store in <SingleProduct/>
+      II. show the quantity in the navbar (nav->Header)
 
-158. Cart Page Setup
-     I. create pages->Cart.jsx
+158.  Cart Page Setup
+      I. create pages->Cart.jsx
 
-159. Cart Page Order Summary
-     I. update <Cart/>
+159.  Cart Page Order Summary
+      I. update <Cart/>
 
-160. Redirect Back to Cart Page After Login
-     <Cart/>
-     I. create saveOrderToDb()
-     II. deseable button if there is no item in the cart
-     III. redirect the to the page after login
+160.  Redirect Back to Cart Page After Login
+      <Cart/>
 
-161. Cart Items in Table
-162. React Modal Image
-163. Pick A Color in Cart Page
-164. Quantity Update in Cart
-165. Remove Products From Cart
-166. Side Drawer Component
-167. Cart Items in Side Drawer
+            I. create saveOrderToDb()
+            II. deseable button if there is no item in the cart
+            III. redirect the to the page after login
+
+161.  Cart Items in Table
+      <Cart/>
+
+           I. create <ProductCardInCheckout/>
+           I. create showCartItems()
+
+162.  React Modal Image
+163.  Pick A Color in Cart Page
+164.  Quantity Update in Cart
+165.  Remove Products From Cart
+166.  Side Drawer Component
+167.  Cart Items in Side Drawer
 
 XVI. Checkout
 
