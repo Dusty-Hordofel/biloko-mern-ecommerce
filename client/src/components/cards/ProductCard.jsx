@@ -5,11 +5,16 @@ import laptop from '../../images/laptop.png';
 import { Link } from 'react-router-dom';
 import { showAverage } from '../../functions/rating';
 import _ from 'lodash'; //you can import lodash or _ from 'lodash'
+import { useSelector, useDispatch } from 'react-redux';
 
 const { Meta } = Card;
 
 const ProductCard = ({ product }) => {
   const [tooltip, setTooltip] = useState('Click to add');
+
+  // redux
+  const { user, cart } = useSelector((state) => ({ ...state })); // destructuring state
+  const dispatch = useDispatch();
 
   const handleAddToCart = () => {
     // create cart array
@@ -58,10 +63,7 @@ const ProductCard = ({ product }) => {
           <Link to={`/product/${slug}`}>
             <EyeOutlined className="text-warning" /> <br /> View Product
           </Link>,
-          // eslint-disable-next-line react/jsx-no-comment-textnodes
           <Tooltip title={tooltip}>
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid,
-            jsx-a11y/anchor-is-valid
             <a onClick={handleAddToCart}>
               <ShoppingCartOutlined className="text-danger" /> <br /> Add to
               Cart

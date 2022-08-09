@@ -1124,6 +1124,10 @@ XV. Add to Cart
      III. wrap Add to Cart with <Toolti/>
 
 156. Cart in Redux State
+     I. create cartReducer
+     II. import cartReducer in rootReducer
+     III. import the store in ProductCard
+
 157. Dispatch Add To Cart
 158. Cart Page Setup
 159. Cart Page Order Summary
