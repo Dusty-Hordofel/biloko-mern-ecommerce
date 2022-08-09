@@ -1153,6 +1153,11 @@ XV. Add to Cart
            I. create showCartItems()
 
 162.  React Modal Image
+      <ProductCardInCheckout/>
+
+            I. npm i react-modal-image
+            II.diplay images with <ModalImage/>
+
 163.  Pick A Color in Cart Page
 164.  Quantity Update in Cart
 165.  Remove Products From Cart
