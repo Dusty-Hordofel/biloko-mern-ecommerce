@@ -1177,6 +1177,14 @@ XV. Add to Cart
     IV. dispatch updated count to the store
 
 165.  Remove Products From Cart
+      <ProductCardInCheckout/>
+
+
+    I. import {CheckCircleOutlined,CloseCircleOutlined,CloseOutlined,} from '@ant-design/icons';
+    II. add conditional rendering for shipping Items
+    III. create handleRemove() to remove product
+    IV. dispatch changes to the store
+
 166.  Side Drawer Component
 167.  Cart Items in Side Drawer
 
