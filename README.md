@@ -1217,7 +1217,7 @@ XVI. Checkout
       I. create Cart Model to save cart in the backend
 
 171.  Save Cart To Database
-      I.
+      I. create route and controller method for cart user.
 
 172.  Get User Cart from Database
 173.  Get User Cart in Frontend
