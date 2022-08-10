@@ -1202,16 +1202,19 @@ XV. Add to Cart
 
 XVI. Checkout
 
-168.
-169.
-170.
-171.
-172.
-173.
-174.
-175.
-176.
-177. XVII. Coupon
+168. Checkout Page Setup
+     I. create <Checkout/> Page,saveAddressToDb() & add it in App.js
+     II. update <Cart/> -> saveOrderToDb()
+
+169. Save Cart Request
+170. Cart Model
+171. Save Cart To Database
+172. Get User Cart from Database
+173. Get User Cart in Frontend
+174. Final Order Summary in Checkout
+175. Empty Cart
+176. User Address on Checkout
+177. Save Address on Checkout
 
      XVIII. Payment with Stripe
 

@@ -33,6 +33,7 @@ import CategoryHome from './pages/category/CategoryHome';
 import SubHome from './pages/sub/SubHome';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -93,6 +94,7 @@ const App = () => {
         {/* <UserRoute exact path="/user/history" component={History} />
         <UserRoute exact path="/user/password" component={Password} />
         <UserRoute exact path="/user/wishlist" component={Wishlist} />
+        <UserRoute exact path="/checkout" component={Checkout} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute exact path="/admin/category" element={CategoryCreate} /> */}
         {/* <AdminRoute
@@ -119,6 +121,7 @@ const App = () => {
         <Route path="/sub/:slug" element={<SubHome />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
