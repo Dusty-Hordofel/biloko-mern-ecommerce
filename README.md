@@ -1202,29 +1202,35 @@ XV. Add to Cart
 
 XVI. Checkout
 
-168. Checkout Page Setup
-     I. create <Checkout/> Page,saveAddressToDb() & add it in App.js
-     II. update <Cart/> -> saveOrderToDb()
+168.  Checkout Page Setup
+      I. create <Checkout/> Page,saveAddressToDb() & add it in App.js
+      II. update <Cart/> -> saveOrderToDb()
 
-169. Save Cart Request
-170. Cart Model
-171. Save Cart To Database
-172. Get User Cart from Database
-173. Get User Cart in Frontend
-174. Final Order Summary in Checkout
-175. Empty Cart
-176. User Address on Checkout
-177. Save Address on Checkout
+169.  Save Cart Request
+      <Cart/>
 
-     XVIII. Payment with Stripe
+           I. create functions->user->userCart()
+           II. import { userCart } from '../functions/user';
+           III. update saveOrderToDb()
 
-     XIX. Orders
+170.  Cart Model
+171.  Save Cart To Database
+172.  Get User Cart from Database
+173.  Get User Cart in Frontend
+174.  Final Order Summary in Checkout
+175.  Empty Cart
+176.  User Address on Checkout
+177.  Save Address on Checkout
 
-     XX. User Dashboard (Purchase History)
+      XVIII. Payment with Stripe
 
-     XXI. PDF/Invoice Download
+      XIX. Orders
 
-     XXII. Admin Dashboard (Order Management)
+      XX. User Dashboard (Purchase History)
+
+      XXI. PDF/Invoice Download
+
+      XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
