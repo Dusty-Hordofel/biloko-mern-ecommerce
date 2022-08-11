@@ -1257,9 +1257,23 @@ XVI. Checkout
               I. add [address, setAddress] & [addressSaved, setAddressSaved]
               II. update saveAddressToDb()
 
-XVIII. Payment with Stripe
+XVII. Coupon
 
-178.         XIX. Orders
+178. Coupon Schema
+     I. create coupon schema.
+
+179. Coupon Routes and Controller Methods
+180. Create Coupon Page
+181. Create Coupon
+182. Coupon List and Delete
+183. Apply Coupon
+184. Apply Discount Backend
+185. Discount Price Response
+186. Coupon Error and Success Message
+187. Coupon in Redux
+
+XVIII. Payment with Stripe
+XIX. Orders
 
              XX. User Dashboard (Purchase History)
 
