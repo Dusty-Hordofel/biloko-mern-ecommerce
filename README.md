@@ -1237,6 +1237,9 @@ XVI. Checkout
       I. update <Checkout/> informations.
 
 175.  Empty Cart
+      I. create route and controller method to empty cart user.
+      II. create funtions->user.js->emptyUserCart()
+      II. update <Checkout/> informations.
 176.  User Address on Checkout
 177.  Save Address on Checkout
 
