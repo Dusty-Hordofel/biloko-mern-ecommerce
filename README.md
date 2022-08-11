@@ -1226,6 +1226,14 @@ XVI. Checkout
       I. Create a endpoint & the controller to get the cart
 
 173.  Get User Cart in Frontend
+      I. create functions->user.js->getUserCart()
+      II.<Checkout/>
+
+            I. create [products, setProducts] & [total, setTotal];
+            II. use useEffect to make a request to the backend when the component mount.
+            III. retrieve user info from the store.
+
+
 174.  Final Order Summary in Checkout
 175.  Empty Cart
 176.  User Address on Checkout
