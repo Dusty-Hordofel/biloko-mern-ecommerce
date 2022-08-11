@@ -1242,7 +1242,7 @@ XVI. Checkout
       II. update <Checkout/> informations.
 
 176.  User Address on Checkout
-      I. create route and controller method to empty user addresse.
+      I. create route and controller method to empty user address.
       II. create saveUserAddress ()
       III. update <Checkout/> informations.
 
@@ -1252,16 +1252,20 @@ XVI. Checkout
       IV. update <Shop/> : 2. load products on user search input
 
 177.  Save Address on Checkout
+      <Checkout/>
 
-      XVIII. Payment with Stripe
+              I. add [address, setAddress] & [addressSaved, setAddressSaved]
+              II. update saveAddressToDb()
 
-      XIX. Orders
+XVIII. Payment with Stripe
 
-      XX. User Dashboard (Purchase History)
+178.         XIX. Orders
 
-      XXI. PDF/Invoice Download
+             XX. User Dashboard (Purchase History)
 
-      XXII. Admin Dashboard (Order Management)
+             XXI. PDF/Invoice Download
+
+             XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
