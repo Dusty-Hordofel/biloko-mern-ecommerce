@@ -28,8 +28,9 @@ export const userCart = async (req, res) => {
     object.color = cart[i].color;
 
     // get price for creating total
-    let { price } = await Product.findById(cart[i]._id).select('price');
-    object.price = price;
+    let productFromDb = await Product.findById(cart[i]._id).select('price');
+    // let { price } = await Product.findById(cart[i]._id).select('price');
+    object.price = productFromDb.price;
 
     products.push(object); //add object to the products array
   }
@@ -71,4 +72,13 @@ export const emptyCart = async (req, res) => {
 
   const cart = await Cart.findOneAndRemove({ orderdBy: user._id });
   res.json(cart);
+};
+
+export const saveAddress = async (req, res) => {
+  const userAddress = await User.findOneAndUpdate(
+    { email: req.user.email },
+    { address: req.body.address }
+  );
+
+  res.json({ ok: true });
 };

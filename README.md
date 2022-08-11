@@ -1240,7 +1240,17 @@ XVI. Checkout
       I. create route and controller method to empty cart user.
       II. create funtions->user.js->emptyUserCart()
       II. update <Checkout/> informations.
+
 176.  User Address on Checkout
+      I. create route and controller method to empty user addresse.
+      II. create saveUserAddress ()
+      III. update <Checkout/> informations.
+
+            I. npm install react-quill --force
+            II. update saveAddressToDb()
+
+      IV. update <Shop/> : 2. load products on user search input
+
 177.  Save Address on Checkout
 
       XVIII. Payment with Stripe
