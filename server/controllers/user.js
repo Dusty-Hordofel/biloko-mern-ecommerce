@@ -53,6 +53,14 @@ export const userCart = async (req, res) => {
   res.json({ ok: true });
 };
 
-// export const user = (req, res) => {
-//   res.json({ message: 'Hello User!' });
-// };
+export const getUserCart = async (req, res) => {
+  const user = await User.findOne({ email: req.user.email }); //we find the user from the database using the email from the user who is logged in
+
+  let cart = await Cart.findOne({ orderdBy: user._id }).populate(
+    'products.product',
+    '_id title price totalAfterDiscount'
+  );
+
+  const { products, cartTotal, totalAfterDiscount } = cart;
+  res.json({ products, cartTotal, totalAfterDiscount });
+};

@@ -1220,6 +1220,11 @@ XVI. Checkout
       I. create route and controller method for cart user.
 
 172.  Get User Cart from Database
+      NB: Make a request to the backend to retrieve cart information. Not from the local storage because of
+      we don't want the user to be able to modify any information.
+
+      I. Create a endpoint & the controller to get the cart
+
 173.  Get User Cart in Frontend
 174.  Final Order Summary in Checkout
 175.  Empty Cart

@@ -48,7 +48,7 @@ app.use(cors()); //to allow cross-origin requests
 
 //routes middleware
 app.use('/api/auth', authRoutes); //to use the authRoute, we prefix the url with /api/auth
-app.use('/api', userRoutes); //to use the authRoute, we prefix the url with /api/auth
+app.use('/api/user', userRoutes); //to use the authRoute, we prefix the url with /api/auth
 app.use('/api', categoryRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', subCategoryRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', productRoutes); //to use the categoryRoutes, we prefix the url with /api

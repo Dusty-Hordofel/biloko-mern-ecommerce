@@ -6,10 +6,9 @@ const router = express.Router();
 // middlewares
 import { authCheck } from '../middlewares/auth.js';
 // controllers
-import { userCart } from '../controllers/user.js';
+import { userCart, getUserCart } from '../controllers/user.js';
 
-router.post('/cart', authCheck, userCart); // save cart
-
-// router.get('/user', user); //the first argument is a url and the second argument is a function which handles the request.)
+router.post('/user/cart', authCheck, userCart); // save cart(the first argument is a url and the second argument is a function which handles the request.)
+router.get('/user/cart', authCheck, getUserCart); // get cart
 
 export default router;
