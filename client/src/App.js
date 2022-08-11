@@ -30,6 +30,7 @@ import AllProducts from './pages/admin/product/AllProducts';
 import ProductUpdate from './pages/admin/product/ProductUpdate';
 import Product from './pages/Product';
 import CategoryHome from './pages/category/CategoryHome';
+import CreateCouponPage from './pages/admin/coupon/CreateCouponPage';
 import SubHome from './pages/sub/SubHome';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
@@ -106,6 +107,7 @@ const App = () => {
         {/* <AdminRoute exact path="/admin/sub/:slug" component={SubUpdate} /> */}
         {/* <AdminRoute exact path="/admin/product" component={ProductCreate} /> */}
         {/* <AdminRoute exact path="/admin/products" component={AllProducts} /> */}
+        {/* // <AdminRoute exact path="/admin/coupon" component={CreateCouponPage} /> */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category" element={<CategoryCreate />} />
         {/*/:slug , slug plugin grab this part from the url */}
@@ -122,6 +124,7 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/admin/coupon" element={<CreateCouponPage />} />
       </Routes>
     </div>
   );

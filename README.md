@@ -1259,21 +1259,24 @@ XVI. Checkout
 
 XVII. Coupon
 
-178. Coupon Schema
-     I. create coupon schema.
+178.  Coupon Schema
+      I. create coupon schema.
 
-179. Coupon Routes and Controller Methods
-     I. create route and controller method for coupon.
+179.  Coupon Routes and Controller Methods
+      I. create route and controller method for coupon.
 
-180. Create Coupon Page
-     I. xqsfggg
-181. Create Coupon
-182. Coupon List and Delete
-183. Apply Coupon
-184. Apply Discount Backend
-185. Discount Price Response
-186. Coupon Error and Success Message
-187. Coupon in Redux
+180.  Create Coupon Page
+      I. create functions->coupon.js
+      II. create pages->admin->coupon-><CreateCouponPage/>
+
+181.  Create Coupon
+      I.
+182.  Coupon List and Delete
+183.  Apply Coupon
+184.  Apply Discount Backend
+185.  Discount Price Response
+186.  Coupon Error and Success Message
+187.  Coupon in Redux
 
 XVIII. Payment with Stripe
 XIX. Orders
