@@ -1263,7 +1263,10 @@ XVII. Coupon
      I. create coupon schema.
 
 179. Coupon Routes and Controller Methods
+     I. create route and controller method for coupon.
+
 180. Create Coupon Page
+     I. xqsfggg
 181. Create Coupon
 182. Coupon List and Delete
 183. Apply Coupon
