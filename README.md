@@ -1282,6 +1282,10 @@ XVII. Coupon
       III. create handleRemove() to remove coupon.
 
 183.  Apply Coupon
+      <Checkout/>
+
+            I. create showAddress(),showProductSummary() & showApplyCoupon()
+
 184.  Apply Discount Backend
 185.  Discount Price Response
 186.  Coupon Error and Success Message
