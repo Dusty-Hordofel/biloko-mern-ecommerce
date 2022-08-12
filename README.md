@@ -1270,7 +1270,12 @@ XVII. Coupon
       II. create pages->admin->coupon-><CreateCouponPage/>
 
 181.  Create Coupon
-      I.
+      <CreateCouponPage/>
+
+            I. create [name, setName],[expiry, setExpiry] ,[discount, setDiscount] & [loading, setLoading]
+            II. create a form
+            III. create handleSubmit()
+
 182.  Coupon List and Delete
 183.  Apply Coupon
 184.  Apply Discount Backend
