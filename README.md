@@ -1277,6 +1277,10 @@ XVII. Coupon
             III. create handleSubmit()
 
 182.  Coupon List and Delete
+      I. add UseEffect to loadAllCoupons.
+      II. display coupons in table
+      III. create handleRemove() to remove coupon.
+
 183.  Apply Coupon
 184.  Apply Discount Backend
 185.  Discount Price Response
