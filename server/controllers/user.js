@@ -1,6 +1,7 @@
 import User from '../models/user.js';
 import Product from '../models/product.js';
 import Cart from '../models/cart.js';
+import Coupon from '../models/coupon.js';
 
 export const userCart = async (req, res) => {
   // console.log(req.body); // {cart: []}
@@ -81,4 +82,39 @@ export const saveAddress = async (req, res) => {
   );
 
   res.json({ ok: true });
+};
+
+export const applyCouponToUserCart = async (req, res) => {
+  const { coupon } = req.body;
+  console.log('COUPON', coupon);
+
+  const validCoupon = await Coupon.findOne({ name: coupon });
+  if (validCoupon === null) {
+    return res.json({
+      err: 'Invalid coupon',
+    });
+  }
+  console.log('VALID COUPON', validCoupon);
+
+  const user = await User.findOne({ email: req.user.email });
+
+  let { products, cartTotal } = await (
+    await Cart.findOne({ orderdBy: user._id })
+  ).populate('products.product', '_id title price');
+
+  console.log('cartTotal', cartTotal, 'discount%', validCoupon.discount);
+
+  // calculate the total after discount
+  let totalAfterDiscount = (
+    cartTotal -
+    (cartTotal * validCoupon.discount) / 100
+  ).toFixed(2); // 99.99
+
+  Cart.findOneAndUpdate(
+    { orderdBy: user._id },
+    { totalAfterDiscount },
+    { new: true }
+  );
+
+  res.json(totalAfterDiscount);
 };

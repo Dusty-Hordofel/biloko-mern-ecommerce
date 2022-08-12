@@ -1287,6 +1287,9 @@ XVII. Coupon
             I. create showAddress(),showProductSummary() & showApplyCoupon()
 
 184.  Apply Discount Backend
+
+      I. create route and controller method for coupon in user.
+
 185.  Discount Price Response
 186.  Coupon Error and Success Message
 187.  Coupon in Redux
