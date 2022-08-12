@@ -1296,8 +1296,13 @@ XVII. Coupon
 
             I. import applyCoupon() & update applyDiscountCoupon()
 
-
 186.  Coupon Error and Success Message
+      <Checkout/>
+
+            I. show discountError
+            II. update showApplyCoupon()
+            III. update emptyUserCart()
+
 187.  Coupon in Redux
 
 XVIII. Payment with Stripe
