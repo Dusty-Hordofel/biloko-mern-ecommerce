@@ -1291,6 +1291,12 @@ XVII. Coupon
       I. create route and controller method for coupon in user.
 
 185.  Discount Price Response
+      I. create functions->applyCoupon()
+      <Checkout/>
+
+            I. import applyCoupon() & update applyDiscountCoupon()
+
+
 186.  Coupon Error and Success Message
 187.  Coupon in Redux
 
