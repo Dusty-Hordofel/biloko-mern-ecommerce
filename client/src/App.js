@@ -35,6 +35,7 @@ import SubHome from './pages/sub/SubHome';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
 
 const App = () => {
   const dispatch = useDispatch(); //useDispatch is used to dispatch action to the store;
@@ -93,6 +94,7 @@ const App = () => {
         <Route path="/user/wishlist" element={<Wishlist />} />
         {/* <UserRoute path="/user/wishlist" element={<Wishlist />} /> */}
         {/* <UserRoute exact path="/user/history" component={History} />
+        // <UserRoute exact path="/payment" component={Payment} />
         <UserRoute exact path="/user/password" component={Password} />
         <UserRoute exact path="/user/wishlist" component={Wishlist} />
         <UserRoute exact path="/checkout" component={Checkout} />
@@ -125,6 +127,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/admin/coupon" element={<CreateCouponPage />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </div>
   );

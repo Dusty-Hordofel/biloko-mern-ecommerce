@@ -1304,6 +1304,14 @@ XVII. Coupon
             III. update emptyUserCart()
 
 187.  Coupon in Redux
+      I. create couponReducer
+
+      II. <Checkout/>
+
+            I. access couponReducer
+            II. dispatch coupon in applyDiscountCoupon()
+            III. create <Payment/>
+            IV. redirect user to payment page.
 
 XVIII. Payment with Stripe
 XIX. Orders
