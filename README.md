@@ -1321,6 +1321,9 @@ XVIII. Payment with Stripe
       III. creae stripe endpoint and controller (to generate a client secrert).
 
 189.  Stripe Setup Frontend
+      I. npm i @stripe/stripe-js @stripe/react-stripe-js
+      II. update <Payment/>
+
 190.  Stripe Checkout Component
 191.  Successful Payment
 192.  Charging Actual Cart Total
