@@ -1314,13 +1314,27 @@ XVII. Coupon
             IV. redirect user to payment page.
 
 XVIII. Payment with Stripe
-XIX. Orders
 
-             XX. User Dashboard (Purchase History)
+188.  Stripe Setup Backend
+      I. go to (https://stripe.com/docs/payments/quickstart) & login
+      II. C&P API key and secret key in .env & install stripe
+      III. creae stripe endpoint and controller (to generate a client secrert).
 
-             XXI. PDF/Invoice Download
+189.  Stripe Setup Frontend
+190.  Stripe Checkout Component
+191.  Successful Payment
+192.  Charging Actual Cart Total
+193.  Charge With Coupon Discount
+194.  Show Discount and Coupon Applied in Frontend
+195.
+196.
+197.  XIX. Orders
 
-             XXII. Admin Dashboard (Order Management)
+                   XX. User Dashboard (Purchase History)
+
+                   XXI. PDF/Invoice Download
+
+                   XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
