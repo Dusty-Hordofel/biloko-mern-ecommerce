@@ -1320,18 +1320,25 @@ XVIII. Payment with Stripe
       II. C&P API key and secret key in .env & install stripe
       III. creae stripe endpoint and controller (to generate a client secrert).
 
-189.  Stripe Setup Frontend
+189.  Stripe Setup Frontend & Stripe Checkout Component
       I. npm i @stripe/stripe-js @stripe/react-stripe-js
       II. update <Payment/>
 
-190.  Stripe Checkout Component
-191.  Successful Payment
-192.  Charging Actual Cart Total
-193.  Charge With Coupon Discount
-194.  Show Discount and Coupon Applied in Frontend
+190.  Successful Payment
+      <StripeCheckout/>
+
+            I. update handleChange()
+            II. add error conditionnal rendering
+            III. update handleSubmit()
+            IV. add a conditionnal rendering for success
+
+191.  Charging Actual Cart Total
+      I. dfbfvfyvfy
+192.  Charge With Coupon Discount
+193.  Show Discount and Coupon Applied in Frontend
+194.
 195.
-196.
-197.  XIX. Orders
+196.  XIX. Orders
 
                    XX. User Dashboard (Purchase History)
 
