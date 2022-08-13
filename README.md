@@ -1333,7 +1333,8 @@ XVIII. Payment with Stripe
             IV. add a conditionnal rendering for success
 
 191.  Charging Actual Cart Total
-      I. dfbfvfyvfy
+      I. update stripe controller.
+      
 192.  Charge With Coupon Discount
 193.  Show Discount and Coupon Applied in Frontend
 194.
