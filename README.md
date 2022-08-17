@@ -1354,18 +1354,24 @@ XIX. Orders
       I. create Order Schema
 
 195.  Create Order Backend
+      I. create a controller and an order route.
 
 196.  Create Order and Empty Cart Frontend
-      I. create a controller and an order route.
-      
-      
-197.  Create Order and Empty Cart Frontend 198. Show Out Of Stock
+      <StripeCheckout/>
 
-             XX. User Dashboard (Purchase History)
+               I. create functions->user.js->createOrder()
+               II. import { createOrder, emptyUserCart } from "../functions/user";
 
-                          XXI. PDF/Invoice Download
 
-                          XXII. Admin Dashboard (Order Management)
+197.  Decrement Quantity Increment Sold
+
+198.  Show Out Of Stock
+
+              XX. User Dashboard (Purchase History)
+
+                           XXI. PDF/Invoice Download
+
+                           XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 

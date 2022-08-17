@@ -9,11 +9,8 @@ dotenv.config();
 const stripe = Stripe(process.env.STRIPE_SECRET);
 
 export const createPaymentIntent = async (req, res) => {
-  //console.log(req.body);
-
+  // console.log(req.body);
   const { couponApplied } = req.body;
-  //const { couponApplied } = req.body;
-  //console.log('couponApplied', couponApplied);
 
   // later apply coupon
   // later calculate price
@@ -24,7 +21,7 @@ export const createPaymentIntent = async (req, res) => {
   const { cartTotal, totalAfterDiscount } = await Cart.findOne({
     orderdBy: user._id,
   }).exec();
-  //console.log('CART TOTAL', cartTotal, 'AFTER DIS%', totalAfterDiscount);
+  // console.log("CART TOTAL", cartTotal, "AFTER DIS%", totalAfterDiscount);
 
   let finalAmount = 0;
 
@@ -36,7 +33,7 @@ export const createPaymentIntent = async (req, res) => {
 
   // create payment intent with order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: finalAmount, //cartTotal * 100
+    amount: finalAmount,
     currency: 'usd',
   });
 
