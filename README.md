@@ -1333,7 +1333,6 @@ XVIII. Payment with Stripe
             IV. add a conditionnal rendering for success
 
 191.  Charging Actual Cart Total
-
       I. update stripe controller.
 
 192.  Charge With Coupon Discount
@@ -1349,15 +1348,20 @@ XVIII. Payment with Stripe
               IV. add new div section with <Card/>
               V. add a conditional rendering for couponApplied
 
-194.
-195.
-196.  XIX. Orders
+XIX. Orders
 
-                   XX. User Dashboard (Purchase History)
+194.  Order Schema
+      I. create Order Schema
 
-                   XXI. PDF/Invoice Download
+195.  Create Order Backend
 
-                   XXII. Admin Dashboard (Order Management)
+I. 196. Create Order and Empty Cart Frontend 197. Create Order and Empty Cart Frontend 198. Show Out Of Stock
+
+           XX. User Dashboard (Purchase History)
+
+                        XXI. PDF/Invoice Download
+
+                        XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
