@@ -1341,6 +1341,14 @@ XVIII. Payment with Stripe
       II. add if statement in stripe controller & charge the discount based on the coupon
 
 193.  Show Discount and Coupon Applied in Frontend
+      <StripeCheckout/>
+
+              I. add [cartTotal, setCartTotal],[totalAfterDiscount, setTotalAfterDiscount] & [payable, setPayable]
+              II. update useEffect()
+              III. import { Card } from "antd",...
+              IV. add new div section with <Card/>
+              V. add a conditional rendering for couponApplied
+
 194.
 195.
 196.  XIX. Orders
