@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const StripeCheckout = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => ({ ...state }));
+  const { user, coupon } = useSelector((state) => ({ ...state }));
   console.log(user);
 
   const [succeeded, setSucceeded] = useState(false);
@@ -19,11 +19,11 @@ const StripeCheckout = () => {
   const elements = useElements();
 
   useEffect(() => {
-    createPaymentIntent(user.token).then((res) => {
+    createPaymentIntent(user.token, coupon).then((res) => {
       console.log('create payment intent', res.data);
       setClientSecret(res.data.clientSecret);
     });
-  }, [user.token]);
+  }, [user.token, coupon]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
