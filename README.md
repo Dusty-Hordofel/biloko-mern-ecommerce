@@ -1366,12 +1366,13 @@ XIX. Orders
       I. decrement the quantity and increment sold in user controller
 
 198.  Show Out Of Stock
+      I. add a conditionnal rendering to disable a cart button in <ProductCard/>
 
-              XX. User Dashboard (Purchase History)
+XX. User Dashboard (Purchase History)
 
-                           XXI. PDF/Invoice Download
+                             XXI. PDF/Invoice Download
 
-                           XXII. Admin Dashboard (Order Management)
+                             XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
