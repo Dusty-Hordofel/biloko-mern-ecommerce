@@ -12,12 +12,15 @@ import {
   emptyCart,
   saveAddress,
   applyCouponToUserCart,
+  createOrder,
 } from '../controllers/user.js';
 
 router.post('/user/cart', authCheck, userCart); // save cart(the first argument is a url and the second argument is a function which handles the request.)
 router.get('/user/cart', authCheck, getUserCart); // get cart
 router.delete('/user/cart', authCheck, emptyCart); // empty cart
 router.post('/user/address', authCheck, saveAddress);
+
+router.post('/user/order', authCheck, createOrder);
 
 // coupon
 router.post('/user/cart/coupon', authCheck, applyCouponToUserCart);

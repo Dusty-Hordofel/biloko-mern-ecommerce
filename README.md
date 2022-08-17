@@ -1355,13 +1355,17 @@ XIX. Orders
 
 195.  Create Order Backend
 
-I. 196. Create Order and Empty Cart Frontend 197. Create Order and Empty Cart Frontend 198. Show Out Of Stock
+196.  Create Order and Empty Cart Frontend
+      I. create a controller and an order route.
+      
+      
+197.  Create Order and Empty Cart Frontend 198. Show Out Of Stock
 
-           XX. User Dashboard (Purchase History)
+             XX. User Dashboard (Purchase History)
 
-                        XXI. PDF/Invoice Download
+                          XXI. PDF/Invoice Download
 
-                        XXII. Admin Dashboard (Order Management)
+                          XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
