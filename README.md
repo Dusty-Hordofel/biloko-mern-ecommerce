@@ -1362,8 +1362,8 @@ XIX. Orders
                I. create functions->user.js->createOrder()
                II. import { createOrder, emptyUserCart } from "../functions/user";
 
-
 197.  Decrement Quantity Increment Sold
+      I. decrement the quantity and increment sold in user controller
 
 198.  Show Out Of Stock
 
