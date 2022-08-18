@@ -1387,12 +1387,19 @@ XX. User Dashboard (Purchase History)
       I. create components->cards-><showPaymentInfo/>
       II.update <History/>
 
-204.
-
 XXI. PDF/Invoice Download
 
-XXII. Admin Dashboard (Order Management)
+204. PDF View and Download Link (todo later because of webpack version)
+     I. npm i @react-pdf/renderer (https://www.npmjs.com/package/@react-pdf/renderer)
+     II. npm i @david.kucsai/react-pdf-table (https://www.npmjs.com/package/@david.kucsai/react-pdf-table?activeTab=versions)
+     III.<History/>
 
+205. Invoice Component
+     I. djTdiwcbQlRfFElGuDXWzaWj6QgKObQ
+206. Download Invoice as PDF
+     I. dgdhfdafqsguizafuf
+
+XXII. Admin Dashboard (Order Management)
 XXIII. Wishlist
 XXIV. Cash On Delivery (Cashless order)
 
