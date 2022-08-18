@@ -1373,7 +1373,11 @@ XX. User Dashboard (Purchase History)
 199.  User Orders Backend  
        I. create a controller and an orders route.
 
-200.  User Orders in Purchase History Page 201. Purchase Orders in Card 202. Showing Each Order's Products in Table 203. Show Payment Info 204.
+200.  User Orders in Purchase History
+      I. create funtions->user.js->getUserOrders ()
+      II. update <History/>
+
+Page 201. Purchase Orders in Card 202. Showing Each Order's Products in Table 203. Show Payment Info 204.
 
                               XXI. PDF/Invoice Download
 
