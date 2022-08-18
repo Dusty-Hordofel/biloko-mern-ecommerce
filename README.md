@@ -1427,7 +1427,13 @@ XXIII. Wishlist
      I. create functions->user.js->getWishlist,removeWishlist & addToWishlist
 
 213. Wishlist Frontend
-     I.
+     <SingleProduct/>
+     I. create handleAddToWishlist()
+     <Wishlist/>
+     I. add [wishlist, setWishlist]
+     II. get the state from the store
+     III. create loadWishlist() & handleRemove()
+     IV. list all wishlist
 
 214. 215.
 

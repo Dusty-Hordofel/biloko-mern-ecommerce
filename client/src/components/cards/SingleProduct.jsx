@@ -11,6 +11,9 @@ import RatingModal from '../modal/RatingModal';
 import { showAverage } from '../../functions/rating';
 import _ from 'lodash'; //you can import lodash or _ from 'lodash'
 import { useSelector, useDispatch } from 'react-redux';
+import { addToWishlist } from '../../functions/user';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 
@@ -23,6 +26,9 @@ const SingleProduct = ({ product, onStarClick, star }) => {
   // redux
   const { user, cart } = useSelector((state) => ({ ...state })); // destructuring state
   const dispatch = useDispatch();
+
+  //router
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     // create cart array
@@ -62,6 +68,14 @@ const SingleProduct = ({ product, onStarClick, star }) => {
     }
   };
 
+  const handleAddToWishlist = (e) => {
+    e.preventDefault();
+    addToWishlist(product._id, user.token).then((res) => {
+      console.log('ADDED TO WISHLIST', res.data);
+      toast.success('Added to wishlist');
+      navigate('/user/wishlist'); //redirect to wishlist
+    });
+  };
   return (
     <>
       <div className="col-md-7">
@@ -96,15 +110,16 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 
         <Card
           actions={[
-            <Tooltip title={tooltip}>
-              <a onClick={handleAddToCart}>
-                <ShoppingCartOutlined className="text-danger" /> <br /> Add to
-                Cart
+            <Tooltip placement="top" title={tooltip}>
+              <a onClick={handleAddToCart} disabled={product.quantity < 1}>
+                <ShoppingCartOutlined className="text-danger" />
+                <br />
+                {product.quantity < 1 ? 'Out of Stock' : 'Add To Cart'}
               </a>
             </Tooltip>,
-            <Link to="/">
+            <a onClick={handleAddToWishlist}>
               <HeartOutlined className="text-info" /> <br /> Add to Wishlist
-            </Link>,
+            </a>,
             <RatingModal>
               <StarRating
                 name={_id}
