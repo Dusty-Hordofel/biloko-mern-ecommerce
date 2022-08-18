@@ -13,7 +13,10 @@ import {
   saveAddress,
   applyCouponToUserCart,
   createOrder,
-  orders
+  orders,
+  addToWishlist,
+  wishlist,
+  removeFromWishlist,
 } from '../controllers/user.js';
 
 router.post('/user/cart', authCheck, userCart); // save cart(the first argument is a url and the second argument is a function which handles the request.)
@@ -22,10 +25,14 @@ router.delete('/user/cart', authCheck, emptyCart); // empty cart
 router.post('/user/address', authCheck, saveAddress);
 
 router.post('/user/order', authCheck, createOrder);
-router.get("/user/orders", authCheck, orders);
-
+router.get('/user/orders', authCheck, orders);
 
 // coupon
 router.post('/user/cart/coupon', authCheck, applyCouponToUserCart);
+
+// wishlist
+router.post('/user/wishlist', authCheck, addToWishlist);
+router.get('/user/wishlist', authCheck, wishlist);
+router.put('/user/wishlist/:productId', authCheck, removeFromWishlist);
 
 export default router;

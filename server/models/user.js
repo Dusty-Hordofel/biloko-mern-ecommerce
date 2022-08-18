@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema(
@@ -11,16 +11,16 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "subscriber",
+      default: 'subscriber',
     },
     cart: {
       type: Array,
       default: [],
     },
     address: String,
-    //wishlist: [{ type: ObjectId, ref: "Product" }],
+    wishlist: [{ type: ObjectId, ref: 'Product' }],
   },
   { timestamps: true } //second argument is the time stamps
 );
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model('User', userSchema);

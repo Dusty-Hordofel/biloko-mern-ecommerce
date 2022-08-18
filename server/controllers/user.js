@@ -161,3 +161,34 @@ export const orders = async (req, res) => {
 
   res.json(userOrders);
 };
+
+// addToWishlist wishlist removeFromWishlist
+export const addToWishlist = async (req, res) => {
+  const { productId } = req.body;
+
+  const user = await User.findOneAndUpdate(
+    { email: req.user.email },
+    { $addToSet: { wishlist: productId } } //$addToSet is a mongodb operator. it adds the productId to the wishlist array.
+  ).exec();
+
+  res.json({ ok: true });
+};
+
+export const wishlist = async (req, res) => {
+  const list = await User.findOne({ email: req.user.email })
+    .select('wishlist')
+    .populate('wishlist')
+    .exec();
+
+  res.json(list);
+};
+
+export const removeFromWishlist = async (req, res) => {
+  const { productId } = req.params;
+  const user = await User.findOneAndUpdate(
+    { email: req.user.email },
+    { $pull: { wishlist: productId } } //$pull is a mongodb operator. it removes the productId from the wishlist array.
+  ).exec();
+
+  res.json({ ok: true });
+};

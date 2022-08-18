@@ -1419,6 +1419,11 @@ XXII. Admin Dashboard (Order Management)
      I. add showOrderInTable() and use it
 
 XXIII. Wishlist
-XXIV. Cash On Delivery (Cashless order)
+
+211. Wishlist Backend
+     I. create a route and controller for Wishlist.
+
+212. Wishlist Functions Frontend 213. Wishlist Frontend 214. 215.
+     XXIV. Cash On Delivery (Cashless order)
 
 XXV. Deployment to Digital Ocean Cloud
