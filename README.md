@@ -1377,11 +1377,14 @@ XX. User Dashboard (Purchase History)
       I. create funtions->user.js->getUserOrders ()
       II. update <History/>
 
-Page 201. Purchase Orders in Card 202. Showing Each Order's Products in Table 203. Show Payment Info 204.
+201.  Purchase Orders in Card
+      I. update <History/>
 
-                              XXI. PDF/Invoice Download
+202.  Showing Each Order's Products in Table 203. Show Payment Info 204.
 
-                              XXII. Admin Dashboard (Order Management)
+                               XXI. PDF/Invoice Download
+
+                               XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 
