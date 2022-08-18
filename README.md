@@ -1370,9 +1370,14 @@ XIX. Orders
 
 XX. User Dashboard (Purchase History)
 
-                             XXI. PDF/Invoice Download
+199.  User Orders Backend  
+       I. create a controller and an orders route.
 
-                             XXII. Admin Dashboard (Order Management)
+200.  User Orders in Purchase History Page 201. Purchase Orders in Card 202. Showing Each Order's Products in Table 203. Show Payment Info 204.
+
+                              XXI. PDF/Invoice Download
+
+                              XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
 

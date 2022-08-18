@@ -13,6 +13,7 @@ import {
   saveAddress,
   applyCouponToUserCart,
   createOrder,
+  orders
 } from '../controllers/user.js';
 
 router.post('/user/cart', authCheck, userCart); // save cart(the first argument is a url and the second argument is a function which handles the request.)
@@ -21,6 +22,8 @@ router.delete('/user/cart', authCheck, emptyCart); // empty cart
 router.post('/user/address', authCheck, saveAddress);
 
 router.post('/user/order', authCheck, createOrder);
+router.get("/user/orders", authCheck, orders);
+
 
 // coupon
 router.post('/user/cart/coupon', authCheck, applyCouponToUserCart);
