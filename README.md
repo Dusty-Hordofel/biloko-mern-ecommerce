@@ -1383,14 +1383,17 @@ XX. User Dashboard (Purchase History)
 202.  Showing Each Order's Products in Table
       I. update <History/>
 
-203.  Show Payment Info 204.
+203.  Show Payment Info
+      I. create components->cards-><showPaymentInfo/>
+      II.update <History/>
 
-                                XXI. PDF/Invoice Download
+204.
 
-                                XXII. Admin Dashboard (Order Management)
+XXI. PDF/Invoice Download
+
+XXII. Admin Dashboard (Order Management)
 
 XXIII. Wishlist
+XXIV. Cash On Delivery (Cashless order)
 
-    XXIV. Cash On Delivery (Cashless order)
-
-    XXV. Deployment to Digital Ocean Cloud
+XXV. Deployment to Digital Ocean Cloud
