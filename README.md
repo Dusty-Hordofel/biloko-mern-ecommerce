@@ -1406,9 +1406,12 @@ XXII. Admin Dashboard (Order Management)
      I. create a controller and an orders status route for Admin in admin.js.
 
 208. Load All Orders in Admin Dashboard
+     I. create functions->admin.js->getOrders() & changeStatus()
+     II. show all Orders in <AdminDashboard/>
+
 209. Orders with Status Update
 210. Products Table in Admin Dashboard
-211.
+211. show all
 
 XXIII. Wishlist
 XXIV. Cash On Delivery (Cashless order)
