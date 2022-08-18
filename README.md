@@ -1401,6 +1401,15 @@ XXI. PDF/Invoice Download
      I. dgdhfdafqsguizafufs
 
 XXII. Admin Dashboard (Order Management)
+
+207. Orders Status Update for Admin Backend
+     I. create a controller and an orders status route for Admin in admin.js.
+
+208. Load All Orders in Admin Dashboard
+209. Orders with Status Update
+210. Products Table in Admin Dashboard
+211.
+
 XXIII. Wishlist
 XXIV. Cash On Delivery (Cashless order)
 

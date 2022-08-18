@@ -11,6 +11,7 @@ import subCategoryRoutes from './routes/sub.js';
 import productRoutes from './routes/product.js';
 import couponRoutes from './routes/coupon.js';
 import stripeRoutes from './routes/stripe.js';
+import orderStatusRoutes from './routes/admin.js';
 import cloudinaryRoutes from './routes/cloudinary.js';
 
 dotenv.config();
@@ -57,6 +58,7 @@ app.use('/api', productRoutes); //to use the categoryRoutes, we prefix the url w
 app.use('/api', cloudinaryRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', couponRoutes); //to use the categoryRoutes, we prefix the url with /api
 app.use('/api', stripeRoutes); //to use the categoryRoutes, we prefix the url with /api
+app.use('/api', orderStatusRoutes); //to use the categoryRoutes, we prefix the url with /api
 //readdirSync("./routes").map((r) => app.use("/api", import("./routes/" + r)));
 
 //port
