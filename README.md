@@ -1395,9 +1395,10 @@ XXI. PDF/Invoice Download
      III.<History/>
 
 205. Invoice Component
-     I. djTdiwcbQlRfFElGuDXWzaWj6QgKObQ
+     I. djTdiwcbQlRfFElGuDXWzaWj6QgKObQs
+
 206. Download Invoice as PDF
-     I. dgdhfdafqsguizafuf
+     I. dgdhfdafqsguizafufs
 
 XXII. Admin Dashboard (Order Management)
 XXIII. Wishlist
