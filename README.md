@@ -1415,7 +1415,8 @@ XXII. Admin Dashboard (Order Management)
      III. update <ShowPaymentInfo/>
 
 210. Products Table in Admin Dashboard
-211. show all
+     <Orders/>
+     I. add showOrderInTable() and use it
 
 XXIII. Wishlist
 XXIV. Cash On Delivery (Cashless order)
