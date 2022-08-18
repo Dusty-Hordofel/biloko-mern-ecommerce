@@ -1410,6 +1410,10 @@ XXII. Admin Dashboard (Order Management)
      II. show all Orders in <AdminDashboard/>
 
 209. Orders with Status Update
+     I. create components->order-><Orders/>
+     II. use <Orders/> in <AdminDashboard/> using props
+     III. update <ShowPaymentInfo/>
+
 210. Products Table in Admin Dashboard
 211. show all
 
