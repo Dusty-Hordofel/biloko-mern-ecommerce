@@ -1397,7 +1397,7 @@ XXI. PDF/Invoice Download
 205. Invoice Component
      I. djTdiwcbQlRfFElGuDXWzaWj6QgKObQs
 
-206. Download Invoice as PDF
+206. Download Invoice as PDF (todo later because of webpack version)
      I. dgdhfdafqsguizafufs
 
 XXII. Admin Dashboard (Order Management)
