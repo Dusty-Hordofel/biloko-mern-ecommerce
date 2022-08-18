@@ -1423,7 +1423,14 @@ XXIII. Wishlist
 211. Wishlist Backend
      I. create a route and controller for Wishlist.
 
-212. Wishlist Functions Frontend 213. Wishlist Frontend 214. 215.
-     XXIV. Cash On Delivery (Cashless order)
+212. Wishlist Functions Frontend
+     I. create functions->user.js->getWishlist,removeWishlist & addToWishlist
+
+213. Wishlist Frontend
+     I.
+
+214. 215.
+
+XXIV. Cash On Delivery (Cashless order)
 
 XXV. Deployment to Digital Ocean Cloud
